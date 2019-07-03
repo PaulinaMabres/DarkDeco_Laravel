@@ -15,5 +15,13 @@
 //     return view('welcome');
 // });
 Route::get('/',function(){
-  return view ('home');
+  return view('home');
+});
+
+// Route::get('home',function(){
+//   return view('home');
+// });
+
+Route::get('faq', function(){
+  return view('faq');
 });

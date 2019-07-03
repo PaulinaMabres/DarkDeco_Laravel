@@ -10,10 +10,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav mr-auto ml-auto text-center">
-        <a class="nav-item nav-link active h4 ml-3" href="home.php">Home</a>
+        <a class="nav-item nav-link active h4 ml-3" href="home">Home</a>
 
         <!-- IDEA: Categorias
          <li class="nav-item dropdown">
@@ -28,7 +27,7 @@
           </div>
         </li> -->
 
-        <a class="nav-item nav-link h4 ml-3" href="faq.php">FAQ</a>
+        <a class="nav-item nav-link h4 ml-3" href="faq">FAQ</a>
         <!-- IDEA: LINK extra
         <a class="nav-item nav-link h4 ml-3" href="#"> Extra </a> -->
       </div>
@@ -78,8 +77,6 @@
             // ?>
         </div>
 
-
-
       <!-- IDEA: CARRITO; se comenta porque no funciona -->
       <!-- <a class=" nav-link text-secondary d-flex justify-content-center mb-2"href="#"><i class="fas fa-shopping-cart fa-2x"></i>
       </a> -->
@@ -89,7 +86,6 @@
         <input class="form-control mr-sm-2" type="search" placeholder="Búsqueda" aria-label="Search">
         <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
       </form> -->
-
 
     </div>
 
