@@ -22,6 +22,4 @@ Route::get('/',function(){
 //   return view('home');
 // });
 
-Route::get('faq', function(){
-  return view('faq');
-});
+Route::get('/faq', 'FaqsController@index');
