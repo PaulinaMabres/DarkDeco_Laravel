@@ -2,7 +2,7 @@
 
   <nav class="navbar navbar-expand-sm  navbar-dark bg-dark container-fluid color fixed-top anchura ml-0 ">
 
-    <a class="navbar-brand mt-15 " href="home.php">
+    <a class="navbar-brand mt-15 " href="/">
       <img src="images/logoNuevoRecortado.png" title="DarkDeco" class="d-inline-block align-top logo" alt="logoDarkD">
     </a>
 
@@ -12,7 +12,7 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav mr-auto ml-auto text-center">
-        <a class="nav-item nav-link active h4 ml-3" href="home">Home</a>
+        <a class="nav-item nav-link active h4 ml-3" href="/">Home</a>
 
         <!-- IDEA: Categorias
          <li class="nav-item dropdown">
@@ -35,6 +35,7 @@
       <!-- IDEA: LOGIN collapse -->
 
       <div class="login-collapse navbar-nav d-flex flex-row justify-content-around">
+
             <?php
             // IDEA: Todo esto hay que descomentarlo despues IDEA
 
