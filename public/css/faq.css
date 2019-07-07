@@ -9,14 +9,14 @@ body{
   padding: 0;
 }
 .card-header{
-  background-color: gray;
+  background-Color: gray;
   font-size: 10px;
-  color: white;
+  Color: white;
   text-align: justify;
 }
 .card-header:hover{
-  /*color: rgb(199,160,77); /*Ocre*/
-  color: rgb(23, 90, 108); /*Azul*/
+  /*Color: rgb(199,160,77); /*Ocre*/
+  Color: rgb(23, 90, 108); /*Azul*/
   cursor: pointer;
 }
 .collapse{
@@ -26,8 +26,8 @@ body{
   text-align: justify;
 }
 .icono-preguntas{
-  color : rgb(199,160,77); /*Ocre*/
-  /* color: rgb(23, 90, 108); /*Azul*/
+  Color : rgb(199,160,77); /*Ocre*/
+  /* Color: rgb(23, 90, 108); /*Azul*/
   font-size: 24px;
 }
 

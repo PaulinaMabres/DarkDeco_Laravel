@@ -1,9 +1,9 @@
 /* Made with love by Mutiullah Samim*/
 
-/* color: rgba(145, 136, 119, 0.6); /*Gris*/
-/* color: rgb(199,160,77); /*Ocre*/
-/* color: rgb(156, 145, 82); /*Verde*/
-/* color: rgb(23, 90, 108); /*Azul*/
+/* Color: rgba(145, 136, 119, 0.6); /*Gris*/
+/* Color: rgb(199,160,77); /*Ocre*/
+/* Color: rgb(156, 145, 82); /*Verde*/
+/* Color: rgb(23, 90, 108); /*Azul*/
 
 /* @import url('https://fonts.googleapis.com/css?family=Numans'); */
 
@@ -27,8 +27,8 @@ html,body{
   margin-top: auto;
   margin-bottom: auto;
   width: 400px;
-  /* background-color: rgba(0,0,0,0.5) !important; */
-  background-color: rgba(145, 136, 119, 0.6) !important; /*Gris*/
+  /* background-Color: rgba(0,0,0,0.5) !important; */
+  background-Color: rgba(145, 136, 119, 0.6) !important; /*Gris*/
   font-size: 1.5rem;
 }
 
@@ -67,34 +67,34 @@ html,body{
 }
 
 .card a {
-  /* color: #55a4fb; */
-  color: rgb(23, 90, 108); /*Azul*/
+  /* Color: #55a4fb; */
+  Color: rgb(23, 90, 108); /*Azul*/
   text-decoration: none;
 }
 .card a:hover{
-  /* color: #55a4fb; */
-  color: rgb(23, 90, 108); /*Azul*/
+  /* Color: #55a4fb; */
+  Color: rgb(23, 90, 108); /*Azul*/
   text-decoration: underline;
 }
 .card a:visited{
-  /* color: #55a4fb; */
-  color: rgb(23, 90, 108); /*Azul*/
+  /* Color: #55a4fb; */
+  Color: rgb(23, 90, 108); /*Azul*/
   text-decoration: none;
 }
 
 .social_icon span{
   font-size: 60px;
   margin-left: 10px;
-  color: #FFD728;
+  Color: #FFD728;
 }
 
 .social_icon span:hover{
-  color: white;
+  Color: white;
   cursor: pointer;
 }
 
 .card-header h1{
-  color: white;
+  Color: white;
 }
 
 /*
@@ -107,8 +107,8 @@ top: -45px;
 
 .input-group-prepend span{
   width: 50px;
-  background-color: #FFD728;
-  color: black;
+  background-Color: #FFD728;
+  Color: black;
   border:0 !important;
 }
 
@@ -136,7 +136,7 @@ content: 'tu foto';
 } */
 
 .remember{
-  color: white;
+  Color: white;
 }
 
 .remember input
@@ -148,19 +148,19 @@ content: 'tu foto';
 }
 
 .login_btn{
-  color: black;
-  background-color: #FFD728;
+  Color: black;
+  background-Color: #FFD728;
   width: 130px;
   margin:0 5px 0 5px;
 }
 
 .login_btn:hover{
-  color: black;
-  background-color: white;
+  Color: black;
+  background-Color: white;
 }
 
 .links{
-  color: white;
+  Color: white;
 }
 
 .links a{
@@ -190,7 +190,7 @@ content: 'tu foto';
 }
 .container.login .space,
 .container.registro .space {
-  color: white;
+  Color: white;
   text-align: center;
   margin: 1em 0;
 }
@@ -200,15 +200,15 @@ content: 'tu foto';
 }
 
 .form-group p {
-  /* color: rgb(199,160,77); /*Ocre*/
-  color:white;
+  /* Color: rgb(199,160,77); /*Ocre*/
+  Color:white;
   font-weight: bold;
   margin-left: 10px;
   margin-bottom: 0!important;
 }
 
 .form-login p {
-  color:white;
+  Color:white;
   font-weight: bold;
 }
 

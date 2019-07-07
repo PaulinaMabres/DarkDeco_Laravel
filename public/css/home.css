@@ -28,8 +28,8 @@ body{
       white-space: nowrap;
       overflow: hidden;
       transform: translateY(-50%);
-       background-color: rgba(25, 42, 86,0.7);
-      color:#f5f6fa;
+       background-Color: rgba(25, 42, 86,0.7);
+      Color:#f5f6fa;
 }
 /*Animacion*/
 .anim-typewriter {
@@ -47,10 +47,10 @@ body{
 
 @keyframes blinkTextCursor {
       from {
-            border-right-color: rgba(255, 255, 255, 0.75);
+            border-right-Color: rgba(255, 255, 255, 0.75);
       }
       to {
-            border-right-color: transparent;
+            border-right-Color: transparent;
       }
 }
 /* --------Fin foto INICIO------------ */
@@ -128,7 +128,7 @@ body{
 }
 .seccionContador{
   margin:7% auto;
-  color:rgb(255, 192, 72);
+  Color:rgb(255, 192, 72);
 }
 .cajaContador p{
   font-size: 100%;
@@ -147,7 +147,7 @@ body{
 }
 .cajaIcono .fas, .far{
   margin: auto;
-  color: rgb(255, 192, 72);
+  Color: rgb(255, 192, 72);
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -268,7 +268,7 @@ body{
   transition: 0s;
 }
 .layer1:hover .textoEscondido{
-  background-color: rgba(0, 0, 0, 0.8);
+  background-Color: rgba(0, 0, 0, 0.8);
   visibility: visible;
   transition: 0s;
 }
@@ -280,7 +280,7 @@ body{
   transition: 0s;
 }
 .layer2:hover .textoEscondido{
-  background-color: rgba(0,0,0, 0.8);
+  background-Color: rgba(0,0,0, 0.8);
   visibility:visible;
   transition: 0s;
 }
@@ -292,7 +292,7 @@ body{
   transition: 0s;
 }
 .layer3:hover .textoEscondido{
-  background-color: rgba(0,0,0, 0.8);
+  background-Color: rgba(0,0,0, 0.8);
   visibility:visible;
   transition: 0s;
 }
@@ -303,7 +303,7 @@ body{
   visibility: hidden;
 }
 .layer4:hover .textoEscondido{
-  background-color: rgba(0,0,0, 0.8);
+  background-Color: rgba(0,0,0, 0.8);
   visibility:visible;
   transition: 0s;
 }
@@ -314,7 +314,7 @@ body{
   visibility: hidden;
 }
 .layer5:hover .textoEscondido{
-  background-color: rgba(0,0,0, 0.8);
+  background-Color: rgba(0,0,0, 0.8);
   visibility:visible;
   transition: 0s;
 }
@@ -325,14 +325,14 @@ body{
   visibility: hidden;
 }
 .layer6:hover .textoEscondido{
-  background-color: rgba(0,0,0, 0.8);
+  background-Color: rgba(0,0,0, 0.8);
   visibility:visible;
   transition: 0s;
 }
 
 .textoOculto1{
   transition:0s!important;
-  color:white;
+  Color:white;
   position: relative;
   top:40%;
 }
@@ -343,7 +343,7 @@ body{
   font-family: 'Reenie Beanie', cursive;
   font-size: 3vh;
   font-weight: bold;
-  background-color: rgba(52, 73, 94, 0.5);
+  background-Color: rgba(52, 73, 94, 0.5);
   margin-bottom: 30px;
 }
 .frase_ultima p{

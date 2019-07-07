@@ -24,7 +24,7 @@ class FAQsController extends Controller
       ];
       $preguntasFrecuentes[] = [
         "pregunta" => "¿Se pueden realizar modificaciones en los muebles que tienen publicados?¿Realizan muebles a medida?",
-        "respuesta" => "Sí. Podes elegir las medidas de los muebles, así como también los lustres, terminaciones, combinaciones de telas y colores. Contamos con un equipo de diseñadoras, que te van a asesorar y acompañar en todo el proceso de diseño, para que los muebles queden tal como te los imaginas. Podes enviarnos imágenes de referencia, contarnos tus ideas, así como también fotos de los ambientes para brindarte un asesoramiento personalizado y ajustado a tu necesidad."
+        "respuesta" => "Sí. Podes elegir las medidas de los muebles, así como también los lustres, terminaciones, combinaciones de telas y Colores. Contamos con un equipo de diseñadoras, que te van a asesorar y acompañar en todo el proceso de diseño, para que los muebles queden tal como te los imaginas. Podes enviarnos imágenes de referencia, contarnos tus ideas, así como también fotos de los ambientes para brindarte un asesoramiento personalizado y ajustado a tu necesidad."
       ];
       $preguntasFrecuentes[] = [
         "pregunta" => "¿Cuál es el costo de envío?",

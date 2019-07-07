@@ -1,6 +1,6 @@
 <section id="header" class="header">
 
-  <nav class="navbar navbar-expand-sm  navbar-dark bg-dark container-fluid color fixed-top anchura ml-0 ">
+  <nav class="navbar navbar-expand-sm  navbar-dark bg-dark container-fluid Color fixed-top anchura ml-0 ">
 
     <a class="navbar-brand mt-15 " href="/">
       <img src="images/logoNuevoRecortado.png" title="DarkDeco" class="d-inline-block align-top logo" alt="logoDarkD">

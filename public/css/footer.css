@@ -10,12 +10,12 @@
     border-left: 3px solid #eeeeee;
     padding-bottom: 6px;
     margin-bottom: 20px;
-    color:#ffffff;
+    Color:#ffffff;
 }
 #footer a {
-    color: #ffffff;
+    Color: #ffffff;
     text-decoration: none !important;
-    background-color: transparent;
+    background-Color: transparent;
     -webkit-text-decoration-skip: objects;
 }
 #footer ul.links li{
@@ -34,21 +34,21 @@
   font-size: 8px;
 }
 #footer .extra-footer{
-  background-color: #081338;
+  background-Color: #081338;
 }
 /* IDEA: para el newsletter */
 #footer .cajaEmail{
   height: 25px;
 }
 #footer .cajaEmail i{
-    background-color: #eccc68;
+    background-Color: #eccc68;
     width: 40px;
     line-height: 25px;
     border: none;
     outline: none;
 }
 #footer .boton{
-  background-color: #eccc68;
+  background-Color: #eccc68;
   text-transform: uppercase;
   cursor:pointer;
   border: none;

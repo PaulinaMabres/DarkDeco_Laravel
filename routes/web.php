@@ -23,3 +23,4 @@ Route::get('/',function(){
 // });
 
 Route::get('/faq', 'FaqsController@index');
+Route::get('/products', 'ProductController@index');

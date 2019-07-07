@@ -378,7 +378,7 @@
             "time": "2019-01-10T14:06:47+00:00"
         },
         {
-            "name": "jakub-onderka/php-console-color",
+            "name": "jakub-onderka/php-console-Color",
             "version": "v0.2",
             "source": {
                 "type": "git",
@@ -435,7 +435,7 @@
             },
             "require": {
                 "ext-tokenizer": "*",
-                "jakub-onderka/php-console-color": "~0.2",
+                "jakub-onderka/php-console-Color": "~0.2",
                 "php": ">=5.4.0"
             },
             "require-dev": {
