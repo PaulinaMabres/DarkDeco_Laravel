@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Pokemon;
+use App\Color;
 
-class PokemonSeeder extends Seeder
+class ColorSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,32 +12,32 @@ class PokemonSeeder extends Seeder
      */
     public function run()
     {
-        Color::create([
-            'Color' => 'Blanco',
-        ]);
-        Color::create([
-            'Color' => 'Negro',
-        ]);
-        Color::create([
-            'Color' => 'Gris',
-        ]);
-        Color::create([
-            'Color' => 'Azul',
-        ]);
-        Color::create([
-            'Color' => 'Verde',
-        ]);
-        Color::create([
-            'Color' => 'Rojo',
-        ]);
-        Color::create([
-            'Color' => 'Amarillo',
-        ]);
-        Color::create([
-            'Color' => 'Violeta',
-        ]);
-        Color::create([
-            'Color' => 'Marrón',
-        ]);
+      Color::create([
+          'color' => 'Blanco',
+      ]);
+      Color::create([
+          'color' => 'Negro',
+      ]);
+      Color::create([
+          'color' => 'Gris',
+      ]);
+      Color::create([
+          'color' => 'Azul',
+      ]);
+      Color::create([
+          'color' => 'Verde',
+      ]);
+      Color::create([
+          'color' => 'Rojo',
+      ]);
+      Color::create([
+          'color' => 'Amarillo',
+      ]);
+      Color::create([
+          'color' => 'Violeta',
+      ]);
+      Color::create([
+          'color' => 'Marrón',
+      ]);
     }
 }
