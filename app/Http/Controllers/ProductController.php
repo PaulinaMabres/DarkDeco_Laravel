@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $productos = Product::all();
+        return view('products', compact('productos'));
     }
 
     /**
@@ -44,9 +45,10 @@ class ProductController extends Controller
      * @param  \App\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(product $product)
+    public function show($id)
     {
-        //
+      $producto = Product::find($id);
+      return view('product', compact('producto')); //Pasamos el dato a la vista.
     }
 
     /**

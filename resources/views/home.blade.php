@@ -62,6 +62,10 @@
           <div class="pt-4"> <span class="h3 font-weight-bold text-uppercase ">Todo para mi habitación</span></div>
           <p class="font-italic">Creadores de sueños.</p>
           <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
+
+          {{-- *** Link provisorio para listado de productos *** --}}
+          <a href="/products">Ver más</a>
+
         </div>
         <div class="col-md-4 borde segundo_articulo text-right">
           <div class="pt-4"> <span class="h3 font-weight-bold text-uppercase ">Cocina</span></div>

@@ -5,9 +5,9 @@
   <link rel="stylesheet" href="css/faq.css">
 @endsection
 
-<!-- Contenido del Home -->
+<!-- Contenido de FAQ -->
 @section('contenidoBody')
-  <!-- Contenido de FAQ -->
+
   <div class="container-fluid ayudinHeight d-flex align-items-center"> <?php // IDEA: (Lucas) agrego una clase de min height para arreglar una cosa ?>
 
     <div class="accordion row" id="accordionExample">
