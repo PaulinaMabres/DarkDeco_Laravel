@@ -21,10 +21,13 @@ Route::get('/',function(){
 // Route::get('home',function(){
 //   return view('home');
 // });
+Route::get('/recuperarpassword', 'RecuperarPasswordController@index');
+Route::post('/recuperarpassword', 'RecuperarPasswordController@recuperar')->name('recuperarpassword');
 
 Route::get('/faq', 'FaqsController@index');
 Route::get('/products', 'ProductController@index');
 Route::get('/product/{id}', 'ProductController@show');
+
 
 Auth::routes();
 
