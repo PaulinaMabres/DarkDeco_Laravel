@@ -1,5 +1,10 @@
 @extends('default')
 
+@section('head')
+  <link rel="stylesheet" href="css/login.css">
+@endsection
+
+
 @section('contenidoBody')
 <div class="container registro" id="registro">
 		<div class="d-flex justify-content-center h-100 headerEspacio">
@@ -9,7 +14,7 @@
 				</div>
 				<div class="imagen" >
 					<a href="home.php">
-						<img src="img/logoNuevo.png" alt="logo" width="100px" height="100px">
+						<img src="/images/logoNuevo.png" alt="logo" width="100px" height="100px">
 					</a>
 				</div>
 				<div class="card-body">

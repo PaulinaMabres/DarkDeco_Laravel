@@ -1,5 +1,9 @@
 @extends('default')
 
+@section('head')
+  <link rel="stylesheet" href="css/login.css">
+@endsection
+
 @section('contenidoBody')
 	<div class="container login" id="login">
 
