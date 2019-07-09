@@ -12,14 +12,12 @@
 <body>
 
   <header>
-    @include('partials.header');
+    @include('partials.header')
   </header>
 
   @yield('contenidoBody')
 
-  <footer>
-    @include('partials.footer');
-  </footer>
+  @include('partials.footer')
 
   <!-- Scripts -->
   @include('partials.scripts')
