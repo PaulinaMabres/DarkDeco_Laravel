@@ -143,8 +143,8 @@ content: 'tu foto';
 {
   width: 20px;
   height: 20px;
-  margin-left: 15px;
-  margin-right: 5px;
+  vertical-align: top;
+  margin: 0;
 }
 
 .login_btn{

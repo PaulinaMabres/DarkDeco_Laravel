@@ -16,3 +16,11 @@ Una vez clonado el proyecto ejecutar:
   php artisan migrate
   php artisan serve
 ```
+
+
+## Cambiar diseño paginas nativas de laravel
+
+Para cambiar el diseño en elas paginas nativas de laravel ejemplo **login** asegurarse lo siguiente:
+
+1 - Respetar todos los campos inputs
+2 - Respetar todos los codigos de laravel que le presedan @ ejemplo los ifs
