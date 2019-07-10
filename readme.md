@@ -24,3 +24,18 @@ Para cambiar el diseño en elas paginas nativas de laravel ejemplo **login** ase
 
 1 - Respetar todos los campos inputs
 2 - Respetar todos los codigos de laravel que le presedan @ ejemplo los ifs
+
+
+## Generar un nuevo seed 
+
+**Links utiles**
+- [Modelo](https://laravel.com/docs/5.8/eloquent#eloquent-model-conventions)
+
+1 - Crear el modelo para la tabla
+```php
+  php artisan make:model TuModelo
+```
+2 - Crear el seed para el modelo
+```php
+  php artisan make:seeder NombreDeLaTabla
+```
