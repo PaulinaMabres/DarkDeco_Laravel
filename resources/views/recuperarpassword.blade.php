@@ -70,7 +70,7 @@
 							<input type="submit" value="Restaurar" class="btn float-right login_btn">
 						</div>
 						<div class="form-group">
-							<a href="login.php"><input type="button" value="Volver" class="btn float-right login_btn"></a>
+						<a href="{{route('anonimo')}}"><input type="button" value="Volver" class="btn float-right login_btn"></a>
 						</div>
 					</form>
 				</div>
