@@ -35,6 +35,11 @@ Para cambiar el diseño en elas paginas nativas de laravel ejemplo **login** ase
 ```php
   php artisan make:model TuModelo
 ```
+> Tambien se puede generar junto con un archivo de migratacioon
+```php
+  php artisan make:model TuModelo --migration
+```
+
 2 - Crear el seed para el modelo
 ```php
   php artisan make:seeder NombreDeLaTabla
