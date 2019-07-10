@@ -86,8 +86,8 @@ class ForgotPasswordController extends Controller
         }
 
         DB::table('users')->where('id', $usuario->id)->update(['password' => Hash::make( $validatedData['password'])]);
-        
-        return redirect()->route('home');
+         
+        return redirect()->route('anonimo');
     }
 
 

@@ -14,9 +14,7 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/',function(){
-  return view('home');
-});
+Route::get('/',function(){ return view('home');})->name('anonimo'); /* Anonimo = La ruta no require login */
 
 // Route::get('home',function(){
 //   return view('home');
