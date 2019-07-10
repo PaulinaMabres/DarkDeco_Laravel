@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Support\Facades\DB;
 class RegisterController extends Controller
 {
     /*
@@ -50,8 +50,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'apellido' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'respuesta_secreta' => ['required','string', 'max:255'],
+            'pregunta_secreta' => ['required']
         ]);
     }
 
@@ -63,10 +66,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'apellido' => $data['apellido'],
             'password' => Hash::make($data['password']),
         ]);
+
+        RespuestaSecreta::create([
+            'user_id' => $user->id,
+            'preguntas_secretas_id' => $data['pregunta_secreta'],
+            'respuesta' => $data['respuesta_secreta']
+        ]);
+
+        return $user;
+    }
+
+    protected function formularioDeRegistro(){
+        
+        $preguntasSecretas = DB::table('preguntas_secretas')->get();
+
+        return view('auth.register', ["preguntas_secretas"=>$preguntasSecretas]);
     }
 }

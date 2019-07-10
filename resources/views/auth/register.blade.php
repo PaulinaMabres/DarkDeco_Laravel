@@ -30,12 +30,12 @@
                                 @enderror
 							</div>
 						</div>
-						{{-- <div class="form-group">
+						<div class="form-group">
 							<div class="input-group mb-3">
 								<input type="text" class="form-control" name="apellido" placeholder="tu apellido" aria-label="tu apellido" aria-describedby="basic-addon1" >
 								
 							</div>
-						</div> --}}
+						</div>
 						<div class="form-group">
 							<div class="input-group mb-3">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="tu email">
@@ -71,17 +71,24 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="confirmación de contraseña" >
 							</div>
 						</div>
-						{{-- <div class="form-group">
+						<div class="form-group">
 							<div class="input-group mb-3">
 								<select class="selectPregunta" name="preguntaSecreta">
-									<option id="item" value="a">Nombre de tu escuela primaria</option>
-									<option id="item" value="b">Nombre de tu superhéroe favorito</option>
-									<option id="item" value="c">Año de nacimiento de tu madre</option>
+                                    @foreach($preguntas_secretas as $pregunta)
+                                     <option id="item" value="{{$pregunta->id}}">{{$pregunta->pregunta}}</option>
+                                    @endforeach
 								</select>
 								
 								
 							</div>
-						</div> --}}
+						</div>
+
+                        <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" name="resupuesta_secreta" placeholder="Resp. secreta: nombre de tu esc. primaria" aria-label="RespuestaSecreta" aria-describedby="basic-addon1" >
+                                    
+                                </div>
+                        </div>
 
 						<div class="form-group">
 							<input type="submit" value="Confirmar" class="btn float-right login_btn" >

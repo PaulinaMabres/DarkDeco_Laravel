@@ -8,16 +8,13 @@ class RecuperarPasswordController extends Controller
 {
     public function index()
     {
-
-
-
         return view("recuperarpassword");
     }
 
     public function recuperar()
     {
         // Usuario pone su nombre
-
+        
         
 
         /**
