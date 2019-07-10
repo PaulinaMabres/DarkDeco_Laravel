@@ -17,8 +17,8 @@ $factory->define(Product::class, function (Faker $faker) {
   return [
     'nombre' => $faker->sentence(3),
     'Color_id' => $faker->numberBetween(1, 9),
-    // 'foto' => $faker->image($path, 480, 600, $categorias[$categoria-1], false), //documentación de faker. El false es para que traiga el archivo sin  path
-    'foto' => $imagenes[$categoria-1],
+    'foto' => $faker->image($path, 480, 600, $categorias[$categoria-1], false), //documentación de faker. El false es para que traiga el archivo sin  path
+    // 'foto' => $imagenes[$categoria-1],
     'precio' => $faker->randomFloat(2, 300, 4000),
     'descripcion' => $faker->sentence(20),
     'stock' => $faker->numberBetween(0, 100),

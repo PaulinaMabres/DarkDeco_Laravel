@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     // $this->call(UsersTableSeeder::class);
     // $this->call(ColorSeeder::class);
     // $this->call(CategorySeeder::class);
-    factory(\App\Product::class, 20)->create(); //Crea los prodcutos definidos en el factory.
+    // $this->call(PreguntasSecretas::class);
+    // factory(\App\Product::class, 20)->create(); //Crea los prodcutos definidos en el factory.
   }
 }

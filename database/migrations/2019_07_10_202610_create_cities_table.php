@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateUsersAgregarApellido extends Migration
+class CreateCitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class UpdateUsersAgregarApellido extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table) {
-            $table->string('lastName');
+        Schema::create('cities', function (Blueprint $table) {
+            $table->bigIncrements('id')->unsigned();
+            $table->string('name');
+            $table->string('postCode');
+
+            $table->timestamps();
+
         });
     }
 
@@ -25,8 +30,6 @@ class UpdateUsersAgregarApellido extends Migration
      */
     public function down()
     {
-        Schema::table('users', function($table) {
-            $table->dropColumn('lastName');
-        });
+        Schema::dropIfExists('cities');
     }
 }
