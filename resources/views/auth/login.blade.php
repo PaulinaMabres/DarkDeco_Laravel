@@ -159,10 +159,11 @@
 					<div class="d-flex justify-content-center links">
 						No tenés cuenta?<a href="{{ route('register') }}">Registrate</a>
 					</div>
-					<div class="d-flex justify-content-center">
-						<a href="{{  route('password.request') }}">Olvidaste tu contraseña?</a>
-					</div>
-
+					@if (Route::has('password.request'))
+						<div class="d-flex justify-content-center">
+							<a href="{{  route('password.request') }}">Olvidaste tu contraseña?</a>
+						</div>
+					@endif
 					<!-- <div class="d-flex justify-content-start social_icon">
 						<span><i class="fab fa-facebook-square"></i></span>
 						<span><i class="fab fa-google-plus-square"></i></span>

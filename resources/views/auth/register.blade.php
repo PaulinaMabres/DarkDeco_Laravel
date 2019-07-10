@@ -32,7 +32,7 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group mb-3">
-								<input type="text" class="form-control" name="apellido" placeholder="tu apellido" aria-label="tu apellido" aria-describedby="basic-addon1" >
+								<input type="text" class="form-control" name="lastName" placeholder="tu apellido" aria-label="tu apellido" aria-describedby="basic-addon1" id="lastName">
 								
 							</div>
 						</div>
@@ -73,7 +73,7 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group mb-3">
-								<select class="selectPregunta" name="preguntaSecreta">
+								<select class="selectPregunta" name="pregunta_secreta" id="pregunta_secreta">
                                     @foreach($preguntas_secretas as $pregunta)
                                      <option id="item" value="{{$pregunta->id}}">{{$pregunta->pregunta}}</option>
                                     @endforeach
@@ -85,7 +85,7 @@
 
                         <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="resupuesta_secreta" placeholder="Resp. secreta: nombre de tu esc. primaria" aria-label="RespuestaSecreta" aria-describedby="basic-addon1" >
+                                    <input type="text" class="form-control" name="respuesta_secreta" placeholder="Resp. secreta: nombre de tu esc. primaria" aria-label="RespuestaSecreta" aria-describedby="basic-addon1" id="respuesta_secreta" >
                                     
                                 </div>
                         </div>

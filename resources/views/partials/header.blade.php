@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-sm  navbar-dark bg-dark container-fluid Color fixed-top anchura ml-0 ">
 
     <a class="navbar-brand mt-15 " href="/">
-      <img src="images/logoNuevoRecortado.png" title="DarkDeco" class="d-inline-block align-top logo" alt="logoDarkD">
+      <img src="/images/logoNuevoRecortado.png" title="DarkDeco" class="d-inline-block align-top logo" alt="logoDarkD">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
