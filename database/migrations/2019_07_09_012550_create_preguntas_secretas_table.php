@@ -14,7 +14,7 @@ class CreatePreguntasSecretasTable extends Migration
     public function up()
     {
         Schema::create('preguntas_secretas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->unsigned();
             $table->string('pregunta');
             $table->timestamps();
         });

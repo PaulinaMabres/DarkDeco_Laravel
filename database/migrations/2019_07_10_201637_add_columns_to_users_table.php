@@ -27,7 +27,7 @@ class AddColumnsToUsersTable extends Migration
 
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('bank_id')->references('id')->on('banks');
-            $table->foreign('pregSecreta_id')->references('id')->on('PreguntasSecretas');
+            $table->foreign('pregSecreta_id')->references('id')->on('preguntas_secretas');
         });
     }
 

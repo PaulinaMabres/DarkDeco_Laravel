@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class PreguntaSecreta extends Model
 {
-    //
-    protected $table = 'preguntas_secretas';
-    protected $primaryKey = 'id';
+  public $table = "preguntas_secretas";
+  // public $primaryKey = "id";
+  // public $timeStamps = false;
+  public $guarded = [];
 }
