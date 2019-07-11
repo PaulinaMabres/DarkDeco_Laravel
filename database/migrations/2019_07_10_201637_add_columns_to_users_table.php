@@ -14,16 +14,16 @@ class AddColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('apellido');
-            $table->boolean('admin');
-            $table->string('telefono');
-            $table->string('domicilio');
-            $table->string('foto');
-            $table->string('numTarjeta');
-            $table->string('respSecreta');
+            $table->string('lastName');
+            $table->string('foto')->nullable();
+            $table->boolean('admin')->default(0);
+            $table->string('telefono')->nullable();
+            $table->string('domicilio')->nullable();
             $table->bigInteger('city_id')->unsigned()->nullable();
+            $table->string('numTarjeta')->nullable();
             $table->bigInteger('bank_id')->unsigned()->nullable();
             $table->bigInteger('pregSecreta_id')->unsigned()->nullable();
+            $table->string('respSecreta')->nullable();
 
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('bank_id')->references('id')->on('banks');
@@ -39,7 +39,7 @@ class AddColumnsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('apellido');
+            $table->dropColumn('lastName');
             $table->dropColumn('admin');
             $table->dropColumn('telefono');
             $table->dropColumn('domicilio');

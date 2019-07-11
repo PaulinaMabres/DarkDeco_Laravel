@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use App\User;
-use App\RespuestaSecreta;
 use App\PreguntaSecreta;
 use Illuminate\Http\Request;
 class ForgotPasswordController extends Controller
@@ -61,7 +60,7 @@ class ForgotPasswordController extends Controller
     }
 
     public function reiniciarPassword(Request $request){
-        
+
         $validatedData = $request->validate([
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -71,10 +70,10 @@ class ForgotPasswordController extends Controller
         $usuario = DB::table('users')->where('email', $validatedData['email'])->first();
 
         if($usuario == null)
-        { 
+        {
             return back()->withErrors(['email' => 'No existe usuario con este correo']);
         }
-        
+
         $preguntasSecretas = DB::table('respuesta_secretas')->where([
             ['user_id', '=', $usuario->id],
             ['respuesta', '=', $validatedData['respuestaSecreta'] ]
@@ -86,7 +85,7 @@ class ForgotPasswordController extends Controller
         }
 
         DB::table('users')->where('id', $usuario->id)->update(['password' => Hash::make( $validatedData['password'])]);
-         
+
         return redirect()->route('anonimo');
     }
 
