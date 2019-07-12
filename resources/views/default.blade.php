@@ -12,15 +12,17 @@
 <body>
 
   <header>
-    @include('partials.header')
+    @include('partials.header');
   </header>
 
-  @yield('contenidoBody')
+  @yield('contenidoBody');
 
-  @include('partials.footer')
+  <footer>
+    @include('partials.footer');
+  </footer>
 
   <!-- Scripts -->
-  @include('partials.scripts')
+  @include('partials.scripts');
 
 </body>
 </html>

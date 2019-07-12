@@ -14,23 +14,13 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 Route::get('/',function(){ return view('home');})->name('anonimo'); /* Anonimo = La ruta no require login */
 
 // Route::get('home',function(){
 //   return view('home');
 // });
-Route::get('/recuperarpassword', 'RecuperarPasswordController@index');
-Route::post('/recuperarpassword', 'RecuperarPasswordController@recuperar')->name('recuperarpassword');
-
-Route::get('/faq', 'FaqsController@index');
-Route::get('/products', 'ProductController@index');
-Route::get('/product/{id}', 'ProductController@show');
-
-
-
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 // Rutas de autorizacion
 //Auth::routes();
@@ -43,15 +33,20 @@ Route::get('register', 'Auth\RegisterController@formularioDeRegistro')->name('re
 Route::post('register', 'Auth\RegisterController@register');
 
 // Password Reset Routes...
-// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::get('/recuperarpassword', 'RecuperarPasswordController@index');
+Route::post('/recuperarpassword', 'RecuperarPasswordController@recuperar')->name('recuperarpassword');
 
+// Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::get('password/reset', 'Auth\ForgotPasswordController@mostrarFormularioDeReinicio')->name('password.request');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 Route::post('password/reset/preguntaSecreta', 'Auth\ForgotPasswordController@reiniciarPassword')->name('password.reiniciar');
-
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-
-
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
+Route::get('/faq', 'FaqsController@index');
 
+// Rutas de productos
+Route::get('/products/{category_id?}', 'ProductController@index');
+Route::get('/product/{id}', 'ProductController@show');
+Route::get('/addProduct', 'ProductController@create');
+Route::post('addProduct', 'ProductController@store');

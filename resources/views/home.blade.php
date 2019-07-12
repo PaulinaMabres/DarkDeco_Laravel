@@ -47,7 +47,9 @@
         </div>
         <div class="col-md-4  text-center" style="max-width:80vw ">
           <i class="fas fa-binoculars fa-4x"></i>
-          <p class="font-weight-bold h1">Descubrí</p>
+          <a href="/products">
+            <p class="font-weight-bold h1">Descubrí</p>
+          </a>
           <p class="text-muted font-weight-light"> En el mundo existe una diversidad enorme de muebles y decoraciones. Mucho más de lo que vos pensás.</p>
         </div>
       </div>
@@ -55,33 +57,47 @@
     </div>
   </section>
 
+  {{-- Secciones de productos - Categorías --}}
   <section id="seccionesArticulos">
     <div class="container">
       <div class="d-flex flex-row flex-wrap">
+
+        {{-- Categoría 1 - Habitación --}}
         <div class="col-md-8 borde primer_articulo text-right">
           <div class="pt-4"> <span class="h3 font-weight-bold text-uppercase ">Todo para mi habitación</span></div>
           <p class="font-italic">Creadores de sueños.</p>
-          <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
-
-          {{-- *** Link provisorio para listado de productos *** --}}
-          <a href="/products">Ver más</a>
-
+          <a href="/products/1">
+            <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
+          </a>
         </div>
+
+        {{-- Categoría 2 - Cocina --}}
         <div class="col-md-4 borde segundo_articulo text-right">
           <div class="pt-4"> <span class="h3 font-weight-bold text-uppercase ">Cocina</span></div>
           <p class="font-italic">Hambrientos de estilo.</p>
-          <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
+          <a href="/products/2">
+            <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
+          </a>
         </div>
+
+        {{-- Categoría 3 - Lavabo --}}
         <div class="col-md-3 borde tercer_articulo text-right">
           <div class="pt-4"> <span class="h3 font-weight-bold text-uppercase text-white ">Lavabo</span></div>
           <p class="font-italic text-white">Relax</p>
-          <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
+          <a href="/products/3">
+            <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
+          </a>
         </div>
+
+        {{-- Categoría 4 - Outdoor --}}
         <div class="col-md-9 borde cuarto_articulo text-right">
           <div class="pt-4"> <span class="h3 font-weight-bold text-uppercase text-white">El outdoor más buscado</span></div>
           <p class="font-italic text-white">Nada como el aire libre.</p>
-          <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
+          <a href="/products/4">
+            <button type="button" class="btn btn-dark borde text-uppercase"> <span class="h6">Comprar ahora</span></button>
+          </a>
         </div>
+
       </div>
     </div>
   </section>

@@ -7,14 +7,16 @@
 
 @section('contenidoBody')
 
-  <h1>Lista de productos</h1>
+  <h1>Detalle del producto</h1>
 
   <section>
     <article>
-      <p>Nombre: {{$producto->nombre}}</p>
-      <p>Precio: {{$producto->precio}}</p>
-      <p>Descripcion: {{$producto->descripcion}}</p>
-      <img src="/storage/product/{{$producto->foto}}" alt="">
+      <h4>
+        <p>Nombre: {{$product->nombre}}</p>
+      </h4>
+      <p>Precio: {{$product->precio}}</p>
+      <p>Descripcion: {{$product->descripcion}}</p>
+      <img width="150px" src="/storage/product/{{$product->foto}}" alt="">
 
       {{-- <form class="" action="/addtocart" method="post">
         @csrf
