@@ -58,7 +58,7 @@
       </div>
 
       <div class="">
-        <img src="product/{{old("foto")}}" alt="">
+        <img width="150px" src="/storage/product/{{old("foto")}}" alt="">
         <label for="foto">Foto</label>
         <input id="foto" type="file" name="foto" value="{{old("foto")}}">
       </div>

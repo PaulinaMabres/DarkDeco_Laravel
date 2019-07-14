@@ -47,6 +47,7 @@ class ProductController extends Controller
   */
   public function store(Request $request)
   {
+    // dd($request->file('foto')->getFileName());
     // //Primero valido los datos. //
     $reglas = [
       "name" => "required|string|min:2",
@@ -61,6 +62,7 @@ class ProductController extends Controller
       "required" => "El campo :attribute debe completarse",
       "gte" => "El campo :attribute debe ser un número positivo",
       "integer" => "El campo :attribute debe ser un numero entero.",
+      "image" => "Error al cargar la foto"
     ];
 
     $this->validate($request, $reglas, $mensajes);
@@ -69,10 +71,10 @@ class ProductController extends Controller
     $newProduct = new Product();
 
     $file = '';
-    if ($request->foto) {
+    if ($request->file('foto')) {
       $path = $request->file('foto')->store('/product');
       $file = basename($path);
-      //dd($path, $file);
+      // dd($path, $file);
     }
 
     //  Le voy a cargar los datos que vienen por post (request)
@@ -141,6 +143,7 @@ class ProductController extends Controller
       "required" => "El campo :attribute debe completarse",
       "gte" => "El campo :attribute debe ser un número positivo",
       "integer" => "El campo :attribute debe ser un numero entero.",
+      "image" => "Error al cargar la foto"
     ];
 
     $this->validate($request, $reglas, $mensajes);
@@ -149,7 +152,7 @@ class ProductController extends Controller
     $product = Product::find($id);
 
     $file = '';
-    if ($request->foto) {
+    if ($request->file('foto')) {
       $path = $request->file('foto')->store('/product');
       $file = basename($path);
       //dd($path, $file);
