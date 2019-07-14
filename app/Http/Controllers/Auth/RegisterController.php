@@ -71,15 +71,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'lastName' => $data['lastName'],
             'password' => Hash::make($data['password']),
+            'pregSecreta_id' => $data['pregunta_secreta'],
+            'respSecreta' => Hash::make($data['respuesta_secreta'])
         ]);
-
-        // TODO: La respuesta secreta se guarda en la tabla de usuarios encriptada igual que la password
-        // RespuestaSecreta::create([
-        //     'user_id' => $user->id,
-        //     'preguntas_secretas_id' => $data['pregunta_secreta'],
-        //     'respuesta' => $data['respuesta_secreta']
-        // ]);
-
         return $user;
     }
 

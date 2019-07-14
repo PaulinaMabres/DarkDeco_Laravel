@@ -6,6 +6,7 @@
 
 @section('contenidoBody')
 
+
 <div class="container login"  id="restore">
 
 		<div class="d-flex justify-content-center h-100 headerEspacio">
@@ -28,11 +29,11 @@
 								</span>
 							</div>
 							<input type="text" class="form-control" placeholder="correo" name="email" id="email">
-							@error('email')
-								<span class="invalid-feedback" role="alert">
-									<strong>{{ $message }}</strong>
+							@if($errors->has('email'))
+								<span class="invalid-feedback d-block" role="alert">
+									<strong>{{ $errors->first('email') }}</strong>
 								</span>
-							@enderror
+							@endif
 						</div>
 
 						<div class="input-group form-group">
@@ -42,7 +43,7 @@
 							</div>
 							<input type="text" class="form-control" placeholder= 'respuesta secreta' name="respuestaSecreta"  id="respuestaSecreta">
 							@error('respuestaSecreta')
-								<span class="invalid-feedback" role="alert">
+								<span class="invalid-feedback d-block" role="alert">
 									<strong>{{ $message }}</strong>
 								</span>
 							@enderror
@@ -54,7 +55,7 @@
 							<input type="password" class="form-control" placeholder="nueva contraseña" name="password" id="password" >
 							
 							@error('password')
-								<span class="invalid-feedback" role="alert">
+								<span class="invalid-feedback d-block" role="alert">
 									<strong>{{ $message }}</strong>
 								</span>
 							@enderror

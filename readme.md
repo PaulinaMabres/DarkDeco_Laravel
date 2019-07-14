@@ -13,7 +13,9 @@ Una vez clonado el proyecto ejecutar:
 3 - Iniciar el proyecto
 ```
   php artisan key:generate
+  // php artisan migrate:fresh  Usar unicamente si se desea borrar las tablas
   php artisan migrate
+  php artisan db:seed
   php artisan serve
 ```
 
@@ -43,4 +45,12 @@ Para cambiar el diseño en elas paginas nativas de laravel ejemplo **login** ase
 2 - Crear el seed para el modelo
 ```php
   php artisan make:seeder NombreDeLaTabla
+```
+
+
+## Limpiar cache laravel
+```
+php artisan optimize `
+php artisan cache:clear 
+composer dump-autoload
 ```

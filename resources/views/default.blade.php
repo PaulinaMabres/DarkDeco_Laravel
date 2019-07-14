@@ -4,25 +4,24 @@
   <meta charset="utf-8">
   <title>Dark Déco</title>
 
-  @include('partials/headmaster');
+  @include('partials/headmaster')
 
-  @yield('head');
+  @yield('head')
 
 </head>
 <body>
 
   <header>
-    @include('partials.header');
+    @include('partials.header')
   </header>
-
-  @yield('contenidoBody');
+  @yield('contenidoBody')
 
   <footer>
-    @include('partials.footer');
+    @include('partials.footer')
   </footer>
 
   <!-- Scripts -->
-  @include('partials.scripts');
+  @include('partials.scripts')
 
 </body>
 </html>

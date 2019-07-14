@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use App\User;
 use App\PreguntaSecreta;
 use Illuminate\Http\Request;
+
+use Auth;
+
 class ForgotPasswordController extends Controller
 {
     /*
@@ -65,7 +68,13 @@ class ForgotPasswordController extends Controller
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'respuestaSecreta' => ['required','string', 'max:255']
-        ]);
+        ],
+            [
+                'email.required' => 'El correo no puede estar vacio',
+                'password.required' => 'El password no puede estar vacio',
+                'respuestaSecreta.required' => 'La respuesta secreta no puede estar vacio'
+            ]
+        );
 
         $usuario = DB::table('users')->where('email', $validatedData['email'])->first();
 
@@ -73,20 +82,26 @@ class ForgotPasswordController extends Controller
         {
             return back()->withErrors(['email' => 'No existe usuario con este correo']);
         }
+        
+        if( Hash::check( $validatedData['respuestaSecreta'] ,  $usuario->respSecreta ) )
+        {
+            
+            DB::table('users')->where('id', $usuario->id)->update(['password' => Hash::make( $validatedData['password']) ]);
+            
+            if ( Auth::attempt( ['email' => $validatedData['email'], 'password' => $validatedData['password']], true ) )
+            {
+                return redirect()->route('home');
+            }
+            else{
+                return redirect()->route('anonimo');
+            }
 
-        $preguntasSecretas = DB::table('respuesta_secretas')->where([
-            ['user_id', '=', $usuario->id],
-            ['respuesta', '=', $validatedData['respuestaSecreta'] ]
-        ])->first();
-
-        if($preguntasSecretas == null)
+            
+        }
+        else
         {
             return back()->withErrors(['respuesta_secretas' => 'Tu respuesta es incorrecta']);
-        }
-
-        DB::table('users')->where('id', $usuario->id)->update(['password' => Hash::make( $validatedData['password'])]);
-
-        return redirect()->route('anonimo');
+        } 
     }
 
 
