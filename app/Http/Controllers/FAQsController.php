@@ -23,7 +23,7 @@ class FAQsController extends Controller
         "respuesta" => "Sí, por supuesto. Podes solicitar una cita poniéndote en contacto con nosotros para coordinar una visita y acercarte a conocer nuestros productos."
       ];
       $preguntasFrecuentes[] = [
-        "pregunta" => "¿Se pueden realizar modificaciones en los muebles que tienen publicados?¿Realizan muebles a medida?",
+        "pregunta" => "¿Se pueden realizar modificaciones en los muebles que tienen publicados? ¿Realizan muebles a medida?",
         "respuesta" => "Sí. Podes elegir las medidas de los muebles, así como también los lustres, terminaciones, combinaciones de telas y Colores. Contamos con un equipo de diseñadoras, que te van a asesorar y acompañar en todo el proceso de diseño, para que los muebles queden tal como te los imaginas. Podes enviarnos imágenes de referencia, contarnos tus ideas, así como también fotos de los ambientes para brindarte un asesoramiento personalizado y ajustado a tu necesidad."
       ];
       $preguntasFrecuentes[] = [
@@ -50,7 +50,7 @@ class FAQsController extends Controller
         "pregunta" => "¿Qué debo hacer si el producto no llega en buen estado?",
         "respuesta" => "Ponte en contacto con nosotros a alp_deco@mail.com y coordinaremos juntos para solucionar el problema."
       ];
-      
+
       return view('faq', compact('preguntasFrecuentes'));
     }
 
