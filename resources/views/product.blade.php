@@ -34,6 +34,15 @@
       <h3>
         <a href="/editProduct/{{$product->id}}">Editar producto</a>
       </h3>
+      <h3>
+        <a href="/deleteProduct/{{$product->id}}">Borrar producto</a>
+      </h3>
+      {{-- <form class="" action="/deleteProduct" method="post">
+        @csrf
+        <input type="hidden" name="id" value="{{$product->id}}">
+        <input type="submit" name="" value="Borrar Producto">
+      </form> --}}
+
     @endif
   @endif
 

@@ -50,6 +50,7 @@ Route::get('/products/{category_id?}', 'ProductController@index');
 Route::get('/product/{id}', 'ProductController@show');
 Route::get('/addProduct', 'ProductController@create');
 Route::post('addProduct', 'ProductController@store');
+Route::get('/deleteProduct/{id}','ProductController@destroy');
 Route::get('/editProduct/{id}', 'ProductController@edit');
 Route::post('editProduct/{id}', 'ProductController@update');
 
