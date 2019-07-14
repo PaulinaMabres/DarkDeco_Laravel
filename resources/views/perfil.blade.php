@@ -10,7 +10,7 @@
 		<div class="d-flex justify-content-center h-100 headerEspacio">
 			<div class="card">
 				<div class="card-header">
-					<h1>Registro</h1>
+					<h1>Mi Perfil</h1>
 				</div>
 				<div class="imagen" >
 					<a href="home.php">
@@ -75,7 +75,7 @@
 									@enderror
 								</div>
 						</div>
-						{{--<div class="form-group">
+						<div class="form-group">
 								<div class="input-group mb-3">
 									<input type="text" class="form-control" name="numTarjeta" placeholder="numTarjeta" aria-label="numTarjeta" aria-describedby="basic-addon1" id="numTarjeta">
 									
@@ -86,7 +86,7 @@
 									<input type="text" class="form-control" name="banco" placeholder="banco" aria-label="tu banco" aria-describedby="basic-addon1" id="banco">
 									
 								</div>
-						</div>--}}
+						</div>
 						<div class="form-group">
 							<div class="input-group mb-3">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="tu email">

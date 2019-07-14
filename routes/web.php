@@ -50,3 +50,5 @@ Route::get('/products/{category_id?}', 'ProductController@index');
 Route::get('/product/{id}', 'ProductController@show');
 Route::get('/addProduct', 'ProductController@create');
 Route::post('addProduct', 'ProductController@store');
+
+Route::get('/perfil', 'PerfilController@index')->name('perfil');
