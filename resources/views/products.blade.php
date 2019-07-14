@@ -18,10 +18,12 @@
     <a href="/products/3">Lavabo</a> -
     <a href="/products/4">Outdoor </a>
   </h3>
-  @if (Auth::user()->admin)
-    <h3>
-      <a href="/addProduct">Agregar producto</a>
-    </h3>
+  @if (Auth::user())
+    @if (Auth::user()->admin)
+      <h3>
+        <a href="/addProduct">Agregar producto</a>
+      </h3>
+    @endif
   @endif
 
   <section>
