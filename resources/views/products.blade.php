@@ -24,7 +24,6 @@
     </h3>
   @endif
 
-
   <section>
     @foreach ($products as $product)
       <article>

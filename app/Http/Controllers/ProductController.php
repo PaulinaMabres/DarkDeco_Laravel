@@ -50,8 +50,8 @@ class ProductController extends Controller
     // //Primero valido los datos. //
     $reglas = [
       "name" => "required|string|min:2",
-      "precio" => "required|numeric|min:0",
-      "stock" => "required|integer|min:0",
+      "precio" => "required|numeric|gte:0",
+      "stock" => "required|integer|gte:0",
       "foto" => "image"
     ];
 
@@ -59,18 +59,21 @@ class ProductController extends Controller
       "string" => "El campo :attribute  debe ser de texto.",
       // "name.string" => "El campo Nombre debe ser de texto.",
       "required" => "El campo :attribute debe completarse",
+      "gte" => "El campo :attribute debe ser un número positivo",
       "integer" => "El campo :attribute debe ser un numero entero.",
-      "min" => "El campo debe :attribute tener como minimo :value caracteres",
-      "max" => "El campo debe :attribute tener como maximo :value caracteres"
     ];
 
     $this->validate($request, $reglas, $mensajes);
-    //Crear un nuevo objeto movie.
+
+    //Crear un nuevo objeto producto.
     $newProduct = new Product();
 
-    $path = $request->file('foto')->store('/public/product');
-    $file = basename($path);
-    //dd($path, $file);
+    $file = '';
+    if ($request->foto) {
+      $path = $request->file('foto')->store('/product');
+      $file = basename($path);
+      //dd($path, $file);
+    }
 
     //  Le voy a cargar los datos que vienen por post (request)
     $newProduct->nombre = $request["name"];
@@ -80,7 +83,7 @@ class ProductController extends Controller
     $newProduct->descripcion = $request["descripcion"];
     $newProduct->stock = $request["stock"];
     $newProduct->categoria_id = $request["categoria_id"];
-    // dd($req, $newProduct);
+    // dd($request, $newProduct);
 
     //  Guardo el objeto en la base de datos.
     $newProduct->save();
@@ -106,9 +109,13 @@ class ProductController extends Controller
   * @param  \App\product  $product
   * @return \Illuminate\Http\Response
   */
-  public function edit(product $product)
+  public function edit($id)
   {
-    //
+    $colors = Color::all();
+    $categories = Category::all();
+    $product = Product::find($id);
+    // dd($product);
+    return view('editProduct', compact('colors', 'categories', 'product'));
   }
 
   /**
@@ -118,9 +125,50 @@ class ProductController extends Controller
   * @param  \App\product  $product
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, product $product)
+  public function update(Request $request, $id)
   {
-    //
+    // //Primero valido los datos. //
+    $reglas = [
+      "name" => "required|string|min:2",
+      "precio" => "required|numeric|gte:0",
+      "stock" => "required|integer|gte:0",
+      "foto" => "image"
+    ];
+
+    $mensajes = [
+      "string" => "El campo :attribute  debe ser de texto.",
+      // "name.string" => "El campo Nombre debe ser de texto.",
+      "required" => "El campo :attribute debe completarse",
+      "gte" => "El campo :attribute debe ser un número positivo",
+      "integer" => "El campo :attribute debe ser un numero entero.",
+    ];
+
+    $this->validate($request, $reglas, $mensajes);
+
+    // Busco el producto para actualizar.
+    $product = Product::find($id);
+
+    $file = '';
+    if ($request->foto) {
+      $path = $request->file('foto')->store('/product');
+      $file = basename($path);
+      //dd($path, $file);
+    }
+
+    //  Le voy a cargar los datos que vienen por post (request)
+    $product->nombre = $request["name"];
+    $product->color_id = $request["color_id"];
+    $product->foto = $file;
+    $product->precio = $request["precio"];
+    $product->descripcion = $request["descripcion"];
+    $product->stock = $request["stock"];
+    $product->categoria_id = $request["categoria_id"];
+    // dd($request, $product);
+
+    //  Guardo el objeto en la base de datos.
+    $product->update();
+
+    return redirect('products');
   }
 
   /**

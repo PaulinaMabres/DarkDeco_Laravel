@@ -30,4 +30,11 @@
     </article>
   </section>
 
+  @if (Auth::user()->admin)
+    <h3>
+      <a href="/editProduct/{{$product->id}}">Editar producto</a>
+    </h3>
+  @endif
+
+
 @endsection
