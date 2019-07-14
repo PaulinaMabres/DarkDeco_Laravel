@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\City;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 class RegisterController extends Controller
 {
     /*
@@ -53,6 +55,11 @@ class RegisterController extends Controller
             'lastName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+
+            'localidad' => ['required', 'string', 'max:255'],
+            'domicilio' => ['required', 'string', 'max:255'],
+            'telefono' => ['required', 'string', 'max:255'],
+            'foto' => ['required', 'mimes:jpeg,jpg,png','max:1000'],
             'respuesta_secreta' => ['required','string', 'max:255'],
             'pregunta_secreta' => ['required']
         ]);
@@ -66,13 +73,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
+        $uploadedFile = $data['foto'];
+        $fotoSubida = Storage::putFile("/public/perfil", $uploadedFile);
+
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'lastName' => $data['lastName'],
+            'city_id' => $data['localidad'],
+            'domicilio' => $data['domicilio'],
+            'telefono' => $data['telefono'],
+            'foto' => $fotoSubida,
+            // 'numTarjeta' => $data['numTarjeta'],
+            // 'banco' => $data['banco'],
             'password' => Hash::make($data['password']),
             'pregSecreta_id' => $data['pregunta_secreta'],
-            'respSecreta' => Hash::make($data['respuesta_secreta'])
+            'respSecreta' => Hash::make($data['respuesta_secreta']),
+            
         ]);
         return $user;
     }
@@ -80,7 +98,9 @@ class RegisterController extends Controller
     protected function formularioDeRegistro(){
 
         $preguntasSecretas = DB::table('preguntas_secretas')->get();
-
-        return view('auth.register', ["preguntas_secretas"=>$preguntasSecretas]);
+        $localidades = City::all();
+        return view('auth.register', ["preguntas_secretas"=>$preguntasSecretas,
+            "localidades" => $localidades
+        ]);
     }
 }

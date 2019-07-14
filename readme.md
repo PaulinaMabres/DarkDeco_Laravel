@@ -16,7 +16,10 @@ Una vez clonado el proyecto ejecutar:
   // php artisan migrate:fresh  Usar unicamente si se desea borrar las tablas
   php artisan migrate
   php artisan db:seed
+  // Habilitar imagenes de perfil.
+	php artisan storage:link
   php artisan serve
+
 ```
 
 
@@ -54,3 +57,12 @@ php artisan optimize `
 php artisan cache:clear 
 composer dump-autoload
 ```
+## Subir imagenes
+Acordarse de correr el siguiente commando para poder ver los archivos en la página.
+```
+  	php artisan storage:link
+```
+
+
+### Sedders
+Informacion de Provincias,Localidades,Partidos : https://datos.gob.ar/dataset/modernizacion-servicio-normalizacion-datos-geograficos/archivo/modernizacion_7.2

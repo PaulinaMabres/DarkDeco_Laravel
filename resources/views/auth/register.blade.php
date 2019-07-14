@@ -18,13 +18,13 @@
 					</a>
 				</div>
 				<div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 						<div class="form-group">
 							<div class="input-group mb-3">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus  placeholder="tu nombre">
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback d-block" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -36,30 +36,68 @@
 								
 							</div>
 						</div>
+						
+						<div class="form-group">
+								<div class="input-group mb-3">
+									<select type="text" class="form-control" name="localidad" placeholder="tu localidad" aria-label="tu localidad" aria-describedby="basic-addon1" id="localidad">
+									@foreach($localidades as $localidad)
+											<option id="item" value="{{$localidad->id}}">{{$localidad->name}}</option>
+									@endforeach
+									</select>
+								</div>
+						</div>	
+						<div class="form-group">
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" name="domicilio" placeholder="tu domicilio" aria-label="tu domicilio" aria-describedby="basic-addon1" id="domicilio">
+									
+								</div>
+						</div>
+						<div class="form-group">
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" name="telefono" placeholder="tu teléfono" aria-label="tu teléfono" aria-describedby="basic-addon1" id="telefono">
+									
+								</div>
+						</div>
+						{{--<div class="form-group">
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" name="numTarjeta" placeholder="numTarjeta" aria-label="numTarjeta" aria-describedby="basic-addon1" id="numTarjeta">
+									
+								</div>
+						</div>
+						<div class="form-group">
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" name="banco" placeholder="banco" aria-label="tu banco" aria-describedby="basic-addon1" id="banco">
+									
+								</div>
+						</div>--}}
 						<div class="form-group">
 							<div class="input-group mb-3">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="tu email">
 
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback d-block" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
 							</div>
 						</div>
-						{{-- <div class="form-group">
+						<div class="form-group">
 							<div class="input-group mb-3">
-								<input type="file" class="file-input" name="foto" placeholder="tu foto de perfil" aria-label="tu foto de perfil" aria-describedby="basic-addon1" value="">
-								
+								<input type="file" class="file-input" name="foto" id="foto" placeholder="tu foto de perfil" aria-label="tu foto de perfil" aria-describedby="basic-addon1" value="">
+								@error('foto')
+								<span class="invalid-feedback d-block" role="alert">
+									<strong>{{ $message }}</strong>
+								</span>
+								@enderror
 							</div>
-						</div> --}}
+						</div>
 						<div class="form-group">
 							<div class="input-group mb-3">
 							
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="contraseña" >
 
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback d-block" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror

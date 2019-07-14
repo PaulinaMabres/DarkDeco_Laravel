@@ -48,8 +48,10 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="padding:0">
+                          <img src={{ Storage::url(Auth::user()->foto) }}  class="img-circle" height="35px" width="35px"/>
+                            {{ Auth::user()->name }} 
+                            {{-- <span class="caret"></span> --}}
                         </a>
         
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
