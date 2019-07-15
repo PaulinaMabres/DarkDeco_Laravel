@@ -47,6 +47,7 @@ class ProductController extends Controller
   */
   public function store(Request $request)
   {
+    // TODO: Ver dónde escribir una función que valide esto para usarla también en el update
     // dd($request->file('foto')->getFileName());
     // //Primero valido los datos. //
     $reglas = [

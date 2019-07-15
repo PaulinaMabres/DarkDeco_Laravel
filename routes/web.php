@@ -55,5 +55,4 @@ Route::get('/editProduct/{id}', 'ProductController@edit');
 Route::post('editProduct/{id}', 'ProductController@update');
 
 
-
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
