@@ -9,6 +9,21 @@ use App\Color;
 
 class ProductController extends Controller
 {
+  // Reglas y mensajes para la validación para alta y modificación de productos
+  protected $reglas = [
+    "name" => "required|string|min:2",
+    "precio" => "required|numeric|gte:0",
+    "stock" => "required|integer|gte:0",
+    "foto" => "image"
+  ];
+  protected $mensajes = [
+    "string" => "El campo :attribute  debe ser de texto.",
+    // "name.string" => "El campo Nombre debe ser de texto.",
+    "required" => "El campo :attribute debe completarse",
+    "gte" => "El campo :attribute debe ser un número positivo",
+    "integer" => "El campo :attribute debe ser un numero entero.",
+    "image" => "Error al cargar la foto"
+  ];
   /**
   * Display a listing of the resource.
   *
@@ -47,26 +62,9 @@ class ProductController extends Controller
   */
   public function store(Request $request)
   {
-    // TODO: Ver dónde escribir una función que valide esto para usarla también en el update
     // dd($request->file('foto')->getFileName());
     // //Primero valido los datos. //
-    $reglas = [
-      "name" => "required|string|min:2",
-      "precio" => "required|numeric|gte:0",
-      "stock" => "required|integer|gte:0",
-      "foto" => "image"
-    ];
-
-    $mensajes = [
-      "string" => "El campo :attribute  debe ser de texto.",
-      // "name.string" => "El campo Nombre debe ser de texto.",
-      "required" => "El campo :attribute debe completarse",
-      "gte" => "El campo :attribute debe ser un número positivo",
-      "integer" => "El campo :attribute debe ser un numero entero.",
-      "image" => "Error al cargar la foto"
-    ];
-
-    $this->validate($request, $reglas, $mensajes);
+    $this->validate($request, $this->reglas, $this->mensajes);
 
     //Crear un nuevo objeto producto.
     $newProduct = new Product();
@@ -131,23 +129,7 @@ class ProductController extends Controller
   public function update(Request $request, $id)
   {
     // //Primero valido los datos. //
-    $reglas = [
-      "name" => "required|string|min:2",
-      "precio" => "required|numeric|gte:0",
-      "stock" => "required|integer|gte:0",
-      "foto" => "image"
-    ];
-
-    $mensajes = [
-      "string" => "El campo :attribute  debe ser de texto.",
-      // "name.string" => "El campo Nombre debe ser de texto.",
-      "required" => "El campo :attribute debe completarse",
-      "gte" => "El campo :attribute debe ser un número positivo",
-      "integer" => "El campo :attribute debe ser un numero entero.",
-      "image" => "Error al cargar la foto"
-    ];
-
-    $this->validate($request, $reglas, $mensajes);
+    $this->validate($request, $this->reglas, $this->mensajes);
 
     // Busco el producto para actualizar.
     $product = Product::find($id);
