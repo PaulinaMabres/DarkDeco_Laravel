@@ -24,76 +24,76 @@
       {{-- {{csrf_field()}} --}}
 
       {{-- Traigo los valores para los inputs --}}
-      @if (old("name"))
+      @if (old("productName"))
         @php
-          $nombreAux = old("name");
-          $color_idAux = old("color_id");
-          $categoria_idAux = old("categoria_id");
-          $fotoAux = old("foto");
-          $precioAux = old("precio");
-          $descripcionAux = old("descripcion");
+          $productNameAux = old("productName");
+          $brand_idAux = old("brand_id");
+          $category_idAux = old("category_id");
+          $imageAux = old("image");
+          $priceoAux = old("price");
+          $descriptionAux = old("description");
           $stockAux = old("stock");
         @endphp
       @else
         @php
-          $nombreAux = $product->nombre;
-          $color_idAux = $product->color_id;
-          $categoria_idAux = $product->categoria_id;
-          $fotoAux = $product->foto;
-          $precioAux = $product->precio;
-          $descripcionAux = $product->descripcion;
+          $productNameAux = $product->productName;
+          $brand_idAux = $product->brand_id;
+          $category_idAux = $product->category_id;
+          $imageAux = $product->image;
+          $priceAux = $product->price;
+          $descriptionAux = $product->description;
           $stockAux = $product->stock;
         @endphp
       @endif
 
       <div class="">
-        <label for="name">Nombre:</label>
-        <input id="name" type="text" name="name" value="{{$nombreAux}}">
-        <small>{{$errors->first('name')}}</small>
+        <label for="productName">Nombre:</label>
+        <input id="productName" type="text" name="productName" value="{{$productNameAux}}">
+        <small>{{$errors->first('productName')}}</small>
       </div>
 
-      <div class="color">
-        <label for="color">Color:</label>
-        <select name="color_id">
-          @foreach ($colors as $color)
+      <div class="brand">
+        <label for="brand">Marca:</label>
+        <select name="brand_id">
+          @foreach ($brands as $brand)
             <option
-            @if($color->id==$color_idAux)
+            @if($brand->id==$brand_idAux)
               {{'selected = \"selected\"'}}
             @endif
-            value=" {{$color->id}}">
-            {{$color->color}}</option>
+            value=" {{$brand->id}}">
+            {{$brand->brandName}}</option>
           @endforeach
         </select>
       </div>
 
       <div class="category">
         <label for="category">Categoría:</label>
-        <select name="categoria_id">
+        <select name="category_id">
           @foreach ($categories as $category)
             <option
-            @if($category->id==$categoria_idAux)
+            @if($category->id==$category_idAux)
               {{'selected = \"selected\"'}}
             @endif
             value=" {{$category->id}}">
-            {{$category->categoria}}</option>
+            {{$category->categoryName}}</option>
           @endforeach
         </select>
       </div>
 
       <div class="">
-        <img width="150px" src="/storage/product/{{$fotoAux}}" alt="">
-        <label for="foto">Foto</label>
-        <input id="foto" type="file" name="foto" value="{{$fotoAux}}">
+        <img width="150px" src="/storage/product/{{$imageAux}}" alt="">
+        <label for="image">Foto</label>
+        <input id="image" type="file" name="image" value="{{$imageAux}}">
       </div>
 
       <div class="">
-        <label for="precio">Precio</label>
-        <input id="precio" type="number" name="precio" value="{{$precioAux}}">
+        <label for="price">Precio</label>
+        <input id="price" type="number" name="price" value="{{$priceAux}}">
       </div>
 
       <div class="">
-        <label for="descripcion">Descripcion</label>
-        <input type="text" name="descripcion" value="{{$descripcionAux}}">
+        <label for="description">Descripcion</label>
+        <input type="text" name="description" value="{{$descriptionAux}}">
       </div>
 
       <div class="">

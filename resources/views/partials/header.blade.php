@@ -49,11 +49,11 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="padding:0">
-                          <img src={{ Storage::url(Auth::user()->foto) }}  class="img-circle" height="35px" width="35px"/>
-                            {{ Auth::user()->name }} 
+                          <img src={{ Storage::url(Auth::user()->image) }}  class="img-circle" height="35px" width="35px"/>
+                            {{ Auth::user()->name }}
                             {{-- <span class="caret"></span> --}}
                         </a>
-        
+
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
@@ -70,10 +70,10 @@
                     </li>
                 @endguest
                </ul>
-        
+
         </div>
       </div>
-     
+
 
       <!-- IDEA: LOGIN collapse -->
 

@@ -15,19 +15,19 @@ class AddColumnsToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('lastName');
-            $table->string('foto')->nullable();
             $table->boolean('admin')->default(0);
-            $table->string('telefono')->nullable();
-            $table->string('domicilio')->nullable();
+            $table->string('image')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
             $table->bigInteger('city_id')->unsigned()->nullable();
-            $table->string('numTarjeta')->nullable();
+            $table->string('cardNumber')->nullable();
             $table->bigInteger('bank_id')->unsigned()->nullable();
-            $table->bigInteger('pregSecreta_id')->unsigned()->nullable();
-            $table->string('respSecreta')->nullable();
+            $table->bigInteger('secretQuestion_id')->unsigned()->nullable();
+            $table->string('secretAnswer')->nullable();
 
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('bank_id')->references('id')->on('banks');
-            $table->foreign('pregSecreta_id')->references('id')->on('preguntas_secretas');
+            $table->foreign('secretQuestion_id')->references('id')->on('SecretQuestions');
         });
     }
 
@@ -41,14 +41,14 @@ class AddColumnsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('lastName');
             $table->dropColumn('admin');
-            $table->dropColumn('telefono');
-            $table->dropColumn('domicilio');
-            $table->dropColumn('foto');
-            $table->dropColumn('numTarjeta');
-            $table->dropColumn('respSecreta');
-            $table->dropColumn('localidad_id');
-            $table->dropColumn('banco_id');
-            $table->dropColumn('pregSecreta_id');
+            $table->dropColumn('image');
+            $table->dropColumn('phone');
+            $table->dropColumn('address');
+            $table->dropColumn('city_id');
+            $table->dropColumn('cardNumber');
+            $table->dropColumn('bank_id');
+            $table->dropColumn('secretQuestion_id');
+            $table->dropColumn('secretAnswer');
         });
     }
 }

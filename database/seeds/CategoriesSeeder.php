@@ -12,9 +12,10 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-      Category::create(['categoria' => 'Habitación']);
-      Category::create(['categoria' => 'Cocina']);
-      Category::create(['categoria' => 'Lavabo']);
-      Category::create(['categoria' => 'Outdoor']);
+      Category::create(['categoryName' => 'Habitación']);
+      Category::create(['categoryName' => 'Cocina']);
+      Category::create(['categoryName' => 'Lavabo']);
+      Category::create(['categoryName' => 'Outdoor']);
+      Category::create(['categoryName' => 'Navidad']);
     }
 }

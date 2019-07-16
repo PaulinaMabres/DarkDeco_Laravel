@@ -40,7 +40,7 @@
 								@enderror
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 								<div class="input-group mb-3">
 									<select type="text" class="form-control" name="localidad" placeholder="tu localidad" aria-label="tu localidad" aria-describedby="basic-addon1" id="localidad">
@@ -54,7 +54,7 @@
 									</span>
 									@enderror
 								</div>
-						</div>	
+						</div>
 						<div class="form-group">
 								<div class="input-group mb-3">
 									<input type="text" class="form-control" name="domicilio" placeholder="tu domicilio" aria-label="tu domicilio" aria-describedby="basic-addon1" id="domicilio">
@@ -78,13 +78,13 @@
 						<div class="form-group">
 								<div class="input-group mb-3">
 									<input type="text" class="form-control" name="numTarjeta" placeholder="numTarjeta" aria-label="numTarjeta" aria-describedby="basic-addon1" id="numTarjeta">
-									
+
 								</div>
 						</div>
 						<div class="form-group">
 								<div class="input-group mb-3">
 									<input type="text" class="form-control" name="banco" placeholder="banco" aria-label="tu banco" aria-describedby="basic-addon1" id="banco">
-									
+
 								</div>
 						</div>
 						<div class="form-group">
@@ -100,8 +100,8 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group mb-3">
-								<input type="file" class="file-input" name="foto" id="foto" placeholder="tu foto de perfil" aria-label="tu foto de perfil" aria-describedby="basic-addon1" value="">
-								@error('foto')
+								<input type="file" class="file-input" name="image" id="image" placeholder="tu foto de perfil" aria-label="tu foto de perfil" aria-describedby="basic-addon1" value="">
+								@error('image')
 								<span class="invalid-feedback d-block" role="alert">
 									<strong>{{ $message }}</strong>
 								</span>
@@ -110,7 +110,7 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group mb-3">
-							
+
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="contraseña" >
 
                                 @error('password')
@@ -122,7 +122,7 @@
 						</div>
 						<div class="form-group">
 							<div class="input-group mb-3">
-								
+
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="confirmación de contraseña" >
 							</div>
 						</div>
@@ -138,14 +138,14 @@
 									<strong>{{ $message }}</strong>
 								</span>
 								@enderror
-								
+
 							</div>
 						</div>
 
                         <div class="form-group">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" name="respuesta_secreta" placeholder="Resp. secreta: nombre de tu esc. primaria" aria-label="RespuestaSecreta" aria-describedby="basic-addon1" id="respuesta_secreta" >
-                                    
+
                                 </div>
                         </div>
 

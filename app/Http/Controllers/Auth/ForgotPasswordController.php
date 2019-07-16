@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use App\User;
-use App\PreguntaSecreta;
+use App\SecretQuestion;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -67,12 +67,12 @@ class ForgotPasswordController extends Controller
         $validatedData = $request->validate([
             'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'respuestaSecreta' => ['required','string', 'max:255']
+            'secretAnswer' => ['required','string', 'max:255']
         ],
             [
                 'email.required' => 'El correo no puede estar vacio',
                 'password.required' => 'El password no puede estar vacio',
-                'respuestaSecreta.required' => 'La respuesta secreta no puede estar vacio'
+                'secretAnswer.required' => 'La respuesta secreta no puede estar vacio'
             ]
         );
 
@@ -82,12 +82,12 @@ class ForgotPasswordController extends Controller
         {
             return back()->withErrors(['email' => 'No existe usuario con este correo']);
         }
-        
-        if( Hash::check( $validatedData['respuestaSecreta'] ,  $usuario->respSecreta ) )
+
+        if( Hash::check( $validatedData['secretAnswer'] ,  $usuario->secretAnswer ) )
         {
-            
+
             DB::table('users')->where('id', $usuario->id)->update(['password' => Hash::make( $validatedData['password']) ]);
-            
+
             if ( Auth::attempt( ['email' => $validatedData['email'], 'password' => $validatedData['password']], true ) )
             {
                 return redirect()->route('home');
@@ -96,12 +96,12 @@ class ForgotPasswordController extends Controller
                 return redirect()->route('anonimo');
             }
 
-            
+
         }
         else
         {
             return back()->withErrors(['respuesta_secretas' => 'Tu respuesta es incorrecta']);
-        } 
+        }
     }
 
 

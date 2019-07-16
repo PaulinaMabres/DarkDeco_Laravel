@@ -12,11 +12,11 @@
   <section>
     <article>
       <h4>
-        <p>Nombre: {{$product->nombre}}</p>
+        <p>Nombre: {{$product->productName}}</p>
       </h4>
-      <p>Precio: {{$product->precio}}</p>
-      <p>Descripcion: {{$product->descripcion}}</p>
-      <img width="150px" src="/storage/product/{{$product->foto}}" alt="">
+      <p>Precio: {{$product->price}}</p>
+      <p>Descripcion: {{$product->description}}</p>
+      <img width="150px" src="/storage/product/{{$product->image}}" alt="">
     </article>
   </section>
 

@@ -16,18 +16,18 @@ class CreateCartsTable extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->date('fecha');
-            $table->bigInteger('producto_id')->unsigned();
-            $table->float('precio');
-            $table->integer('cantidad');
+            $table->date('date');
+            $table->bigInteger('product_id')->unsigned();
+            $table->float('price');
+            $table->integer('quantity');
             $table->boolean('status');
-            $table->string('foto');
-            $table->string('nombreProducto');
+            $table->string('image');
+            $table->string('productName');
             $table->text('description');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('producto_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

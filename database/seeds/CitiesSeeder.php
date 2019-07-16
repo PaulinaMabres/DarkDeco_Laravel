@@ -13,51 +13,51 @@ class CitiesSeeder extends Seeder
     public function run()
     {
       City::create([
-        'name' => 'Buenos Aires',
+        'cityName' => 'Buenos Aires',
         'postCode' => '1234'
       ]);
       City::create([
-        'name' => 'Quilmes',
+        'cityName' => 'Quilmes',
         'postCode' => '4568'
       ]);
       City::create([
-        'name' => 'Bernal',
+        'cityName' => 'Bernal',
         'postCode' => '3456'
       ]);
       City::create([
-        'name' => 'Adrogué',
+        'cityName' => 'Adrogué',
         'postCode' => '8645'
       ]);
       City::create([
-        'name' => 'Pilar',
+        'cityName' => 'Pilar',
         'postCode' => '9321'
       ]);
       City::create([
-        'name' => 'San Isidro',
+        'cityName' => 'San Isidro',
         'postCode' => '9188'
       ]);
       City::create([
-        'name' => 'Avellaneda',
+        'cityName' => 'Avellaneda',
         'postCode' => '9021'
       ]);
       City::create([
-        'name' => 'Tigre',
+        'cityName' => 'Tigre',
         'postCode' => '1568'
       ]);
       City::create([
-        'name' => 'Vicente López',
+        'cityName' => 'Vicente López',
         'postCode' => '4568'
       ]);
       City::create([
-        'name' => 'San Fernando',
+        'cityName' => 'San Fernando',
         'postCode' => '9654'
       ]);
       City::create([
-        'name' => 'Lomas de Zamora',
+        'cityName' => 'Lomas de Zamora',
         'postCode' => '3654'
       ]);
       City::create([
-        'name' => 'Escobar',
+        'cityName' => 'Escobar',
         'postCode' => '7521'
       ]);
     }

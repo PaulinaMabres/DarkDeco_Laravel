@@ -5,20 +5,20 @@ namespace App\Http\Controllers;
 use App\product;
 use Illuminate\Http\Request;
 use App\Category;
-use App\Color;
+use App\Brand;
 
 class ProductController extends Controller
 {
   // Reglas y mensajes para la validación para alta y modificación de productos
   protected $reglas = [
-    "name" => "required|string|min:2",
-    "precio" => "required|numeric|gte:0",
+    "productName" => "required|string|min:2",
+    "price" => "required|numeric|gte:0",
     "stock" => "required|integer|gte:0",
-    "foto" => "image"
+    "image" => "image"
   ];
   protected $mensajes = [
     "string" => "El campo :attribute  debe ser de texto.",
-    // "name.string" => "El campo Nombre debe ser de texto.",
+    // "productName.string" => "El campo Nombre debe ser de texto.",
     "required" => "El campo :attribute debe completarse",
     "gte" => "El campo :attribute debe ser un número positivo",
     "integer" => "El campo :attribute debe ser un numero entero.",
@@ -32,14 +32,14 @@ class ProductController extends Controller
   public function index($category_id = null)
   {
     if($category_id){
-      $products = Product::where('categoria_id', $category_id)->paginate(4);
-      $categoria = Category::find($category_id)->categoria;
-      // dd($categoria);
+      $products = Product::where('category_id', $category_id)->paginate(4);
+      $category = Category::find($category_id)->category;
+      // dd($category);
     } else {
       $products = Product::paginate(4); //Traemos todos los productos.
-      $categoria = '';
+      $category = '';
     }
-    return view('products', compact('products', 'categoria'));
+    return view('products', compact('products', 'category'));
   }
 
   /**
@@ -49,9 +49,10 @@ class ProductController extends Controller
   */
   public function create()
   {
-    $colors = Color::all();
+    $brands = Brand::all();
     $categories = Category::all();
-    return view('addProduct', compact('colors', 'categories'));
+    // dd($brands, $categories);
+    return view('addProduct', compact('brands', 'categories'));
   }
 
   /**
@@ -62,7 +63,7 @@ class ProductController extends Controller
   */
   public function store(Request $request)
   {
-    // dd($request->file('foto')->getFileName());
+    // dd($request);
     // //Primero valido los datos. //
     $this->validate($request, $this->reglas, $this->mensajes);
 
@@ -70,20 +71,20 @@ class ProductController extends Controller
     $newProduct = new Product();
 
     $file = '';
-    if ($request->file('foto')) {
-      $path = $request->file('foto')->store('/product');
+    if ($request->file('image')) {
+      $path = $request->file('image')->store('/product');
       $file = basename($path);
       // dd($path, $file);
     }
 
     //  Le voy a cargar los datos que vienen por post (request)
-    $newProduct->nombre = $request["name"];
-    $newProduct->color_id = $request["color_id"];
-    $newProduct->foto = $file;
-    $newProduct->precio = $request["precio"];
-    $newProduct->descripcion = $request["descripcion"];
+    $newProduct->productName = $request["productName"];
+    $newProduct->brand_id = $request["brand_id"];
+    $newProduct->image = $file;
+    $newProduct->price = $request["price"];
+    $newProduct->description = $request["description"];
     $newProduct->stock = $request["stock"];
-    $newProduct->categoria_id = $request["categoria_id"];
+    $newProduct->category_id = $request["category_id"];
     // dd($request, $newProduct);
 
     //  Guardo el objeto en la base de datos.
@@ -112,11 +113,11 @@ class ProductController extends Controller
   */
   public function edit($id)
   {
-    $colors = Color::all();
+    $brands = Brand::all();
     $categories = Category::all();
     $product = Product::find($id);
     // dd($product);
-    return view('editProduct', compact('colors', 'categories', 'product'));
+    return view('editProduct', compact('brands', 'categories', 'product'));
   }
 
   /**
@@ -135,20 +136,22 @@ class ProductController extends Controller
     $product = Product::find($id);
 
     $file = '';
-    if ($request->file('foto')) {
-      $path = $request->file('foto')->store('/product');
+    if ($request->file('image')) {
+      $path = $request->file('image')->store('/product');
       $file = basename($path);
       //dd($path, $file);
+    } else {
+      $file = $product->image;
     }
 
     //  Le voy a cargar los datos que vienen por post (request)
-    $product->nombre = $request["name"];
-    $product->color_id = $request["color_id"];
-    $product->foto = $file;
-    $product->precio = $request["precio"];
-    $product->descripcion = $request["descripcion"];
+    $product->productName = $request["productName"];
+    $product->brand_id = $request["brand_id"];
+    $product->image = $file;
+    $product->price = $request["price"];
+    $product->description = $request["description"];
     $product->stock = $request["stock"];
-    $product->categoria_id = $request["categoria_id"];
+    $product->category_id = $request["category_id"];
     // dd($request, $product);
 
     //  Guardo el objeto en la base de datos.

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Color;
+use App\Brand;
 use Illuminate\Http\Request;
 
-class ColorController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ColorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Color  $color
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function show(Color $color)
+    public function show(Brand $brand)
     {
         //
     }
@@ -52,10 +52,10 @@ class ColorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Color  $color
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Color $color)
+    public function edit(Brand $brand)
     {
         //
     }
@@ -64,10 +64,10 @@ class ColorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Color  $color
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Color $color)
+    public function update(Request $request, Brand $brand)
     {
         //
     }
@@ -75,10 +75,10 @@ class ColorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Color  $color
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Color $color)
+    public function destroy(Brand $brand)
     {
         //
     }

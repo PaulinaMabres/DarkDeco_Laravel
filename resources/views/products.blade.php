@@ -8,8 +8,8 @@
 @section('contenidoBody')
 
   <h1>Lista de productos</h1>
-  @if ($categoria)
-    <h2>{{$categoria}}</h2>
+  @if ($category)
+    <h2>{{$category}}</h2>
   @endif
   <h3>
     <a href="/products">Todos</a> -
@@ -30,11 +30,11 @@
     @foreach ($products as $product)
       <article>
         <h4>
-          <p>Nombre: {{$product->nombre}}</p>
+          <p>Nombre: {{$product->productName}}</p>
         </h4>
-        <p>Precio: {{$product->precio}}</p>
-        <p>Descripcion: {{$product->descripcion}}</p>
-        <img width="150px" src="/storage/product/{{$product->foto}}" alt="">
+        <p>Precio: {{$product->price}}</p>
+        <p>Descripcion: {{$product->description}}</p>
+        <img width="150px" src="/storage/product/{{$product->image}}" alt="">
         <p><a href="/product/{{$product->id}}">Ver más</a></p>
         {{-- <p><a href="#">Comprar</a></p> --}}
       </article>

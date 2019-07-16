@@ -25,13 +25,13 @@ Una vez clonado el proyecto ejecutar:
 
 ## Cambiar diseño paginas nativas de laravel
 
-Para cambiar el diseño en elas paginas nativas de laravel ejemplo **login** asegurarse lo siguiente:
+Para cambiar el diseño en las paginas nativas de laravel ejemplo **login** asegurarse lo siguiente:
 
 1 - Respetar todos los campos inputs
 2 - Respetar todos los codigos de laravel que le presedan @ ejemplo los ifs
 
 
-## Generar un nuevo seed 
+## Generar un nuevo seed
 
 **Links utiles**
 - [Modelo](https://laravel.com/docs/5.8/eloquent#eloquent-model-conventions)
@@ -40,7 +40,7 @@ Para cambiar el diseño en elas paginas nativas de laravel ejemplo **login** ase
 ```php
   php artisan make:model TuModelo
 ```
-> Tambien se puede generar junto con un archivo de migratacioon
+> Tambien se puede generar junto con un archivo de migracion
 ```php
   php artisan make:model TuModelo --migration
 ```
@@ -54,7 +54,7 @@ Para cambiar el diseño en elas paginas nativas de laravel ejemplo **login** ase
 ## Limpiar cache laravel
 ```
 php artisan optimize `
-php artisan cache:clear 
+php artisan cache:clear
 composer dump-autoload
 ```
 ## Subir imagenes
@@ -64,5 +64,5 @@ Acordarse de correr el siguiente commando para poder ver los archivos en la pág
 ```
 
 
-### Sedders
+### Seeders
 Informacion de Provincias,Localidades,Partidos : https://datos.gob.ar/dataset/modernizacion-servicio-normalizacion-datos-geograficos/archivo/modernizacion_7.2

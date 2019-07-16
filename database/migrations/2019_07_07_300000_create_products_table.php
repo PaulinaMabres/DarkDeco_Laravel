@@ -16,17 +16,18 @@ class CreateProductsTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
-            $table->string('nombre');
-            $table->bigInteger('color_id')->unsigned()->nullable();
-            $table->string('foto', 500);
-            $table->decimal('precio',6,2);
-            $table->string('descripcion', 255);
-            $table->integer('stock');
-            $table->bigInteger('categoria_id')->unsigned()->nullable();
+            $table->bigInteger('brand_id')->unsigned()->nullable();
+            $table->bigInteger('category_id')->unsigned()->nullable();
+            $table->string('productName');
+            $table->string('image', 500);
+            $table->string('description', 255);
+            $table->decimal('price',6,2);
+            $table->integer('stock')->unsigned()->nullable()->default(0);
+            $table->boolean('important')->default(0);
             $table->timestamps();
 
-            $table->foreign('color_id')->references('id')->on('colors');
-            $table->foreign('categoria_id')->references('id')->on('categories');
+            $table->foreign('brand_id')->references('id')->on('brands');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

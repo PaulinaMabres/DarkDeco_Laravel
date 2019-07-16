@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\City;
-use App\PreguntaSecreta;
+use App\SecretQuestion;
 class PerfilController extends Controller
 {
     //
@@ -16,7 +16,7 @@ class PerfilController extends Controller
 
     public function index()
     {
-        $preguntasSecretas = PreguntaSecreta::all();
+        $preguntasSecretas = SecretQuestion::all();
         $localidades = City::all();
         return view('perfil', ["preguntas_secretas"=>$preguntasSecretas,
             "localidades" => $localidades
@@ -29,12 +29,12 @@ class PerfilController extends Controller
             // 'lastName' => ['required', 'string', 'max:255'],
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             // 'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'localidad' => ['required', 'string', 'max:255'],
-            'domicilio' => ['required', 'string', 'max:255'],
-            'telefono' => ['required', 'string', 'max:255'],
-            'foto' => ['required', 'mimes:jpeg,jpg,png','max:1000'],
-            'respuesta_secreta' => ['required','string', 'max:255'],
-            'pregunta_secreta' => ['required'], 
+            'city' => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
+            'image' => ['required', 'mimes:jpeg,jpg,png','max:1000'],
+            'secretAnswer' => ['required','string', 'max:255'],
+            'secretQuestion' => ['required'],
         ]);
 
         DB::table('users')->where('id', $usuario->id)->update(
@@ -43,12 +43,12 @@ class PerfilController extends Controller
             // 'lastName' => $validatedData['lastName'],
             // 'email' => $validatedData['email'],
             // 'password' => $validatedData['password'],
-            'localidad' => $validatedData['localidad'],
-            'domicilio' => $validatedData['domicilio'],
-            'telefono' => $validatedData['telefono'],
-            'foto' => $validatedData['foto'],
-            'respuesta_secreta' => $validatedData['respuesta_secreta'],
-            'pregunta_secreta' => $validatedData['pregunta_secreta']
+            'city' => $validatedData['localidad'],
+            'address' => $validatedData['domicilio'],
+            'phone' => $validatedData['telefono'],
+            'image' => $validatedData['image'],
+            'secretAnswer' => $validatedData['secretAnswer'],
+            'secretQuestion' => $validatedData['secretQuestion']
         ]);
 
     }

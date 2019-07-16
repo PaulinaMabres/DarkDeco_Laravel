@@ -24,53 +24,53 @@
       {{-- {{csrf_field()}} --}}
 
       <div class="">
-        <label for="name">Nombre:</label>
-        <input id="name" type="text" name="name" value="{{old("name")}}">
-        <small>{{$errors->first('name')}}</small>
+        <label for="productName">Nombre:</label>
+        <input id="productName" type="text" name="productName" value="{{old("productName")}}">
+        <small>{{$errors->first('productName')}}</small>
       </div>
 
-      <div class="color">
-        <label for="color">Color:</label>
-        <select name="color_id">
-          @foreach ($colors as $color)
+      <div class="brand">
+        <label for="brand">Marca:</label>
+        <select name="brand_id">
+          @foreach ($brands as $brand)
             <option
-            @if($color->id==old("color_id"))
+            @if($brand->id==old("brand_id"))
               {{'selected = \"selected\"'}}
             @endif
-            value=" {{$color->id}}">
-            {{$color->color}}</option>
+            value=" {{$brand->id}}">
+            {{$brand->brandName}}</option>
           @endforeach
         </select>
       </div>
 
       <div class="category">
         <label for="category">Categoría:</label>
-        <select name="categoria_id">
+        <select name="category_id">
           @foreach ($categories as $category)
             <option
-            @if($category->id==old("categoria_id"))
+            @if($category->id==old("category_id"))
               {{'selected = \"selected\"'}}
             @endif
             value=" {{$category->id}}">
-            {{$category->categoria}}</option>
+            {{$category->categoryName}}</option>
           @endforeach
         </select>
       </div>
 
       <div class="">
-        <img width="150px" src="/storage/product/{{old("foto")}}" alt="">
-        <label for="foto">Foto</label>
-        <input id="foto" type="file" name="foto" value="{{old("foto")}}">
+        <img width="150px" src="/storage/product/{{old("image")}}" alt="">
+        <label for="image">Foto</label>
+        <input id="image" type="file" name="image" value="{{old("image")}}">
       </div>
 
       <div class="">
-        <label for="precio">Precio</label>
-        <input id="precio" type="number" name="precio" value="{{old("precio")}}">
+        <label for="price">Precio</label>
+        <input id="price" type="number" name="price" value="{{old("price")}}">
       </div>
 
       <div class="">
-        <label for="descripcion">Descripcion</label>
-        <input type="text" name="descripcion" value="{{old("descripcion")}}">
+        <label for="description">Descripcion</label>
+        <input type="text" name="description" value="{{old("description")}}">
       </div>
 
       <div class="">

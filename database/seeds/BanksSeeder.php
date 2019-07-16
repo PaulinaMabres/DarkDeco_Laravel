@@ -12,8 +12,8 @@ class BanksSeeder extends Seeder
      */
     public function run()
     {
-      Bank::create(['name' => 'Santander']);
-      Bank::create(['name' => 'Galicia']);
-      Bank::create(['name' => 'HSBC']);
+      Bank::create(['bankName' => 'Santander']);
+      Bank::create(['bankName' => 'Galicia']);
+      Bank::create(['bankName' => 'HSBC']);
     }
 }

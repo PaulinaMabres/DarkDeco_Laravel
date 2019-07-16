@@ -56,12 +56,12 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
 
-            'localidad' => ['required', 'string', 'max:255'],
-            'domicilio' => ['required', 'string', 'max:255'],
-            'telefono' => ['required', 'string', 'max:255'],
-            'foto' => ['required', 'mimes:jpeg,jpg,png','max:1000'],
-            'respuesta_secreta' => ['required','string', 'max:255'],
-            'pregunta_secreta' => ['required']
+            'city' => ['required', 'string', 'max:255'],
+            'adress' => ['required', 'string', 'max:255'],
+            'fone' => ['required', 'string', 'max:255'],
+            'image' => ['required', 'mimes:jpeg,jpg,png','max:1000'],
+            'secretAnswer' => ['required','string', 'max:255'],
+            'secretQuestion' => ['required']
         ]);
     }
 
@@ -73,31 +73,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        
-        $uploadedFile = $data['foto'];
-        $fotoSubida = Storage::putFile("/public/perfil", $uploadedFile);
+
+        $uploadedFile = $data['image'];
+        $imageUploaded = Storage::putFile("/public/perfil", $uploadedFile);
 
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'lastName' => $data['lastName'],
-            'city_id' => $data['localidad'],
-            'domicilio' => $data['domicilio'],
-            'telefono' => $data['telefono'],
-            'foto' => $fotoSubida,
-            // 'numTarjeta' => $data['numTarjeta'],
-            // 'banco' => $data['banco'],
+            'city_id' => $data['city'],
+            'address' => $data['domicilio'],
+            'phone' => $data['telefono'],
+            'image' => $imageUploaded,
+            // 'cardNumber' => $data['numTarjeta'],
+            // 'bank_id' => $data['banco'],
             'password' => Hash::make($data['password']),
-            'pregSecreta_id' => $data['pregunta_secreta'],
-            'respSecreta' => Hash::make($data['respuesta_secreta']),
-            
+            'secretQuestion_id' => $data['secretQuestion'],
+            'secretAnswer' => Hash::make($data['secretAnswer']),
+
         ]);
         return $user;
     }
 
     protected function formularioDeRegistro(){
 
-        $preguntasSecretas = DB::table('preguntas_secretas')->get();
+        $preguntasSecretas = DB::table('secretQuestions')->get();
         $localidades = City::all();
         return view('auth.register', ["preguntas_secretas"=>$preguntasSecretas,
             "localidades" => $localidades
