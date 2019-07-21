@@ -178,18 +178,22 @@ content: 'tu foto';
 /* .headerEspacio{
   padding-top: 61px!important;
 } */
-.container.registro .headerEspacio{
+.container.registro .headerEspacio,
+.container.perfil .headerEspacio{
   padding-top: 81px!important;
 }
-.container.registro .card{
+.container.registro .card,
+.container.perfil .card{
   height: auto;
 }
 .container.login .social_login a,
-.container.registro .social_login a{
+.container.registro .social_login a,
+.container.perfil .social_login a{
   background: #FFD728;
 }
 .container.login .space,
-.container.registro .space {
+.container.registro .space,
+.container.perfil .space {
   Color: white;
   text-align: center;
   margin: 1em 0;
@@ -253,4 +257,8 @@ content: 'tu foto';
   .login .tablet{
     visibility: hidden;
   }
+}
+
+.perfil .card{
+  flex-grow: 1;
 }

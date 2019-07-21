@@ -6,7 +6,7 @@
 
 
 @section('contenidoBody')
-<div class="container registro" id="registro">
+<div class="container perfil" id="perfil">
 		<div class="d-flex justify-content-center h-100 headerEspacio">
 			<div class="card">
 				<div class="card-header">
