@@ -44,8 +44,8 @@
               <div class="form-group">
                 <div class="input-group mb-3">
                   <select type="text" class="form-control" name="localidad" placeholder="tu localidad" aria-label="tu localidad" aria-describedby="basic-addon1" id="localidad">
-                    @foreach($localidades as $localidad)
-                      <option id="item" value="{{$localidad->id}}">{{$localidad->name}}</option>
+                    @foreach($cities as $city)
+                      <option id="item" value="{{$city->id}}">{{$city->cityName}}</option>
                     @endforeach
                   </select>
                   @error('localidad')

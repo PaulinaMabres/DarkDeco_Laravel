@@ -98,9 +98,9 @@ class RegisterController extends Controller
     protected function formularioDeRegistro(){
 
         $preguntasSecretas = DB::table('secretQuestions')->get();
-        $localidades = City::all();
+        $cities = City::all();
         return view('auth.register', ["preguntas_secretas"=>$preguntasSecretas,
-            "localidades" => $localidades
+            "cities" => $cities
         ]);
     }
 }
