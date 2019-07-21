@@ -130,7 +130,7 @@
             <div class="input-group mb-3">
               <select class="selectPregunta" name="pregunta_secreta" id="pregunta_secreta">
                 @foreach($preguntas_secretas as $pregunta)
-                  <option id="item" value="{{$pregunta->id}}">{{$pregunta->pregunta}}</option>
+                  <option id="item" value="{{$pregunta->id}}">{{$pregunta->question}}</option>
                 @endforeach
               </select>
               @error('selectPregunta')
