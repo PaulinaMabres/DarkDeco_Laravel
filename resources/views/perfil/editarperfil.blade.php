@@ -177,7 +177,7 @@
                                 <label class="col-md-4 col-form-label form-control-label">Número De Tarjeta </label>
                                 <div class="input-group col-md-8">
                                     <input id="cardNumber" type="text" class="form-control @error('cardNumber') is-invalid @enderror"
-                                        name="cardNumber" value="{{ old('cardNumber',$user->email) }}" required autocomplete="cardNumber"
+                                        name="cardNumber" value="{{ old('cardNumber',$user->cardNumber) }}" required autocomplete="cardNumber"
                                         placeholder="">
             
                                     @error('cardNumber')
@@ -191,7 +191,7 @@
         </div>
         <div class="form-group">
             <input type="submit" value="Guardar Cambios" class="btn float-right login_btn">
-            <a href={{ route('home') }}><input type="button" value="Volver" class="btn float-right login_btn"></a>
+            <a href={{ route('perfil') }}><input type="button" value="Volver" class="btn float-right login_btn"></a>
         </div>
 
         </form>
