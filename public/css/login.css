@@ -258,7 +258,40 @@ content: 'tu foto';
     visibility: hidden;
   }
 }
-
+/* 
 .perfil .card{
   flex-grow: 1;
+} */
+.perfil {
+  height: unset;
+}
+.perfil .card {
+  width: 80%;
+}
+.perfil .login_btn{
+  width: 150px;
+}
+.perfil h2{
+  color : white;
+}
+.perfil  .form-group {
+  margin-bottom: 2.5rem;
+}
+
+.form-group label {
+  text-align: right;
+}
+
+.perfil select{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Reiniciar Contraseña */
+.passwordReset .form-group {
+  margin-bottom: 2.5rem;
+}
+.passwordReset .card{
+  width:500px;
 }

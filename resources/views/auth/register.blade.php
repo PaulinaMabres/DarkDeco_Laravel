@@ -18,6 +18,17 @@
           </a>
         </div>
         <div class="card-body">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
           <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
@@ -32,7 +43,7 @@
               </div>
               <div class="form-group">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="lastName" placeholder="tu apellido" aria-label="tu apellido" aria-describedby="basic-addon1" id="lastName">
+                  <input type="text" class="form-control" name="lastName" placeholder="tu apellido" aria-label="tu apellido" aria-describedby="basic-addon1" id="lastName" value="{{ old('lastName') }}">
                   @error('lastName')
                     <span class="invalid-feedback d-block" role="alert">
                       <strong>{{ $message }}</strong>
@@ -43,12 +54,12 @@
 
               <div class="form-group">
                 <div class="input-group mb-3">
-                  <select type="text" class="form-control" name="localidad" placeholder="tu localidad" aria-label="tu localidad" aria-describedby="basic-addon1" id="localidad">
+                  <select type="text" class="form-control" name="city" placeholder="tu localidad" aria-label="tu localidad" aria-describedby="basic-addon1" id="city">
                     @foreach($cities as $city)
                       <option id="item" value="{{$city->id}}">{{$city->cityName}}</option>
                     @endforeach
                   </select>
-                  @error('localidad')
+                  @error('city')
                     <span class="invalid-feedback d-block" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
@@ -57,8 +68,8 @@
               </div>
               <div class="form-group">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="domicilio" placeholder="tu domicilio" aria-label="tu domicilio" aria-describedby="basic-addon1" id="domicilio">
-                  @error('domicilio')
+                  <input type="text" class="form-control" name="address" placeholder="tu address" aria-label="tu address" aria-describedby="basic-addon1" id="address" value="{{ old('address') }}">
+                  @error('address')
                     <span class="invalid-feedback d-block" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
@@ -67,8 +78,8 @@
               </div>
               <div class="form-group">
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="telefono" placeholder="tu teléfono" aria-label="tu teléfono" aria-describedby="basic-addon1" id="telefono">
-                  @error('telefono')
+                  <input type="text" class="form-control" name="phone" placeholder="tu teléfono" aria-label="tu teléfono" aria-describedby="basic-addon1" id="phone" value="{{ old('phone') }}">
+                  @error('phone')
                     <span class="invalid-feedback d-block" role="alert">
                       <strong>{{ $message }}</strong>
                     </span>
@@ -100,7 +111,7 @@
         </div>
         <div class="form-group">
           <div class="input-group mb-3">
-            <input type="file" class="file-input" name="image" id="image" placeholder="tu foto de perfil" aria-label="tu foto de perfil" aria-describedby="basic-addon1" value="">
+            <input type="file" class="file-input" name="image" id="image" placeholder="tu foto de perfil" aria-label="tu foto de perfil" aria-describedby="basic-addon1" value="{{ old('file') }}">
             @error('image')
               <span class="invalid-feedback d-block" role="alert">
                 <strong>{{ $message }}</strong>
@@ -128,12 +139,12 @@
           </div>
           <div class="form-group">
             <div class="input-group mb-3">
-              <select class="selectPregunta" name="pregunta_secreta" id="pregunta_secreta">
-                @foreach($preguntas_secretas as $pregunta)
-                  <option id="item" value="{{$pregunta->id}}">{{$pregunta->question}}</option>
+              <select class="selectPregunta" name="secretQuestion" id="secretQuestion">
+                @foreach($secretQuestions as $question)
+                  <option id="item" value="{{$question->id}}">{{$question->question}}</option>
                 @endforeach
               </select>
-              @error('selectPregunta')
+              @error('secretQuestion')
                 <span class="invalid-feedback d-block" role="alert">
                   <strong>{{ $message }}</strong>
                 </span>
@@ -143,7 +154,7 @@
 
           <div class="form-group">
             <div class="input-group mb-3">
-              <input type="text" class="form-control" name="respuesta_secreta" placeholder="Resp. secreta: nombre de tu esc. primaria" aria-label="RespuestaSecreta" aria-describedby="basic-addon1" id="respuesta_secreta" >
+              <input type="text" class="form-control" name="secretAnswer" placeholder="Resp. secreta: nombre de tu esc. primaria" aria-label="RespuestaSecreta" aria-describedby="basic-addon1" id="secretAnswer" >
 
             </div>
           </div>

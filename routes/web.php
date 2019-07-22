@@ -56,3 +56,7 @@ Route::post('editProduct/{id}', 'ProductController@update');
 
 
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
+Route::get('/perfil/editar', 'PerfilController@editarPerfil')->name('editarPerfil');
+Route::post('/perfil/editar', 'PerfilController@update')->name('updatePerfil');
+Route::get('/perfil/editarcontraseña', 'PerfilController@editarContraseña')->name('editarContraseña');
+Route::post('/perfil/actualizarcontraseña', 'PerfilController@actualizarContraseña')->name('actualizarContraseña');

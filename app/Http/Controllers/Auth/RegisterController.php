@@ -55,10 +55,9 @@ class RegisterController extends Controller
             'lastName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-
-            'city' => ['required', 'string', 'max:255'],
-            'adress' => ['required', 'string', 'max:255'],
-            'fone' => ['required', 'string', 'max:255'],
+            'city' => ['required'],
+            'address' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
             'image' => ['required', 'mimes:jpeg,jpg,png','max:1000'],
             'secretAnswer' => ['required','string', 'max:255'],
             'secretQuestion' => ['required']
@@ -82,15 +81,14 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'lastName' => $data['lastName'],
             'city_id' => $data['city'],
-            'address' => $data['domicilio'],
-            'phone' => $data['telefono'],
+            'address' => $data['address'],
+            'phone' => $data['phone'],
             'image' => $imageUploaded,
             // 'cardNumber' => $data['numTarjeta'],
             // 'bank_id' => $data['banco'],
             'password' => Hash::make($data['password']),
             'secretQuestion_id' => $data['secretQuestion'],
             'secretAnswer' => Hash::make($data['secretAnswer']),
-
         ]);
         return $user;
     }
@@ -99,7 +97,7 @@ class RegisterController extends Controller
 
         $preguntasSecretas = DB::table('secretQuestions')->get();
         $cities = City::all();
-        return view('auth.register', ["preguntas_secretas"=>$preguntasSecretas,
+        return view('auth.register', ["secretQuestions"=>$preguntasSecretas,
             "cities" => $cities
         ]);
     }
