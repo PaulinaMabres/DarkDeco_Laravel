@@ -24,6 +24,14 @@ class ProductController extends Controller
     "integer" => "El campo :attribute debe ser un numero entero.",
     "image" => "Error al cargar la foto"
   ];
+
+  // Buscador
+  public function search(request $request){
+    $products = Product::where('productName', 'LIKE', '%'.$request["filtro"].'%')->paginate(6);
+    $category = 'Resultado de la búsqueda';
+    return view('products', compact('products', 'category'));
+  }
+
   /**
   * Display a listing of the resource.
   *
@@ -32,11 +40,12 @@ class ProductController extends Controller
   public function index($category_id = null)
   {
     if($category_id){
-      $products = Product::where('category_id', $category_id)->paginate(4);
-      $category = Category::find($category_id)->category;
-      // dd($category);
+      // Productos filtrados por categoría, paginados.
+      $products = Product::where('category_id', $category_id)->paginate(6);
+      $category = Category::find($category_id)->categoryName;
     } else {
-      $products = Product::paginate(4); //Traemos todos los productos.
+      //Todos los productos paginados.
+      $products = Product::paginate(6);
       $category = '';
     }
     return view('products', compact('products', 'category'));
@@ -102,7 +111,9 @@ class ProductController extends Controller
   public function show($id)
   {
     $product = Product::find($id);
-    return view('product', compact('product')); //Pasamos el dato a la vista.
+    $brand = Brand::find($product->brand_id);
+    $category = Category::find($product->category_id);
+    return view('product', compact('product', 'brand', 'category')); //Pasamos el dato a la vista.
   }
 
   /**

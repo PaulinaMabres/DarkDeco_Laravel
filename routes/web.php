@@ -53,7 +53,7 @@ Route::post('addProduct', 'ProductController@store');
 Route::get('/deleteProduct/{id}','ProductController@destroy');
 Route::get('/editProduct/{id}', 'ProductController@edit');
 Route::post('editProduct/{id}', 'ProductController@update');
-
+Route::get('/searchProducts', 'ProductController@search');
 
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('/perfil/editar', 'PerfilController@editarPerfil')->name('editarPerfil');

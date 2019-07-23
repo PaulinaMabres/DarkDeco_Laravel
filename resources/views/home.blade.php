@@ -115,7 +115,7 @@
     <div class="container">
       <div class="row my-5 text-center">
         <p class="espaciado col-12 text-uppercase">Esta navidad vestí a tu hogar con DarkDeco©</p>
-        <p class="titulo col-12 display-4"> Decoraciones especiales por <span style="Color:#218c74;">navidad???</span></p>
+        <p class="titulo col-12 display-4"> Decoraciones especiales por <a href="/products/5"><span style="Color:#218c74;">navidad???</span></a></p>
       </div>
       <div class="d-flex row">
         <div class="col-md-4 d-flex align-items-center">
@@ -134,9 +134,9 @@
             </div>
           </div>
         </div>
-        <div id="imagen" class="col-md-4 navidad">
-          <!-- IDEA: Esconder en xs -->
-        </div>
+          <div id="imagen" class="col-md-4 navidad">
+            <!-- IDEA: Esconder en xs -->
+          </div>
         <div class="col-md-4 d-flex align-items-center">
           <div class="d-flex flex-column ">
             <div class="col-md-12 text-center mb-5">

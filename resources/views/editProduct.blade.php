@@ -102,7 +102,8 @@
       </div>
 
       <div class="">
-        <a href="/products">
+        {{-- Cancelar - Vuelve a la página anterior --}}
+        <a href="javascript:history.back(-1);">
           <button type="button" class=""> <span class="h6">Cancelar</span></button>
         </a>
         <input type="submit" name="" value="Guradar">
