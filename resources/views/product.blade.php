@@ -3,7 +3,7 @@
 @section('head')
   {{-- <link rel="stylesheet" href="css/master.css">
   <link rel="stylesheet" href="css/faq.css"> --}}
-  <script src="js/product.js"> </script>
+  <script src="/js/product.js"> </script>
 @endsection
 
 @section('contenidoBody')
