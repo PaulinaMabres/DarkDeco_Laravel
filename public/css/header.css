@@ -1,13 +1,13 @@
 #header .Color {
-    background: #1E1B2C !important;
-  }
+  background: #1E1B2C !important;
+}
 #header .anchura{
   max-width: 100vw;
 }
 .header {
   background-size: auto;
 }
- #header .mt-15{
+#header .mt-15{
   margin-top: -15px;
 }
 #header .logo{
@@ -17,6 +17,18 @@
 #header .show{
   width: 12em;
 }
+
+.div-buscador{
+  /* margin:auto; */
+   margin-right: 50px;
+   margin-top: 15px;
+}
+.btn-buscador{
+  height: 27px;
+  border-radius: 30%;
+  margin-top: -1;
+}
+
 @media screen and (max-width:575px) {
   #header .mt-15{
     margin-top: 3px

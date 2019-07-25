@@ -1,8 +1,7 @@
 @extends('default');
 
 @section('head')
-  <link rel="stylesheet" href="css/master.css">
-  <link rel="stylesheet" href="css/faq.css">
+  <link rel="stylesheet" href="/css/faq.css">
 @endsection
 
 <!-- Contenido de FAQ -->

@@ -1,8 +1,8 @@
 @extends('default');
 
 @section('head')
-  {{-- <link rel="stylesheet" href="css/master.css">
-  <link rel="stylesheet" href="css/faq.css"> --}}
+  <link rel="stylesheet" href="/css/products.css">
+  <script src="/js/abmProduct.js"> </script>
 @endsection
 
 @section('contenidoBody')

@@ -1,0 +1,76 @@
+/* CSS para cargar imagen */
+/* https://bootsnipp.com/snippets/eNbOa */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    width: 120px;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+#img-upload{
+    width: 100%;
+}
+/* CSS para cargar imagen */
+
+/*--- AddProduct blade */
+.input-group-text{
+  width:80px;
+}
+/*AddProduct blade ---*/
+
+/*--- Products blade */
+.products-title{
+  margin-top: 10px;
+  background-color: rgba(145, 136, 119, 0.6); /*Gris*/
+  color: white;
+}
+.products-title h1{
+  margin: auto;
+}
+.products-filter h3{
+  margin: auto !important;
+}
+.products-footer{
+  background-color: rgba(145, 136, 119, 0.6); /*Gris*/
+  padding: 0;
+}
+.products-footer h3{
+  margin: 22px;
+  text-align: right;
+}
+.products-links{
+  margin-left: 22px;
+}
+/* Products blade ---*/
+
+/* --- Product-card --> Product - AddProduct - EditProduct blade */
+.product-card-img{
+  background-color: rgba(145, 136, 119, 0.6); /*Gris*/
+}
+.product-card-header{
+  background-color: rgba(145, 136, 119, 0.6); /*Gris*/
+  color: white;
+}
+.product-card-body{
+  min-height: 180px;
+}
+.product-card-title{
+  Color: rgb(23, 90, 108); /*Azul*/
+}
+.product-card-footer{
+  background-color: rgba(145, 136, 119, 0.6); /*Gris*/
+}
+/* Product-card --> Product - AddProduct - EditProduct blade ---*/

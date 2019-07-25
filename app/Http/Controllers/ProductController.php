@@ -28,8 +28,9 @@ class ProductController extends Controller
   // Buscador
   public function search(request $request){
     $products = Product::where('productName', 'LIKE', '%'.$request["filtro"].'%')->paginate(6);
-    $category = 'Resultado de la búsqueda';
-    return view('products', compact('products', 'category'));
+    $categoryName = 'Resultado de la búsqueda';
+    $categories = Category::all();
+    return view('products', compact('products', 'categoryName', 'categories'));
   }
 
   /**
@@ -42,13 +43,14 @@ class ProductController extends Controller
     if($category_id){
       // Productos filtrados por categoría, paginados.
       $products = Product::where('category_id', $category_id)->paginate(6);
-      $category = Category::find($category_id)->categoryName;
+      $categoryName = Category::find($category_id)->categoryName;
     } else {
       //Todos los productos paginados.
       $products = Product::paginate(6);
-      $category = '';
+      $categoryName = '';
     }
-    return view('products', compact('products', 'category'));
+    $categories = Category::all();
+    return view('products', compact('products', 'categoryName', 'categories'));
   }
 
   /**

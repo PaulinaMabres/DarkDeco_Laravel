@@ -14,6 +14,7 @@
   <header>
     @include('partials.header')
   </header>
+
   @yield('contenidoBody')
 
   <footer>

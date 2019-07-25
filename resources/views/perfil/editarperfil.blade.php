@@ -8,16 +8,15 @@
 @section('contenidoBody')
 <div class="container perfil" id="perfil">
 
-    
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+  @if ($errors->any())
+    <div class="alert alert-danger">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
 
     <div class="d-flex justify-content-center h-100 headerEspacio">
         <div class="card">
@@ -107,7 +106,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group"> 
+                        <div class="form-group">
                             <label class="col-md-4 col-form-label form-control-label"> Teléfono </label>
                             <div class="input-group col-md-8">
                                 <input type="text" class="form-control" name="phone" placeholder="tu teléfono"
@@ -125,7 +124,7 @@
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email',$user->email) }}" required autocomplete="email"
                                         placeholder="tu email">
-            
+
                                     @error('email')
                                     <span class="invalid-feedback d-block" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -146,7 +145,7 @@
                                 </div>
                             </div> --}}
                     </div>
-            
+
             <div class="card col-md-6">
                     <div class="card-header ">
                             <h2>Medios de pago </h2>
@@ -154,7 +153,7 @@
                         <div class="form-group">
                                 <label class="col-md-4 col-form-label form-control-label"> Banco </label>
                                 <div class="input-group col-md-8">
-                                    <select type="text" class="form-control" name="bank" 
+                                    <select type="text" class="form-control" name="bank"
                                         aria-label="tu banco" aria-describedby="basic-addon1" id="bank" >
                                         <option id="item" value=""></option>
                                             @foreach($banks as $bank)
@@ -163,7 +162,7 @@
                                                 selected="selected"
                                                 @endif
                                             >{{$bank->bankName}}</option>
-                                        
+
                                         @endforeach
                                     </select>
                                     @error('banco')
@@ -179,7 +178,7 @@
                                     <input id="cardNumber" type="text" class="form-control @error('cardNumber') is-invalid @enderror"
                                         name="cardNumber" value="{{ old('cardNumber',$user->cardNumber) }}" required autocomplete="cardNumber"
                                         placeholder="">
-            
+
                                     @error('cardNumber')
                                     <span class="invalid-feedback d-block" role="alert">
                                         <strong>{{ $message }}</strong>
