@@ -25,12 +25,6 @@
 }
 /* CSS para cargar imagen */
 
-/*--- AddProduct blade */
-.input-group-text{
-  width:80px;
-}
-/*AddProduct blade ---*/
-
 /*--- Products blade */
 .products-title{
   margin-top: 10px;
@@ -58,19 +52,37 @@
 
 /* --- Product-card --> Product - AddProduct - EditProduct blade */
 .product-card-img{
-  background-color: rgba(145, 136, 119, 0.6); /*Gris*/
+  /* background-color: rgba(145, 136, 119, 0.6); /*Gris*/
+}
+.product-card-info{
+  display: flex;
+  flex-direction: column;
 }
 .product-card-header{
   background-color: rgba(145, 136, 119, 0.6); /*Gris*/
   color: white;
 }
 .product-card-body{
-  min-height: 180px;
 }
 .product-card-title{
   Color: rgb(23, 90, 108); /*Azul*/
 }
 .product-card-footer{
+  align-self: flex-end;
+  width: 100%;
   background-color: rgba(145, 136, 119, 0.6); /*Gris*/
 }
 /* Product-card --> Product - AddProduct - EditProduct blade ---*/
+
+/*--- AddProduct blade */
+.input-foto{
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  margin-left: 10%;
+  /* align-self: flex-end; */
+}
+.input-group-text{
+  width:80px;
+}
+/*AddProduct blade ---*/

@@ -29,69 +29,45 @@
       {{-- {{csrf_field()}} --}}
 
       <div class="product-card card mb-3" style="max-width: 1000px; margin: auto; margin-top: 20px;">
-        {{-- <div class="card mb-3" style=""> --}}
         <div class="row no-gutters">
+
+          {{-- FOTO --}}
           <div class="product-card-img col-md-4 card-img">
-            <div class="input-group mb-3">
-
-              {{-- <label>Foto</label> --}}
-              <div class="input-foto input-group mb-3">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" id="imgInp" aria-describedby="inputGroupFileAddon01" name="image" value="{{old("image")}}">
-                  <label class="custom-file-label" for="inputGroupFile01">Seleccionar imagen</label>
-                </div>
-              </div>
-
+            {{-- <label>Foto</label> --}}
+            <div class="product-foto">
               <img width="150px" id='img-upload'/>
+            </div>
+            <div class="input-foto input-group mb-3">
+              <input type="file" class="custom-file-input" id="imgInp" aria-describedby="inputGroupFileAddon01" name="image" value="{{old("image")}}" required>
+              <label class="custom-file-label" for="inputGroupFile01">Seleccionar imagen</label>
             </div>
           </div>
 
-          <div class="col-md-8">
+          {{-- INFO DEL PRODUCTO --}}
+          <div class="product-card-info col-md-8">
             <div class="product-card-header card-header">
               <h1>Agregar producto</h1>
             </div>
             <div class="product-card-body card-body">
 
-              {{-- <div class="">
-                <label for="productName">Nombre:</label>
-                <input id="productName" type="text" name="productName" value="{{old("productName")}}">
-                <small>{{$errors->first('productName')}}</small>
-              </div> --}}
-
+              {{-- Nombre --}}
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" id="basic-addon1" style="width:80px;">Nombre</span>
                 </div>
-                <input id="productName" type="text" class="form-control" name="productName" placeholder="" aria-label="Nombre" aria-describedby="basic-addon1" value="{{old("productName")}}">
-                {{-- <input id="productName" type="text" name="productName" value="{{old("productName")}}"> --}}
+                <input id="productName" type="text" class="form-control" name="productName" placeholder="" aria-label="Nombre" aria-describedby="basic-addon1" value="{{old("productName")}}" required>
+                {{-- <small>{{$errors->first('productName')}}</small> --}}
               </div>
 
-              {{-- <div class="">
-                <label for="description">Descripcion</label>
-                <input type="text" name="description" value="{{old("description")}}">
-              </div> --}}
-
+              {{-- Descripción --}}
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text" style="width:80px;">Descripción</span>
                 </div>
-                <textarea class="form-control" aria-label="With textarea" name="description" value="{{old("description")}}"></textarea>
+                <textarea class="form-control" aria-label="With textarea" name="description" value="{{old("description")}}" required></textarea>
               </div>
 
-              {{-- <div class="brand">
-                <label for="brand">Marca:</label>
-                <select name="brand_id">
-                  @foreach ($brands as $brand)
-                    <option
-                    @if($brand->id==old("brand_id"))
-                      {{'selected = \"selected\"'}}
-                    @endif
-                    value=" {{$brand->id}}">
-                    {{$brand->brandName}}</option>
-                  @endforeach
-                </select>
-              </div> --}}
-
+              {{-- Marca --}}
               <div class="input-group mb-3" style="margin-top: 10px;">
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01" style="width:80px;">Marca</label>
@@ -108,20 +84,7 @@
                 </select>
               </div>
 
-              {{-- <div class="category">
-                <label for="category">Categoría:</label>
-                <select name="category_id">
-                  @foreach ($categories as $category)
-                    <option
-                    @if($category->id==old("category_id"))
-                      {{'selected = \"selected\"'}}
-                    @endif
-                    value=" {{$category->id}}">
-                    {{$category->categoryName}}</option>
-                  @endforeach
-                </select>
-              </div> --}}
-
+              {{-- Categoría --}}
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01" style="width:80px;">Categoría</label>
@@ -138,37 +101,27 @@
                 </select>
               </div>
 
-              {{-- <div class="">
-                <label for="price">Precio</label>
-                <input id="price" type="number" name="price" value="{{old("price")}}">
-              </div> --}}
-
+              {{-- Precio --}}
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" style="width:80px;">Precio $</span>
                 </div>
-                <input id="price" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" value="{{old("price")}}">
+                <input id="price" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" value="{{old("price")}}" required>
                 <div class="input-group-append">
                   <span class="input-group-text">.00</span>
                 </div>
               </div>
 
-              {{-- <div class="">
-                <label for="stock">Stock</label>
-                <input id="stock" type="number" name="stock" value="{{old("stock")}}">
-              </div> --}}
-
+              {{-- Stock --}}
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text" style="width:80px;">Stock</span>
                 </div>
                 <input id="stock" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="stock" value="{{old("stock")}}">
-                {{-- <div class="input-group-append">
-                  <span id="price" class="input-group-text" name="price" value="{{old("price")}}">0</span>
-                </div> --}}
               </div>
 
             </div>
+
             <div class="product-card-footer card-footer">
               <div class="">
                 {{-- Cancelar - Vuelve a la página anterior --}}

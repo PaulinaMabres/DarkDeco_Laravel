@@ -12,7 +12,7 @@
         <div class="product-card-img col-md-4 card-img">
           <img src="/storage/product/{{$product->image}}" class="card-img" alt="...">
         </div>
-        <div class="col-md-8">
+        <div class="product-card-info col-md-8">
           <div class="product-card-header card-header">
             <h1>Detalle del producto</h1>
           </div>
@@ -24,33 +24,16 @@
             <p class="card-text">Precio: $ {{$product->price}}</p>
           </div>
           <div class="product-card-footer card-footer">
-            @if (Auth::user())
-              <h4><a href="#">Agregar al Carrito</a></h4>
-              {{-- <form class="" action="/addtocart" method="post">
-                @csrf
-                <input type="number" name="quantity" value="" placeholder="Cantidad">
-                <input type="hidden" name="id" value="{{$product->id}}">
-                <p></p>
-                <button type="submit">Agregar al carrito</button>
-              </form>
-              <img src="/storage/product/{{$product->image}}" alt=""> --}}
-
-              @if (Auth::user()->admin)
-                <h4>
-                  <a class="editProduct" href="/editProduct/{{$product->id}}">Editar producto</a>
-                </h4>
-                <h4>
-                  {{-- <a class="deleteProduct" href="#">Borrar producto</a> --}}
-                  <a class="deleteProduct" href="/deleteProduct/{{$product->id}}">Borrar producto</a>
-                </h4>
-                {{-- <form class="" action="/deleteProduct" method="post">
-                  @csrf
-                  <input type="hidden" name="id" value="{{$product->id}}">
-                  <input type="submit" name="" value="Borrar Producto">
-                </form> --}}
+            <h4>
+              @if (Auth::user())
+                <a href="#">Agregar al Carrito</a> -
+                @if (Auth::user()->admin)
+                   <a class="editProduct" href="/editProduct/{{$product->id}}">Editar producto</a> -
+                   <a class="deleteProduct" href="/deleteProduct/{{$product->id}}">Borrar producto</a> - 
+                @endif
               @endif
-            @endif
-            <h4><a href="javascript:history.back(-1);">Volver</a></h4>
+              <a href="javascript:history.back(-1);">Volver</a>
+            </h4>
           </div>
         </div>
       </div>
