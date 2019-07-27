@@ -2,7 +2,7 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/products.css">
-  <script src="/js/abmProduct.js"> </script>
+  <script src="/js/addEditProduct.js"> </script>
 @endsection
 
 @section('contenidoBody')
@@ -47,9 +47,20 @@
       @endif
 
       <div class="">
+        <img width="150px" src="/storage/product/{{$imageAux}}" alt="">
+        <label for="image">Foto</label>
+        <input id="image" type="file" name="image" value="{{$imageAux}}">
+      </div>
+
+      <div class="">
         <label for="productName">Nombre:</label>
         <input id="productName" type="text" name="productName" value="{{$productNameAux}}">
         <small>{{$errors->first('productName')}}</small>
+      </div>
+
+      <div class="">
+        <label for="description">Descripcion</label>
+        <input type="text" name="description" value="{{$descriptionAux}}">
       </div>
 
       <div class="brand">
@@ -81,19 +92,8 @@
       </div>
 
       <div class="">
-        <img width="150px" src="/storage/product/{{$imageAux}}" alt="">
-        <label for="image">Foto</label>
-        <input id="image" type="file" name="image" value="{{$imageAux}}">
-      </div>
-
-      <div class="">
         <label for="price">Precio</label>
         <input id="price" type="number" name="price" value="{{$priceAux}}">
-      </div>
-
-      <div class="">
-        <label for="description">Descripcion</label>
-        <input type="text" name="description" value="{{$descriptionAux}}">
       </div>
 
       <div class="">
@@ -103,9 +103,7 @@
 
       <div class="">
         {{-- Cancelar - Vuelve a la página anterior --}}
-        <a href="javascript:history.back(-1);">
-          <button type="button" class=""> <span class="h6">Cancelar</span></button>
-        </a>
+        <input class="btn btn-secondary" onclick="window.location.href='javascript:history.back(-1);'" type="" name="cancelar" value="Cancelar">
         <input type="submit" name="" value="Guradar">
       </div>
     </form>

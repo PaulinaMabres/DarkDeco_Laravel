@@ -2,6 +2,7 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/products.css">
+  <script src="/js/deleteProduct.js"> </script>
 @endsection
 
 @section('contenidoBody')
@@ -24,16 +25,23 @@
             <p class="card-text">Precio: $ {{$product->price}}</p>
           </div>
           <div class="product-card-footer card-footer">
-            <h4>
+            <form>
               @if (Auth::user())
-                <a href="#">Agregar al Carrito</a> -
+                {{-- <a href="#">Agregar al Carrito</a> - --}}
+                <input class="btn btn-secondary" onclick="window.location.href='#'" type="" name="" value="Agregar al Carrito">
                 @if (Auth::user()->admin)
-                   <a class="editProduct" href="/editProduct/{{$product->id}}">Editar producto</a> -
-                   <a class="deleteProduct" href="/deleteProduct/{{$product->id}}">Borrar producto</a> - 
+                  {{-- Editar Producto --}}
+                  <input id="#editProduct" class="btn btn-secondary" onclick="window.location.href='/editProduct/{{$product->id}}'" type="" name="" value="Editar producto">
+                  {{-- Borrar Producto --}}
+                  <input id="#deleteProduct" class="btn btn-secondary"
+                  onclick="if (window.confirm('Está seguro de borrar el producto?')) {window.location.href='/deleteProduct/{{$product->id}}'}"
+                  type="" name="deleteProduct" value="Borrar producto">
+                   {{-- <a class="deleteProduct" href="/deleteProduct/{{$product->id}}">Borrar producto</a> - --}}
                 @endif
               @endif
-              <a href="javascript:history.back(-1);">Volver</a>
-            </h4>
+              <input class="btn btn-secondary" onclick="window.location.href='javascript:history.back(-1);'" type="" name="volver" value="Volver">
+              {{-- <a href="javascript:history.back(-1);">Volver</a> --}}
+            </form>
           </div>
         </div>
       </div>

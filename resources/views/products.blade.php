@@ -55,13 +55,13 @@
 
     <div class="products-footer card-footer row">
       <div class="products-links col-7">
-        <p class="">{{$products->links()}}</p>
+        {{-- <p class="">{{$products->links()}}</p> --}}
+        {{$products->links()}}
       </div>
-      <div class="col-4">
+      <div class="products-btn col-4">
         @if (Auth::user() && Auth::user()->admin)
-          <h3>
-            <a href="/addProduct">Agregar producto</a>
-          </h3>
+          <input class="btn-agregar-producto btn btn-secondary" onclick="window.location.href='/addProduct'" type="" name="" value="Agregar producto">
+          {{-- <a href="/addProduct">Agregar producto</a> --}}
         @endif
       </div>
     </div>
