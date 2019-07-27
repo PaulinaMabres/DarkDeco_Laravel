@@ -27,7 +27,6 @@ window.onload = function(){
     }
   }
 
-
   var formAddEditProduct = document.querySelector('.addEditProduct');
   formAddEditProduct.onsubmit = function(event){
     event.preventDefault();
@@ -39,7 +38,6 @@ window.onload = function(){
       errores++;
     }
     var price = document.querySelector('#price');
-    console.log(price.value);
     if (price.value < 1) {
       alert('Precio incorrecto');
       errores++;
@@ -49,18 +47,18 @@ window.onload = function(){
     }
   }
 
-  function CurrencyFormatted(amount) {
-    var i = parseFloat(amount);
-    if(isNaN(i)) { i = 0.00; }
-    var minus = '';
-    if(i < 0) { minus = '-'; }
-    i = Math.abs(i);
-    i = parseInt((i + .005) * 100);
-    i = i / 100;
-    s = new String(i);
-    if(s.indexOf('.') < 0) { s += '.00'; }
-    if(s.indexOf('.') == (s.length - 2)) { s += '0'; }
-    s = minus + s;
-    return s;
-  }
+  // function CurrencyFormatted(amount) {
+  //   var i = parseFloat(amount);
+  //   if(isNaN(i)) { i = 0.00; }
+  //   var minus = '';
+  //   if(i < 0) { minus = '-'; }
+  //   i = Math.abs(i);
+  //   i = parseInt((i + .005) * 100);
+  //   i = i / 100;
+  //   s = new String(i);
+  //   if(s.indexOf('.') < 0) { s += '.00'; }
+  //   if(s.indexOf('.') == (s.length - 2)) { s += '0'; }
+  //   s = minus + s;
+  //   return s;
+  // }
 }

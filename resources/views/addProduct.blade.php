@@ -7,8 +7,8 @@
   {{-- Scripts para cargar la foto --}}
   {{-- https://bootsnipp.com/snippets/eNbOa --}}
   {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  {{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> --}}
   <!-- Include the above in your HEAD tag ---------->
 @endsection
 
@@ -35,11 +35,11 @@
           <div class="product-card-img col-md-4 col-sm-12 card-img">
             {{-- <label>Foto</label> --}}
             <div class="product-foto">
-              <img width="150px" id='img-upload' src=""/>
+              <img width="150px" id='img-upload' src="">
             </div>
             <div class="input-foto input-group mb-3">
               <input type="file" class="custom-file-input" id="imgInp" aria-describedby="inputGroupFileAddon01" name="image" value="{{old("image")}}" required>
-              <label id="labelImg" class="custom-file-label" for="inputGroupFile01">Seleccionar imagen</label>
+              <label id="labelImg" class="custom-file-label" for="inputGroupFile01">Imagen</label>
             </div>
           </div>
 
@@ -64,7 +64,7 @@
                 <div class="input-group-prepend">
                   <span class="input-label-descripcion input-group-text">Descripción</span>
                 </div>
-                <textarea id="description" class="input-text-descripcion form-control" aria-label="With textarea" name="description" value="{{old("description")}}" required></textarea>
+                <textarea id="description" class="input-text-descripcion form-control" aria-label="With textarea" name="description" value="" required>{{old("description")}}</textarea>
               </div>
 
               <div class="input-group mb-3" style="margin-top: 10px;">

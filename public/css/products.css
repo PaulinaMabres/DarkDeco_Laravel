@@ -1,6 +1,6 @@
 /* CSS para cargar imagen */
 /* https://bootsnipp.com/snippets/eNbOa */
-.btn-file {
+/* .btn-file {
     position: relative;
     overflow: hidden;
     width: 120px;
@@ -19,7 +19,7 @@
     background: white;
     cursor: inherit;
     display: block;
-}
+} */
 #img-upload{
     width: 100%;
 }
@@ -96,6 +96,9 @@
 /* Product-card --> Product - AddProduct - EditProduct blade ---*/
 
 /*--- AddProduct blade */
+#imgInp{
+  /* display: none; */
+}
 .input-foto{
   position: absolute;
   bottom: 0;
