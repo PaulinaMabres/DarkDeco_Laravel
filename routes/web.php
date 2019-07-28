@@ -60,3 +60,4 @@ Route::get('/perfil/editar', 'PerfilController@editarPerfil')->name('editarPerfi
 Route::post('/perfil/editar', 'PerfilController@update')->name('updatePerfil');
 Route::get('/perfil/editarcontraseña', 'PerfilController@editarContraseña')->name('editarContraseña');
 Route::post('/perfil/actualizarcontraseña', 'PerfilController@actualizarContraseña')->name('actualizarContraseña');
+Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->name('actualizarImagen');

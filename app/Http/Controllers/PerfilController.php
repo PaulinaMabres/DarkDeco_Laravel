@@ -9,6 +9,7 @@ use App\User;
 use App\Bank;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 class PerfilController extends Controller
 {
     //
@@ -24,13 +25,45 @@ class PerfilController extends Controller
         $localidades = City::all();
         $banks = Bank::all();
 
-        return view('perfil.perfil', ["preguntas_secretas"=>$preguntasSecretas,
+        return view('perfil.perfil', 
+        [
+            "preguntas_secretas"=>$preguntasSecretas,
             "cities" => $localidades,
             "banks" => $banks,
             'user' => auth()->user()
         ]);
     }
+    public function actualizarImagen( Request $request){
+        // Traes la informacion del usuario
+        $user = auth()->user();
+        $preguntasSecretas = SecretQuestion::all();
+        $localidades = City::all();
+        $banks = Bank::all();
 
+        // Validas
+        // dd($request);
+        $validatedData = $request->validate([
+            'imagenPerfil' => ['required', 'mimes:jpeg,jpg,png','max:1000'],
+        ]);
+        
+        // Guardas la imagen en el disco
+        $uploadedFile = $validatedData['imagenPerfil'];
+        $imageUploaded = Storage::putFile("/public/perfil", $uploadedFile);
+        
+        // Actualizas el registro del usuario con la nueva imagen
+        User::where('id', $user->id)->update(
+        [
+            'image' => $imageUploaded
+        ]);
+
+        return Redirect("/perfil");
+        // return view('perfil.perfil', [
+        //     'user' => auth()->user(),
+        //     "preguntas_secretas"=>$preguntasSecretas,
+        //     "cities" => $localidades,
+        //     "banks" => $banks 
+        // ] );
+    }
       /**
      * GET: /perfil/editarPerfil
      */

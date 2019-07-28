@@ -44,13 +44,13 @@
 
         </div>
       </div>--}}
-                    <div class="card col-md-6">
+                    <div class="card-interior col-lg-6 col-md-12 ">
                         <div class="card-header">
                             <h2>Información Personal:</h2>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 col-form-label form-control-label"> Nombre</label>
-                            <div class="input-group col-md-8">
+                            <label class="col-lg-4 col-md-12 col-form-label form-control-label"> Nombre</label>
+                            <div class="input-group col-lg-8 col-md-12">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror"
                                     name="name" value="{{ old('name', $user->name) }}" required autocomplete="name" autofocus
                                     placeholder="tu nombre">
@@ -62,8 +62,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 col-form-label form-control-label"> Apellido</label>
-                            <div class="input-group col-md-8">
+                            <label class="col-lg-4 col-md-12 col-form-label form-control-label"> Apellido</label>
+                            <div class="input-group col-lg-8 col-md-12">
                                 <input type="text" class="form-control" name="lastName" placeholder="tu apellido"
                                     aria-label="tu apellido" aria-describedby="basic-addon1" id="lastName" value="{{ old('lastName', $user->lastName) }}">
                                 @error('lastName')
@@ -75,8 +75,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-4 col-form-label form-control-label"> Localidad </label>
-                            <div class="input-group col-md-8">
+                            <label class="col-lg-4 col-md-12 col-form-label form-control-label"> Localidad </label>
+                            <div class="input-group col-lg-8 col-md-12">
                                 <select type="text" class="form-control" name="city" placeholder="tu localidad"
                                     aria-label="tu localidad" aria-describedby="basic-addon1" id="city">
                                     @foreach($cities as $city)
@@ -95,8 +95,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 col-form-label form-control-label"> Domicilio </label>
-                            <div class="input-group col-md-8">
+                            <label class="col-lg-4 col-md-12 col-form-label form-control-label"> Domicilio </label>
+                            <div class="input-group col-lg-8 col-md-12">
                                 <input type="text" class="form-control" name="address" placeholder="tu domicilio"
                                     aria-label="tu domicilio" aria-describedby="basic-addon1" id="address" value="{{ old('address', $user->address) }}">
                                 @error('address')
@@ -107,8 +107,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 col-form-label form-control-label"> Teléfono </label>
-                            <div class="input-group col-md-8">
+                            <label class="col-lg-4 col-md-12 col-form-label form-control-label"> Teléfono </label>
+                            <div class="input-group col-lg-8 col-md-12">
                                 <input type="text" class="form-control" name="phone" placeholder="tu teléfono"
                                     aria-label="tu teléfono" aria-describedby="basic-addon1" id="phone" value="{{ old('address', $user->phone) }}" >
                                 @error('phone')
@@ -119,8 +119,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                                <label class="col-md-4 col-form-label form-control-label"> E-mail </label>
-                                <div class="input-group col-md-8">
+                                <label class="col-lg-4 col-md-12 col-form-label form-control-label"> E-mail </label>
+                                <div class="input-group col-lg-8 col-md-12">
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                         name="email" value="{{ old('email',$user->email) }}" required autocomplete="email"
                                         placeholder="tu email">
@@ -146,13 +146,13 @@
                             </div> --}}
                     </div>
 
-            <div class="card col-md-6">
+            <div class="card-interior col-lg-5 offset-lg-1 col-md-12 ">
                     <div class="card-header ">
                             <h2>Medios de pago </h2>
                         </div>
                         <div class="form-group">
-                                <label class="col-md-4 col-form-label form-control-label"> Banco </label>
-                                <div class="input-group col-md-8">
+                                <label class="col-lg-4 col-md-12 col-form-label form-control-label"> Banco </label>
+                                <div class="input-group col-lg-8 col-md-12">
                                     <select type="text" class="form-control" name="bank"
                                         aria-label="tu banco" aria-describedby="basic-addon1" id="bank" >
                                         <option id="item" value=""></option>
@@ -173,17 +173,21 @@
                                 </div>
                             </div>
                         <div class="form-group">
-                                <label class="col-md-4 col-form-label form-control-label">Número De Tarjeta </label>
-                                <div class="input-group col-md-8">
-                                    <input id="cardNumber" type="text" class="form-control @error('cardNumber') is-invalid @enderror"
-                                        name="cardNumber" value="{{ old('cardNumber',$user->cardNumber) }}" required autocomplete="cardNumber"
-                                        placeholder="">
+                                
+                                <div class="input-group">
+                                    <label class="col-lg-4 col-md-12 col-form-label form-control-label">Número De Tarjeta </label>
+                                    <div class = "input-group col-lg-8 col-md-12">
+                                            <input id="cardNumber" type="text" class="form-control @error('cardNumber') is-invalid @enderror"
+                                            name="cardNumber" value="{{ old('cardNumber',$user->cardNumber) }}" required autocomplete="cardNumber"
+                                            placeholder="">
+    
+                                        @error('cardNumber')
+                                        <span class="invalid-feedback d-block" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
 
-                                    @error('cardNumber')
-                                    <span class="invalid-feedback d-block" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
                                 </div>
                         </div>
                 </div>
