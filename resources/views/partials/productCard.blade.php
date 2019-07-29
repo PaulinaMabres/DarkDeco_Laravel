@@ -74,7 +74,7 @@
           <div class="input-precio input-group-prepend">
             <span class="input-group-text">Precio $</span>
           </div>
-          <input id="price" type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" value="{{$price_card}}" required>
+          <input id="price" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" value="{{$price_card}}" required>
 
           {{-- Stock --}}
           <div class="input-stock input-group-prepend">

@@ -10,6 +10,7 @@ window.onload = function(){
     stock.value = 0;
   }
 
+  // Carga foto
   var imgInput = document.querySelector('#imgInp');
   imgInput.onchange = function(event){
     var preview = document.querySelector('#img-upload');
