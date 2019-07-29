@@ -9,7 +9,7 @@
 
   <section>
 
-    <form class="" action="/editProduct/{{$product->id}}" method="post" enctype="multipart/form-data">
+    <form class="addEditProduct" action="/editProduct/{{$product->id}}" method ="post" enctype="multipart/form-data">
       @csrf {{-- ES OBLIGATORIO PARA FORMS METHOD POST --}}
       {{-- {{csrf_field()}} --}}
 
@@ -24,25 +24,29 @@
       {{-- Traigo los valores para los inputs --}}
       @if (old("productName"))
         @php
-          $productNameAux = old("productName");
-          $brand_idAux = old("brand_id");
-          $category_idAux = old("category_id");
-          $imageAux = old("image");
-          $priceoAux = old("price");
-          $descriptionAux = old("description");
-          $stockAux = old("stock");
+          $productName_card = old("productName");
+          $brand_id_card = old("brand_id");
+          $category_id_card = old("category_id");
+          $image_card = old("image");
+          $priceo_card = old("price");
+          $description_card = old("description");
+          $stock_card = old("stock");
         @endphp
       @else
         @php
-          $productNameAux = $product->productName;
-          $brand_idAux = $product->brand_id;
-          $category_idAux = $product->category_id;
-          $imageAux = $product->image;
-          $priceAux = $product->price;
-          $descriptionAux = $product->description;
-          $stockAux = $product->stock;
+          $productName_card = $product->productName;
+          $brand_id_card = $product->brand_id;
+          $category_id_card = $product->category_id;
+          $image_card = $product->image;
+          $price_card = $product->price;
+          $description_card = $product->description;
+          $stock_card = $product->stock;
         @endphp
       @endif
+
+      @php
+        $cardTitle = 'Modificar producto';
+      @endphp
 
       @include('partials.productCard')
 

@@ -6,7 +6,7 @@
 
   {{-- Scripts para cargar la foto --}}
   {{-- https://bootsnipp.com/snippets/eNbOa --}}
-  {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
+  {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id ="bootstrap-css"> --}}
   {{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> --}}
   <!-- Include the above in your HEAD tag ---------->
@@ -16,7 +16,7 @@
 
   <section>
 
-    <form class="addEditProduct" action="/addProduct" method="post" enctype="multipart/form-data">
+    <form class="addEditProduct" action="/addProduct" method ="post" enctype="multipart/form-data">
       @csrf {{-- ES OBLIGATORIO PARA FORMS METHOD POST --}}
       {{-- {{csrf_field()}} --}}
 
@@ -31,25 +31,29 @@
       {{-- Traigo los valores para los inputs --}}
       @if (old("productName"))
         @php
-          $productNameAux = old("productName");
-          $brand_idAux = old("brand_id");
-          $category_idAux = old("category_id");
-          $imageAux = old("image");
-          $priceoAux = old("price");
-          $descriptionAux = old("description");
-          $stockAux = old("stock");
+          $productName_card = old("productName");
+          $brand_id_card = old("brand_id");
+          $category_id_card = old("category_id");
+          $image_card = old("image");
+          $price_card = old("price");
+          $description_card = old("description");
+          $stock_card = old("stock");
         @endphp
       @else
         @php
-          $productNameAux = '';
-          $brand_idAux = 0;
-          $category_idAux = 0;
-          $imageAux = '';
-          $priceAux = 0;
-          $descriptionAux = '';
-          $stockAux = 0;
+          $productName_card = '';
+          $brand_id_card = 0;
+          $category_id_card = 0;
+          $image_card = '';
+          $price_card = 0;
+          $description_card = '';
+          $stock_card = 0;
         @endphp
       @endif
+
+      @php
+        $cardTitle = 'Agregar producto';
+      @endphp
 
       @include('partials.productCard')
 

@@ -13,7 +13,7 @@ window.onload = function(){
   var imgInput = document.querySelector('#imgInp');
   imgInput.onchange = function(event){
     var preview = document.querySelector('#img-upload');
-    var file    = document.querySelector('#imgInp').files[0]; //sames as here
+    var file    = document.querySelector('#imgInp').files[0];
     var reader  = new FileReader();
 
     reader.onloadend = function () {
@@ -27,11 +27,12 @@ window.onload = function(){
     }
   }
 
+  // Validaciones
   var formAddEditProduct = document.querySelector('.addEditProduct');
   formAddEditProduct.onsubmit = function(event){
     event.preventDefault();
-    // Validaciones
     var errores = 0;
+
     var productName = document.querySelector('#productName');
     if (productName.value.length < 5) {
       alert('El nombre es muy corto');
@@ -40,6 +41,11 @@ window.onload = function(){
     var price = document.querySelector('#price');
     if (price.value < 1) {
       alert('Precio incorrecto');
+      errores++;
+    }
+    var description = document.querySelector('#description');
+    if (description.value.length > 255){
+      alert('La descripción no puede superar los 255 caracteres.')
       errores++;
     }
     if (errores == 0) {

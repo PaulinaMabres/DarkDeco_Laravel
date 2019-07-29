@@ -31,7 +31,7 @@
                 <input class="btn btn-secondary" onclick="window.location.href='#'" type="" name="" value="Agregar al Carrito">
                 @if (Auth::user()->admin)
                   {{-- Editar Producto --}}
-                  <input id="#editProduct" class="btn btn-secondary" onclick="window.location.href='/editProduct/{{$product->id}}'" type="" name="" value="Editar producto">
+                  <input id="#editProduct" class="btn btn-secondary" onclick="window.location.href='/editProduct/{{$product->id}}'" type="" name="" value="Modificar producto">
                   {{-- Borrar Producto --}}
                   <input id="#deleteProduct" class="btn btn-secondary"
                   onclick="if (window.confirm('Está seguro de borrar el producto?')) {window.location.href='/deleteProduct/{{$product->id}}'}"
