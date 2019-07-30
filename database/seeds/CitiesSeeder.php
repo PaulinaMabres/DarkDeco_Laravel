@@ -11,6 +11,7 @@ class CitiesSeeder extends Seeder
      * @return void
      */
     public function run()
+    // https://infra.datos.gob.ar/catalog/modernizacion/dataset/7/distribution/7.27/download/localidades-censales.json    
     {
       City::create([
         'cityName' => 'Buenos Aires',

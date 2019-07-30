@@ -23,9 +23,12 @@
             <p class="card-text">Marca: {{$brand->brandName}}</p>
             <p class="card-text">Categoría: {{$category->categoryName}}</p>
             <p class="card-text">Precio: $ {{$product->price}}</p>
+            <p class="card-text">Stock: {{$product->stock}}</p>
           </div>
           <div class="product-card-footer card-footer">
-            <form>
+            <form class="formProduct">
+              {{-- <a href="#"><i class="fas fa-shopping-cart fa-2x"></i> --}}
+              {{-- <i class="fas fa-cart-plus"></i> --}}
               @if (Auth::user())
                 {{-- <a href="#">Agregar al Carrito</a> - --}}
                 <input class="btn btn-secondary" onclick="window.location.href='#'" type="" name="" value="Agregar al Carrito">
@@ -47,5 +50,4 @@
       </div>
     </div>
   </section>
-
 @endsection

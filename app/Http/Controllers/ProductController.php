@@ -62,8 +62,9 @@ class ProductController extends Controller
   {
     $brands = Brand::all();
     $categories = Category::all();
+    $action = 'create';
     // dd($brands, $categories);
-    return view('addProduct', compact('brands', 'categories'));
+    return view('addEditProduct', compact('brands', 'categories', 'action'));
   }
 
   /**
@@ -129,8 +130,9 @@ class ProductController extends Controller
     $brands = Brand::all();
     $categories = Category::all();
     $product = Product::find($id);
+    $action = 'edit';
     // dd($product);
-    return view('editProduct', compact('brands', 'categories', 'product'));
+    return view('addEditProduct', compact('brands', 'categories', 'product', 'action'));
   }
 
   /**

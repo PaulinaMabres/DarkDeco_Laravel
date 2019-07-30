@@ -10,22 +10,25 @@ window.onload = function(){
     stock.value = 0;
   }
 
+  // var esNumero = function(){
+  //   if(isNaN(this.value)){
+  //     this.style.borderColor = "red";
+  //     this.focus();
+  //   }else{
+  //     this.style.borderColor = "initial";
+  //   }
+  // }
+  // price.addEventListener('blur',esNumero);
+  // stock.addEventListener('blur',esNumero);
+
   // Carga foto
   var imgInput = document.querySelector('#imgInp');
   imgInput.onchange = function(event){
     var preview = document.querySelector('#img-upload');
-    var file    = document.querySelector('#imgInp').files[0];
-    var reader  = new FileReader();
-
-    reader.onloadend = function () {
-      preview.src = reader.result;
-    }
-
-    if (file) {
-      reader.readAsDataURL(file); //reads the data as a URL
-    } else {
-      preview.src = "";
-    }
+    var file    = this.files[0];
+    imgPreview(preview, file);
+    // var label = document.querySelector('#imgLabel');
+    // label.innerText = this.files[0].name;
   }
 
   // Validaciones
@@ -37,35 +40,29 @@ window.onload = function(){
     var productName = document.querySelector('#productName');
     if (productName.value.length < 5) {
       alert('El nombre es muy corto');
+      productName.focus();
       errores++;
     }
     var price = document.querySelector('#price');
-    if (price.value < 1) {
+    if (isNaN(price.value) || price.value < 1) {
       alert('Precio incorrecto');
+      price.focus();
+      errores++;
+    }
+    var price = document.querySelector('#stock');
+    if (isNaN(stock.value) || stock.value < 0) {
+      alert('Stock incorrecto');
+      price.focus();
       errores++;
     }
     var description = document.querySelector('#description');
     if (description.value.length > 255){
       alert('La descripción no puede superar los 255 caracteres.')
+      description.focus();
       errores++;
     }
     if (errores == 0) {
       this.submit();
     }
   }
-
-  // function CurrencyFormatted(amount) {
-  //   var i = parseFloat(amount);
-  //   if(isNaN(i)) { i = 0.00; }
-  //   var minus = '';
-  //   if(i < 0) { minus = '-'; }
-  //   i = Math.abs(i);
-  //   i = parseInt((i + .005) * 100);
-  //   i = i / 100;
-  //   s = new String(i);
-  //   if(s.indexOf('.') < 0) { s += '.00'; }
-  //   if(s.indexOf('.') == (s.length - 2)) { s += '0'; }
-  //   s = minus + s;
-  //   return s;
-  // }
 }
