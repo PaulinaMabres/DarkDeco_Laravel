@@ -14,7 +14,20 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        //Vemos que el usuario este logueado
+        $carts = Cart::where('status',0)
+        ->where('user_id', Auth:user()->id)
+        ->get(); //y traemos todo su carrito
+
+        $carts = Cart::all()->where('status', 0)
+        ->where('user_id', Auth::user()->id)
+
+        // IDEA: Sacando el total de cada carrito
+        $total = 0;
+        foreach ($carts as $item) {
+          $total = $total +($item->quantity * $item->price);
+          }
+        return view('cart', compact('carts', 'total'));
     }
 
     /**
@@ -35,7 +48,35 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validamos que el numero ingresado sea >0
+        $rule = [
+          'quantity' =>"integer|min:1"
+        ];
+        $message = [
+          'min' =>'La cantidad debe ser mayor a :min.',
+          'integer' => 'El valor debe ser numérico.'
+        ];
+        $this->validate($request, $rule, $message);
+
+        $product = Product::find($request->id);
+
+        //Hasta acá el producto ya está cargado en el chart y hay que ver si realmente está
+        $exist = Cart::where('product_id', $request->id)->where('user_id')->where('status', 0)->first();
+        if ($exist){
+          $exist->quantity += $request->quantity;
+          $exist->save();
+          return redirect('/products');
+        }
+        //entonces; cada "$cart" o Cart es un item/articulo del carrito:
+        $cart = new Cart;
+        $cart->product_id = $product->id;
+        $cart->name = $product->name;
+        $cart->price = $product->price;
+        $cart->quantity = $request->quantity;
+        $cart->user_id = Auth::user()->id;
+
+        $cart->save();
+        return redicect('/products');
     }
 
     /**
@@ -78,8 +119,37 @@ class CartController extends Controller
      * @param  \App\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function destroy($id) // TODO: ca me tienen que dar el ID del item del carrito a eliminar
     {
-        //
+        $item = Cart::where('id',$id);
+        ->where('user_id', Auth::user()->id);
+        ->where('status',0)->get();
+
+        $item[0]->delete();
+
+        return redirect('/cart');
     }
+
+    public function cartClose()
+    {
+      $items = Cart::where('user_id', Auth::user()->id)
+      ->where('status', 0)->get();
+
+      $lastCart = Cart::max('cart_num'); //trae el ultimo cerrado
+
+      foreach ($items as $item) {
+        $item->cart_num = $lastCart+1;
+        $item->status = 1;
+        $item->save();
+      }
+    }
+
+    public function history()
+    {
+      $carts = Cart::where('user_id', Auth::user()->id)
+      ->where('status', 1)->get()->groupBy('cart_num');
+
+      // return view('history', compact('carts'));
+    }
+
 }
