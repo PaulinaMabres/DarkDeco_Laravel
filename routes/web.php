@@ -15,7 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/',function(){ return view('home');})->name('anonimo'); /* Anonimo = La ruta no require login */
+Route::get('/',function(){ return view('home');})->name('anonimo'); /* Anonimo = La ruta no requiere login */
 
 // Route::get('home',function(){
 //   return view('home');
@@ -61,3 +61,7 @@ Route::post('/perfil/editar', 'PerfilController@update')->name('updatePerfil');
 Route::get('/perfil/editarcontraseña', 'PerfilController@editarContraseña')->name('editarContraseña');
 Route::post('/perfil/actualizarcontraseña', 'PerfilController@actualizarContraseña')->name('actualizarContraseña');
 Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->name('actualizarImagen');
+
+// Rutas de carrito
+Route::get('/myCart', 'CartController@index');
+Route::get('/storeCart', 'CartController@store');
