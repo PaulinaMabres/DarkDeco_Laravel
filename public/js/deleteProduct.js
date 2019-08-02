@@ -7,4 +7,8 @@ window.onload = function(){
   //
   // }
 
+  $('.message-card-body').css('color', 'red');
+  $('.message-card').hide();
+  $('.message-card-container').hide();
+
 }
