@@ -45,7 +45,7 @@
           <div class="card-footer product-card-footer">
             <div class="">
               {{-- Agregar al carrito --}}
-              <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='/product/{{$product->id}}'">Ver más</button>
+              <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='/product/{{$product->id}}'">Ver detalle</button>
 
               {{-- <h3><a href="/product/{{$product->id}}">Ver más</a></h3> --}}
               @if (Auth::user())
@@ -66,7 +66,7 @@
       </div>
       <div class="products-btn col-4">
         @if (Auth::user() && Auth::user()->admin)
-          <input class="btn-agregar-producto btn btn-secondary" onclick="window.location.href='/addProduct'" type="" name="" value="Agregar producto">
+          <button type="button" name="edit-product" id="#editProduct" class="btn-agregar-producto btn btn-secondary" onclick="window.location.href='/addProduct'">Agregar producto</button>
         @endif
       </div>
     </div>

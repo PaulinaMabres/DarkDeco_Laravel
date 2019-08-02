@@ -7,6 +7,21 @@
 
 @section('contenidoBody')
   <section>
+    {{-- Card para alert y confirm --}}
+    <div class="message-card-container">
+      <div class="card message-card">
+        <div class="card-body message-card-body">
+          Está seguro de borrar el producto?
+        </div>
+        <div class="card-footer message-card-footer product-card-footer">
+          <div class="">
+            <button class="btn btn-secondary" type="button" name="btn-accept" onclick="window.location.href='/deleteProduct/{{$product->id}}'">Aceptar</button>
+            <button class="btn btn-secondary" type="button" name="btn-cancel" onclick="$('.message-card').fadeToggle();$('.message-card-container').fadeToggle();">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="product-card card mb-3" style="max-width: 1000px; margin: auto; margin-top: 20px;">
     {{-- <div class="card mb-3" style=""> --}}
       <div class="row no-gutters">
@@ -17,6 +32,7 @@
           <div class="product-card-header card-header">
             <h1>Detalle del producto</h1>
           </div>
+
           <div class="product-card-body card-body">
             <h3 class="product-card-title card-title">{{$product->productName}}</h3>
             <p class="card-text">{{$product->description}}</p>
@@ -25,7 +41,6 @@
             <p class="card-text">Precio: $ {{$product->price}}</p>
             <p class="card-text">Stock: {{$product->stock}}</p>
           </div>
-
 
           <div class="product-card-footer card-footer">
             <div class="formProduct">
@@ -41,7 +56,10 @@
 
                   {{-- Borrar Producto --}}
                   <button type="button" name="delete-product" id="#deleteProduct" class="btn btn-secondary"
-                  onclick="if (window.confirm('Está seguro de borrar el producto?')) {window.location.href='/deleteProduct/{{$product->id}}'}">Borrar producto</button>
+                  onclick="$('.message-card').show();$('.message-card-container').show();">Borrar producto</button>
+
+                  {{-- <button type="button" name="delete-product" id="#deleteProduct" class="btn btn-secondary"
+                  onclick="if (window.confirm('Está seguro de borrar el producto?')) {window.location.href='/deleteProduct/{{$product->id}}'}">Borrar producto</button> --}}
                    {{-- <a class="deleteProduct" href="/deleteProduct/{{$product->id}}">Borrar producto</a> - --}}
                 @endif
               @endif
@@ -52,8 +70,10 @@
 
           </div>
         </div>
+
       </div>
     </div>
+
 
   </section>
 @endsection
