@@ -2,6 +2,8 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/products.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="js/minCart.js"></script>
 @endsection
 
 @section('contenidoBody')
@@ -50,7 +52,8 @@
               {{-- <h3><a href="/product/{{$product->id}}">Ver más</a></h3> --}}
               @if (Auth::user())
                 {{-- Agregar al carrito --}}
-                <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='#'">Agregar al Carrito</button>
+                <button id="cartData" type="button" name="add-to-cart" class="btn btn-secondary" value ="{{$product->productName}}-{{$product->price}}-{{$product->brand_id}}"
+                   onclick="carrito()">Agregar al Carrito</button>
                 {{-- <h3><a href="#">Agregar al Carrito</a></h3> --}}
               @endif
             </div>
@@ -71,5 +74,6 @@
       </div>
     </div>
   </div>
+
 
 @endsection

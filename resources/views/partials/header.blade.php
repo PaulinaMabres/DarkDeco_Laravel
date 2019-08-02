@@ -36,7 +36,7 @@
       <div class="div-buscador">
         <form class="buscador" action="/searchProducts" method="get">
           <div class="filtro input-group">
-            <input type="text" name="filtro" class="form-control" value="" placeholder="Buscar productos">
+            <input type="search" name="filtro" class="form-control" value="" placeholder="Buscar productos">
             {{-- <button type="submit" class="btn btn-dark borde text-uppercase"> <span class="h6">Buscar</span></button> --}}
             <div class="input-group-btn">
               <button class="btn-buscador btn btn-default" type="submit">
@@ -134,15 +134,15 @@
             // ?>
         </div>
 
-      <!-- IDEA: CARRITO; se comenta porque no funciona -->
-      <!-- <a class=" nav-link text-secondary d-flex justify-content-center mb-2"href="#"><i class="fas fa-shopping-cart fa-2x"></i>
-      </a> -->
+       {{--  Idea: CARRITO; se comenta porque no funciona --}}
+      <a class=" nav-link text-secondary d-flex justify-content-center mb-2"href="#"><i class="fas fa-shopping-cart fa-2x"></i>
+      </a>
 
-      <?php // IDEA: Se comenta porque no funciona [Boton de busqueda ] ?>
-      <!-- <form class="form-inline">
+       {{-- IDEA: Se comenta porque no funciona [Boton de busqueda ] --}}
+       {{-- <form class="form-inline">
         <input class="form-control mr-sm-2" type="search" placeholder="Búsqueda" aria-label="Search">
         <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
-      </form> -->
+      </form> --}}
 
     </div>
 
