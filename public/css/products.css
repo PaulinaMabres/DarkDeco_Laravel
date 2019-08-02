@@ -20,6 +20,17 @@
     cursor: inherit;
     display: block;
 } */
+
+.modal-pau{
+  background-color: lightblue;
+  max-width: 200px;
+  margin: auto;
+  border-radius: 10%;
+  visibility: visible;
+  /* position: absolute;
+  z-index: 1000; */
+}
+
 #img-upload{
     width: 100%;
 }

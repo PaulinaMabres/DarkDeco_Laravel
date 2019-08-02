@@ -12,7 +12,6 @@ window.onload = function(){
       title += letter;
       upper = letter == " " || letter == "'";
     }
-    console.log(title);
     return title;
   }
 
@@ -24,7 +23,6 @@ window.onload = function(){
     var body = document.querySelector('body');
     for (var i = 0; i < data.localidades.length; i++) {
       // if (data.localidades[i].provincia.id == '02'){
-        // console.log(data.localidades[i].nombre);
         var nameLocation = data.localidades[i].nombre;
         nameLocation = strToTitle(nameLocation);
 
