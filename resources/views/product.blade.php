@@ -1,3 +1,5 @@
+{{-- Probando Git --}}
+
 @extends('default');
 
 @section('head')
@@ -25,47 +27,31 @@
             <p class="card-text">Precio: $ {{$product->price}}</p>
             <p class="card-text">Stock: {{$product->stock}}</p>
           </div>
+
+
           <div class="product-card-footer card-footer">
             <form class="formProduct">
-              {{-- <a href="#"><i class="fas fa-shopping-cart fa-2x"></i> --}}
-              {{-- <i class="fas fa-cart-plus"></i> --}}
               @if (Auth::user())
-                {{-- <a href="#">Agregar al Carrito</a> - --}}
-                <input class="btn btn-secondary" onclick="window.location.href='#'" type="" name="" value="Agregar al Carrito">
+
+                {{-- Agregar al carrito --}}
+                <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='#'">Agregar al Carrito</button>
+
                 @if (Auth::user()->admin)
+
                   {{-- Editar Producto --}}
-                  <input id="#editProduct" class="btn btn-secondary" onclick="window.location.href='/editProduct/{{$product->id}}'" type="" name="" value="Modificar producto">
+                  <button type="button" name="edit-product" id="#editProduct" class="btn btn-secondary" onclick="window.location.href='/editProduct/{{$product->id}}'">Modificar producto</button>
+
                   {{-- Borrar Producto --}}
-                  <input id="#deleteProduct" class="btn btn-secondary"
-                  onclick="if (window.confirm('Está seguro de borrar el producto?')) {window.location.href='/deleteProduct/{{$product->id}}'}"
-                  type="" name="deleteProduct" value="Borrar producto">
+                  <button type="button" name="delete-product" id="#deleteProduct" class="btn btn-secondary"
+                  onclick="if (window.confirm('Está seguro de borrar el producto?')) {window.location.href='/deleteProduct/{{$product->id}}'}">Borrar producto</button>
                    {{-- <a class="deleteProduct" href="/deleteProduct/{{$product->id}}">Borrar producto</a> - --}}
                 @endif
               @endif
-              <input class="btn btn-secondary" onclick="window.location.href='javascript:history.back(-1);'" type="" name="volver" value="Volver">
+
+              <button type="button" name="back" class="btn btn-secondary" onclick="window.location.href='javascript:history.back(-1);'">Volver</button>
               {{-- <a href="javascript:history.back(-1);">Volver</a> --}}
             </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    {{-- Modal de getbootstrap --}}
-    <div class="modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
