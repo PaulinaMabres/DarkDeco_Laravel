@@ -42,11 +42,18 @@
             {{-- <p class="card-text">{{$product->description}}</p> --}}
             <p class="card-price">{{'$ '.$product->price}}</p>
           </div>
-          <div class="card-footer">
-            <h3><a href="/product/{{$product->id}}">Ver más</a></h3>
-            @if (Auth::user())
-              <h3><a href="#">Agregar al Carrito</a></h3>
-            @endif
+          <div class="card-footer product-card-footer">
+            <div class="">
+              {{-- Agregar al carrito --}}
+              <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='/product/{{$product->id}}'">Ver más</button>
+
+              {{-- <h3><a href="/product/{{$product->id}}">Ver más</a></h3> --}}
+              @if (Auth::user())
+                {{-- Agregar al carrito --}}
+                <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='#'">Agregar al Carrito</button>
+                {{-- <h3><a href="#">Agregar al Carrito</a></h3> --}}
+              @endif
+            </div>
           </div>
         </div>
       @endforeach

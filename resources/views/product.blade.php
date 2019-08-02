@@ -1,5 +1,3 @@
-{{-- Probando Git --}}
-
 @extends('default');
 
 @section('head')
@@ -30,7 +28,7 @@
 
 
           <div class="product-card-footer card-footer">
-            <form class="formProduct">
+            <div class="formProduct">
               @if (Auth::user())
 
                 {{-- Agregar al carrito --}}
@@ -50,7 +48,7 @@
 
               <button type="button" name="back" class="btn btn-secondary" onclick="window.location.href='javascript:history.back(-1);'">Volver</button>
               {{-- <a href="javascript:history.back(-1);">Volver</a> --}}
-            </form>
+            </div>
 
           </div>
         </div>
