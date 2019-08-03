@@ -1,6 +1,6 @@
 #img-upload{
   width: 100%;
-  min-height: 321px;
+  /* min-height: 321px; */
 }
 .body-container{
   margin: 0;
@@ -44,8 +44,8 @@
 
 /* --- Product-card --> Product - AddProduct - EditProduct blade */
 .product-card{
-  margin-top: 50px !important;
-  margin-bottom: 50px !important;
+  margin-top: 65px !important;
+  margin-bottom: 65px !important;
 }
 .product-card-info{
   display: flex;
