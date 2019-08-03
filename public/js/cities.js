@@ -2,10 +2,9 @@ window.onload = function(){
 
   function strToTitle(string) {
     var title = '';
-    upper = true;
+    var upper = true;
     string = string.toLowerCase();
     for (letter of string) {
-      // console.log(letter);
       if (upper) {
         letter = letter.toUpperCase();
       }
@@ -27,7 +26,6 @@ window.onload = function(){
         nameLocation = strToTitle(nameLocation);
 
         var line = document.createElement('l');
-        // line.innerText = "City::create(['cityName' => '" + nameLocation + "']);";
         line.innerText = 'City::create(["cityName" => "' + nameLocation + '"]);';
         body.append(line);
         var line = document.createElement('br');
