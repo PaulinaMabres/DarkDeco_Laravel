@@ -3,24 +3,13 @@
 @section('head')
   <link rel="stylesheet" href="/css/products.css">
   <script src="/js/deleteProduct.js"> </script>
+  <script src="/js/modal.js"> </script>
 @endsection
 
 @section('contenidoBody')
-  <section>
-    {{-- Card para alert y confirm --}}
-    <div class="message-card-container">
-      <div class="card message-card">
-        <div class="card-body message-card-body">
-          Está seguro de borrar el producto?
-        </div>
-        <div class="card-footer message-card-footer product-card-footer">
-          <div class="">
-            <button class="btn btn-secondary" type="button" name="btn-accept" onclick="window.location.href='/deleteProduct/{{$product->id}}'">Aceptar</button>
-            <button class="btn btn-secondary" type="button" name="btn-cancel" onclick="$('.message-card').fadeToggle();$('.message-card-container').fadeToggle();">Cancelar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  <section class='body-container container-fluid'>
+
+    @include('partials.modal')
 
     <div class="product-card card mb-3" style="max-width: 1000px; margin: auto; margin-top: 20px;">
     {{-- <div class="card mb-3" style=""> --}}
@@ -52,15 +41,13 @@
                 @if (Auth::user()->admin)
 
                   {{-- Editar Producto --}}
-                  <button type="button" name="edit-product" id="#editProduct" class="btn btn-secondary" onclick="window.location.href='/editProduct/{{$product->id}}'">Modificar producto</button>
+                  <button type="button" name="edit-product" id="editProduct" class="btn btn-secondary" onclick="window.location.href='/editProduct/{{$product->id}}'">Modificar producto</button>
 
                   {{-- Borrar Producto --}}
-                  <button type="button" name="delete-product" id="#deleteProduct" class="btn btn-secondary"
-                  onclick="$('.message-card').show();$('.message-card-container').show();">Borrar producto</button>
+                  <button type="button" name="delete-product" id="deleteProduct" class="btn btn-secondary" value="{{$product->id}}">Borrar producto</button>
 
-                  {{-- <button type="button" name="delete-product" id="#deleteProduct" class="btn btn-secondary"
-                  onclick="if (window.confirm('Está seguro de borrar el producto?')) {window.location.href='/deleteProduct/{{$product->id}}'}">Borrar producto</button> --}}
-                   {{-- <a class="deleteProduct" href="/deleteProduct/{{$product->id}}">Borrar producto</a> - --}}
+                  {{-- <button type="button" name="delete-product" id="deleteProduct" class="btn btn-secondary" value="{{$product->id}}"
+                  onclick="$('.message-card').show();$('.message-card-container').show();">Borrar producto</button> --}}
                 @endif
               @endif
 

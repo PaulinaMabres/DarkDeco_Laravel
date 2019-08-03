@@ -7,11 +7,15 @@
   <link rel="stylesheet" href="/css/products.css">
   <script src="/js/addEditProduct.js"> </script>
   <script src="/js/imgPreview.js"> </script>
+  <script src="/js/modal.js"> </script>
 @endsection
 
 @section('contenidoBody')
 
-  <section>
+  <section class='body-container container-fluid'>
+
+    @include('partials.modal')
+
     @php
     if ($action == 'create') {
       $route = "/addProduct";
@@ -26,9 +30,10 @@
       @csrf {{-- ES OBLIGATORIO PARA FORMS METHOD POST --}}
       {{-- {{csrf_field()}} --}}
 
+      {{-- Si hay errores que vienen del controlador en addEditProduct.js muestra mensaje --}}
       <ul>
         @foreach ($errors->all() as $error)
-          <li>
+          <li class="error">
             {{$error}}
           </li>
         @endforeach
@@ -69,7 +74,11 @@
           <div class="product-card-img col-md-4 col-sm-12 card-img">
             {{-- <label>Foto</label> --}}
             <div class="product-foto">
-              <img width="150px" id='img-upload' src="/storage/product/{{$image_card}}">
+              @if ($image_card == '')
+                <img width="150px" id='img-upload' src="" value="">
+              @else
+                <img width="150px" id='img-upload' src="/storage/product/{{$image_card}}" value="">
+              @endif
             </div>
             <div class="input-foto input-group mb-3">
               <div class="input-group mb-3">
@@ -159,8 +168,8 @@
             <div class="product-card-footer card-footer">
               <div class="">
                 {{-- Cancelar - Vuelve a la página anterior --}}
-                <input class="btn btn-secondary" onclick="window.location.href='javascript:history.back(-1);'" type="" name="cancelar" value="Cancelar">
-                <input class="btn btn-secondary" type="submit" name="" value="Guardar">
+                <button type="button" name="button" class="btn btn-secondary" onclick="window.location.href='javascript:history.back(-1);'">Cancelar</button>
+                <button type="submit" name="button" class="btn btn-secondary">Guardar</button>
               </div>
             </div>
           </div>

@@ -1,9 +1,11 @@
-
 #img-upload{
-    width: 100%;
+  width: 100%;
+  min-height: 321px;
 }
-/* CSS para cargar imagen */
-
+.body-container{
+  margin: 0;
+  padding: 0;
+}
 /*--- Products blade */
 .products-title{
   margin-top: 10px;
@@ -45,9 +47,6 @@
   margin-top: 50px !important;
   margin-bottom: 50px !important;
 }
-.product-card-img{
-  /* background-color: rgba(145, 136, 119); /*Gris*/
-}
 .product-card-info{
   display: flex;
   flex-direction: column;
@@ -55,8 +54,6 @@
 .product-card-header{
   background-color: rgba(145, 136, 119); /*Gris*/
   color: white;
-}
-.product-card-body{
 }
 .product-card-title{
   Color: rgb(23, 90, 108); /*Azul*/
@@ -71,18 +68,26 @@
 .btn-secondary{
   height: 25px;
   width: 120px;
+  background-color: rgb(199,160,77); /*Ocre*/
+
 }
 .message-card-container{
   position: fixed;
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
   background-color: rgba(145, 136, 119, 0.6); /*Gris*/
   z-index: 999;
 }
 .message-card{
   max-width: 500px;
   margin: auto;
+  margin-top: 150px;
   font-size: 2em;
+}
+.message-card-body{
+  color: red;
 }
 /* Product-card --> Product - AddProduct - EditProduct blade ---*/
 

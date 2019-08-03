@@ -64,10 +64,10 @@
     </div>
 
     <div class="products-footer card-footer row">
-      <div class="products-links col-7">
+      <div class="products-links col-md-7">
         {{$products->links()}}
       </div>
-      <div class="products-btn col-4">
+      <div class="products-btn col-md-4">
         @if (Auth::user() && Auth::user()->admin)
           <button type="button" name="edit-product" id="#editProduct" class="btn-agregar-producto btn btn-secondary" onclick="window.location.href='/addProduct'">Agregar producto</button>
         @endif
