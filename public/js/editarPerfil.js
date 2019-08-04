@@ -18,7 +18,7 @@ function validateForm(event){
         cardNumber : $('#cardNumber').val(),
         
         }
-        fetch( "http://localhost:8000/perfil/editar/validateData", {
+        fetch( "/perfil/editar/validateData", {
             method: 'POST',
             body: JSON.stringify( datos ),
             headers: {
