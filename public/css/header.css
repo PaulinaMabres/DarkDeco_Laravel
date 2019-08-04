@@ -6,6 +6,10 @@
 }
 .header {
   background-size: auto;
+  font-size: 1.5em;
+}
+.navbar{
+  min-height: 65px;
 }
 #header .mt-15{
   margin-top: -15px;
@@ -17,16 +21,18 @@
 #header .show{
   width: 12em;
 }
-
-.div-buscador{
-  /* margin:auto; */
-   margin-right: 50px;
-   margin-top: 15px;
-}
 .btn-buscador{
-  height: 27px;
-  border-radius: 30%;
-  margin-top: -1;
+  color: white;
+  background-color: rgb(199,160,77); /*Ocre*/
+}
+.fa-shopping-cart{
+  color: rgb(199,160,77); /*Ocre*/
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.login-nav{
+  margin: auto;
+  align-self: center;
 }
 
 @media screen and (max-width:575px) {
