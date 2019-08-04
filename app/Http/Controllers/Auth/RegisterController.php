@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 class RegisterController extends Controller
 {
     /*
@@ -64,6 +65,28 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function ValidateRegisterData(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'lastName' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'city' => ['required'],
+            'address' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
+            'image' => ['required','max:1000'],
+            'secretAnswer' => ['required','string', 'max:255'],
+            'secretQuestion' => ['required']
+        ]);
+        
+        if ($validator->fails())
+        {
+            return response()->json(['messaje'=>$validator->errors()->all(),'errores'=>$validator->errors(),'valida'=>false]);
+        }
+        return response()->json(['messaje'=>'Tus campos son validos','valida'=>true]);
+        
+ }
     /**
      * Create a new user instance after a valid registration.
      *

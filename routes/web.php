@@ -31,6 +31,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 // Registration Routes...
 Route::get('register', 'Auth\RegisterController@formularioDeRegistro')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
+Route::post('register/validateData', 'Auth\RegisterController@ValidateRegisterData');
 
 // Password Reset Routes...
 Route::get('/recuperarpassword', 'RecuperarPasswordController@index');
