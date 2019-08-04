@@ -45,8 +45,10 @@
   width: 170px !important;
 }
 .dropdown-item{
-  width: 170px !important;
+  width: 160px !important;
+  margin-left: 5px !important;
   font-size: 12px;
+  padding-left: 5px !important;
 }
 ul{
   margin: 0 !important;
