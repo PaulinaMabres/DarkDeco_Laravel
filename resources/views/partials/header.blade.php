@@ -58,7 +58,7 @@
               <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="padding:0">
                   
-                    @if(is_file( Storage::url(Auth::user()->image) ))    
+                    @if(Storage::exists(Auth::user()->image) )    
                         <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}  " alt=""  onerror="{{Storage::url('perfil/NotFound-ProfilePhoto.png') }}" height="35px" width="35px"/>
                     @else
                         <img class="img-circle" src="{{Storage::url('perfil/NotFound-ProfilePhoto.png') }}" alt="" height="35px" width="35px"/>
