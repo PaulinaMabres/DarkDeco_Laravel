@@ -15,7 +15,7 @@ function validateForm(event){
         secretAnswer : $('#secretAnswer').val(),
         
     }
-        fetch( "http://localhost:8000/password/reset/validateData", {
+        fetch( "/password/reset/validateData", {
             method: 'POST',
             body: JSON.stringify( datos ),
             headers: {

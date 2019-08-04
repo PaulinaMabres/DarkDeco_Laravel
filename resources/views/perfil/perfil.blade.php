@@ -47,13 +47,18 @@
                             <div class="profile-card">
                                     
                                     <div class="profile-img ">
-                                            <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}  " alt="" />
+                                        {{-- Validamos si existe la imagen, caso contrario mostramos una de ejemplo. --}}
+                                        @if( Storage::exists(Auth::user()->image) )     
+                                            <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}  " alt=""  onerror="{{Storage::url('perfil/NotFound-ProfilePhoto.png') }} " id="PerfilImage"/>
+                                        @else
+                                            <img class="img-circle" src="{{Storage::url('perfil/NotFound-ProfilePhoto.png') }}" alt="" id="PerfilImage"/>
+                                        @endif
                                             {{-- <img src="" alt=""/> --}}
                                             <div class="file btn btn-lg btn-primary">
                                                 Cambiar foto
-                                                <input type="file"  name="imagenPerfil" id="imagenPerfil"/>
+                                                <input type="file"  name="imagenPerfil" id="imagenPerfil" onchange="validarImagen(event)"/>
                                             </div>
-                                            <input type="submit" id="actualizarImagen" name="actualizarImagen" value="Guardar">
+                                            <input type="submit" id="actualizarImagen" name="actualizarImagen" value="Aplicar Foto">
                                         </button>
                                     </div>
                             </div>            

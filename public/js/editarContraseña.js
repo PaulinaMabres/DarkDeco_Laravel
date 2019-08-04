@@ -16,7 +16,7 @@ function validateForm(event){
         secretQuestion : $('#secretQuestion').val(),
         
         }
-        fetch( "http://localhost:8000/perfil/editarContraseña/validateData", {
+        fetch( "/perfil/editarContraseña/validateData", {
             method: 'POST',
             body: JSON.stringify( datos ),
             headers: {

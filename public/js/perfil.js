@@ -1,3 +1,6 @@
+/*
+    Imprime mensaje de error en los campos.
+*/
 function showErrorInField(  fieldName, error )
 {
     var field = $("#"+fieldName).closest(".input-group");
@@ -6,6 +9,9 @@ function showErrorInField(  fieldName, error )
         field.append('<span class="invalid-feedback d-block" role="alert"><strong>'+value+'</strong></span>');
     });
 }
+/* 
+    Realizamos la validación desde laravel comunicandonos por AJAX
+*/
 function validateForm(event){
     event.preventDefault();
     var datos = {
@@ -18,7 +24,7 @@ function validateForm(event){
         cardNumber : $('#cardNumber').val(),
         
         }
-        fetch( "http://localhost:8000/perfil/validateData", {
+        fetch( "/perfil/validateData", {
             method: 'POST',
             body: JSON.stringify( datos ),
             headers: {
@@ -57,3 +63,25 @@ function validateForm(event){
         })
         console.log(datos);
     }
+
+// Cuando se carga la página agrego la funcion al boton subir imagen.
+function validarImagen(){
+
+    var input = $("#imagenPerfil");
+    var url = $(input).val();
+    var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+    if (input[0].files && input[0].files[0]&& (ext == "gif" || ext == "png" || ext == "jpeg" || ext == "jpg")) 
+    {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#PerfilImage').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input[0].files[0]);
+    }
+    else
+    {
+        $('#PerfilImage').attr('src', '/storage/perfil/NotFound-ProfilePhoto.png');
+    }
+        
+}

@@ -15,7 +15,7 @@ function validateForm(event){
         }
 
 
-        fetch( "http://localhost:8000/login/validateData", {
+        fetch( "/login/validateData", {
             method: 'POST',
             body: JSON.stringify( datos ),
             headers: {
