@@ -32,7 +32,7 @@
     @endif
 
 
-          <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+          <form method="POST" action="{{ route('register') }}" id="mainForm" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
               <div class="input-group mb-3">

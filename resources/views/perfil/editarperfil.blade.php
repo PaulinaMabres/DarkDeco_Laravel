@@ -2,6 +2,7 @@
 
 @section('head')
 <link rel="stylesheet" href="/css/login.css">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 
@@ -29,7 +30,7 @@
                 </a>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('updatePerfil') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('updatePerfil') }}" id="mainForm" enctype="multipart/form-data">
                     @csrf
 
                     {{--<div class="form-group">
@@ -193,7 +194,7 @@
                 </div>
         </div>
         <div class="form-group">
-            <input type="submit" value="Guardar Cambios" class="btn float-right login_btn">
+            <input type="submit" value="Guardar Cambios" class="btn float-right login_btn"   onClick="validateForm(event)">
             <a href={{ route('perfil') }}><input type="button" value="Volver" class="btn float-right login_btn"></a>
         </div>
 
@@ -203,7 +204,7 @@
 </div>
 </div>
 
-
+<script src="/js/editarPerfil.js"> </script>
 
 
 @endsection

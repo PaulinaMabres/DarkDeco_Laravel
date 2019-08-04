@@ -2,6 +2,7 @@
 
 @section('head')
 <link rel="stylesheet" href="/css/login.css">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 
@@ -28,7 +29,7 @@
                 </a>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ route('actualizarContraseña') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('actualizarContraseña') }}"  id="mainForm" enctype="multipart/form-data">
                     @csrf
                         
                     <div class="form-group">
@@ -102,7 +103,7 @@
 
             
                     <div class="form-group">
-                        <input type="submit" value="Guardar" class="btn float-right login_btn">
+                        <input type="submit" value="Guardar" class="btn float-right login_btn"    onClick="validateForm(event)">
                         <a href={{ route('home') }}><input type="button" value="Volver" class="btn float-right login_btn"></a>
                     </div>
                 </form>
@@ -111,7 +112,7 @@
 </div>
 </div>
 
-
+<script src="/js/editarContraseña.js"> </script>
 
 
 @endsection

@@ -2,6 +2,7 @@
 
 @section('head')
 <link rel="stylesheet" href="/css/login.css">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 @section('contenidoBody')
@@ -21,7 +22,7 @@
 
 				</div>
 				<div class="card-body">
-					<form method="POST"  class="form-login" action="{{ route('password.reiniciar') }}">
+					<form method="POST"  class="form-login" action="{{ route('password.reiniciar') }}"  id="mainForm">
                         @csrf
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
@@ -41,7 +42,7 @@
 								<span class="input-group-text"><i class="fas fa-question"></i>
 								</span>
 							</div>
-							<input type="text" class="form-control" placeholder= 'respuesta secreta' name="respuestaSecreta"  id="respuestaSecreta">
+							<input type="text" class="form-control" placeholder= 'respuesta secreta' name="secretAnswer"  id="secretAnswer">
 							@error('respuestaSecreta')
 								<span class="invalid-feedback d-block" role="alert">
 									<strong>{{ $message }}</strong>
@@ -68,7 +69,7 @@
 						</div>
 						
 						<div class="form-group">
-							<input type="submit" value="Restaurar" class="btn float-right login_btn">
+							<input type="submit" value="Restaurar" class="btn float-right login_btn"   onClick="validateForm(event)">
 						</div>
 						<div class="form-group">
 						<a href="{{route('anonimo')}}"><input type="button" value="Volver" class="btn float-right login_btn"></a>
@@ -82,5 +83,6 @@
 
 </div>
 
+<script src="/js/recuperarPassword.js"> </script>
 
 @endsection

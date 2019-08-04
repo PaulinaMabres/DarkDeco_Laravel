@@ -110,6 +110,42 @@ class PerfilController extends Controller
         return redirect('/perfil');
     }
 
+
+    public function ValidateEditarPerfilData( Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'lastName' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'string', 'max:255'],
+            'bank' =>['required','string','max:255'],
+            'cardNumber' =>['required','string','max:16'],
+        ]);
+        
+        if ($validator->fails())
+        {
+            return response()->json(['messaje'=>$validator->errors()->all(),'errores'=>$validator->errors(),'valida'=>false]);
+        }
+        return response()->json(['messaje'=>'Tus campos son validos','valida'=>true]);
+    }
+
+
+    public function ValidateEditarContraseñaData( Request $request){
+        $validator = Validator::make($request->all(), [
+            'oldPassword' => ['required', 'string', 'min:8'],
+            'password' =>  ['required', 'string', 'min:8', 'confirmed'],
+            'secretAnswer' => ['required','string', 'max:255'],
+            'secretQuestion' => ['required'],
+        ]);
+        
+        if ($validator->fails())
+        {
+            return response()->json(['messaje'=>$validator->errors()->all(),'errores'=>$validator->errors(),'valida'=>false]);
+        }
+        return response()->json(['messaje'=>'Tus campos son validos','valida'=>true]);
+    }
+
+
     /**
      * GET: /perfil/editarcontraseña
      */

@@ -3,6 +3,7 @@
 
 @section('head')
 <link rel="stylesheet" href="css/login.css">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @endsection
 
 
@@ -98,7 +99,7 @@
 				</div>
 				<div class="card-body">
 					{{-- <form class="form-login" action="login.php" method="post" enctype="multipart/form-data"> --}}
-					<form method="POST" action="{{ route('login') }}">
+					<form method="POST" action="{{ route('login') }}" id="mainForm">
 							@csrf
 						<div class="form-group social_login">
 							<a class="btn btn-block btn-social btn-twitter">
@@ -151,7 +152,7 @@
 
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Ingresar" class="btn float-right login_btn">
+							<input type="submit" value="Ingresar" class="btn float-right login_btn"   onClick="validateForm(event)">
 						</div>
 					</form>
 				</div>
@@ -174,4 +175,6 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="/js/login.js"> </script>
 @endsection

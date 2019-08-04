@@ -2,6 +2,7 @@
 
 @section('head')
 <link rel="stylesheet" href="/css/login.css">
+
 @endsection
 
 
@@ -210,6 +211,6 @@
 </div>
 
 
-
+<script src="/js/perfil.js"> </script>
 
 @endsection

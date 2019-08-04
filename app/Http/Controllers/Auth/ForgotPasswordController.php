@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use App\User;
 use App\SecretQuestion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 use Auth;
 
@@ -61,6 +62,23 @@ class ForgotPasswordController extends Controller
     public function mostrarFormularioDeReinicio(){
         return view('recuperarpassword');
     }
+
+
+    public function ValidateRecuperarPasswordData( Request $request){
+        $validator = Validator::make($request->all(), [
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'secretAnswer' => ['required','string', 'max:255'],
+           
+        ]);
+        
+        if ($validator->fails())
+        {
+            return response()->json(['messaje'=>$validator->errors()->all(),'errores'=>$validator->errors(),'valida'=>false]);
+        }
+        return response()->json(['messaje'=>'Tus campos son validos','valida'=>true]);
+    }
+
 
     public function reiniciarPassword(Request $request){
 

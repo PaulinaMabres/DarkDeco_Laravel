@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Auth::routes();
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
+Route::post('login/validateData','Auth\LoginController@ValidateLoginData');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
@@ -37,10 +38,12 @@ Route::post('register/validateData', 'Auth\RegisterController@ValidateRegisterDa
 Route::get('/recuperarpassword', 'RecuperarPasswordController@index');
 Route::post('/recuperarpassword', 'RecuperarPasswordController@recuperar')->name('recuperarpassword');
 
+
 // Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::get('password/reset', 'Auth\ForgotPasswordController@mostrarFormularioDeReinicio')->name('password.request');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 Route::post('password/reset/preguntaSecreta', 'Auth\ForgotPasswordController@reiniciarPassword')->name('password.reiniciar');
+Route::post('password/reset/validateData','Auth\ForgotPasswordController@ValidateRecuperarPasswordData');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
@@ -58,10 +61,13 @@ Route::get('/searchProducts', 'ProductController@search');
 
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('/perfil/editar', 'PerfilController@editarPerfil')->name('editarPerfil');
+Route::post('/perfil/editar/validateData','PerfilController@ValidateEditarPerfilData');
 Route::post('/perfil/editar', 'PerfilController@update')->name('updatePerfil');
 Route::get('/perfil/editarcontraseña', 'PerfilController@editarContraseña')->name('editarContraseña');
+Route::post('/perfil/editarContraseña/validateData','PerfilController@validateEditarContraseñaData');
 Route::post('/perfil/actualizarcontraseña', 'PerfilController@actualizarContraseña')->name('actualizarContraseña');
 Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->name('actualizarImagen');
+
 
 // Rutas de carrito
 Route::get('/myCart', 'CartController@index');
