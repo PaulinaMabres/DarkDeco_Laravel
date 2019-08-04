@@ -47,6 +47,7 @@ Route::post('password/reset/validateData','Auth\ForgotPasswordController@Validat
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 
+// Preguntas frecuentes
 Route::get('/faq', 'FaqsController@index');
 
 // Rutas de productos
@@ -59,6 +60,7 @@ Route::get('/editProduct/{id}', 'ProductController@edit');
 Route::post('editProduct/{id}', 'ProductController@update');
 Route::get('/searchProducts', 'ProductController@search');
 
+// Perfil
 Route::get('/perfil', 'PerfilController@index')->name('perfil');
 Route::get('/perfil/editar', 'PerfilController@editarPerfil')->name('editarPerfil');
 Route::post('/perfil/editar/validateData','PerfilController@ValidateEditarPerfilData');

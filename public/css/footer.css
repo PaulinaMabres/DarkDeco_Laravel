@@ -36,6 +36,9 @@
 #footer .extra-footer{
   background-Color: #081338;
 }
+.redes-sociales{
+  margin: auto !important;
+}
 /* IDEA: para el newsletter */
 #footer .cajaEmail{
   height: 25px;

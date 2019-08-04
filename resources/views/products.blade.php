@@ -49,12 +49,10 @@
               {{-- Agregar al carrito --}}
               <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='/product/{{$product->id}}'">Ver detalle</button>
 
-              {{-- <h3><a href="/product/{{$product->id}}">Ver más</a></h3> --}}
               @if (Auth::user())
                 {{-- Agregar al carrito --}}
                 <button id="cartData" type="button" name="add-to-cart" class="btn btn-secondary" value ="{{$product->productName}}-{{$product->price}}-{{$product->brand_id}}"
                    onclick="carrito()">Agregar al Carrito</button>
-                {{-- <h3><a href="#">Agregar al Carrito</a></h3> --}}
               @endif
             </div>
           </div>
@@ -64,10 +62,11 @@
     </div>
 
     <div class="products-footer card-footer row">
-      <div class="products-links col-md-7">
+      <div class="products-links col-xs-12 col-md-7">
         {{$products->links()}}
+        {{-- {{$products->links("pagination::bootstrap-4")}} --}}
       </div>
-      <div class="products-btn col-md-4">
+      <div class="products-btn col-xs-12 col-md-4">
         @if (Auth::user() && Auth::user()->admin)
           <button type="button" name="edit-product" id="#editProduct" class="btn-agregar-producto btn btn-secondary" onclick="window.location.href='/addProduct'">Agregar producto</button>
         @endif

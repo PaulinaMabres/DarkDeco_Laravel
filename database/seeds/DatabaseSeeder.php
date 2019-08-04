@@ -18,6 +18,6 @@ class DatabaseSeeder extends Seeder
     $this->call(SecretQuestionsSeeder::class);
     $this->call(BanksSeeder::class);
     $this->call(CitiesSeeder::class);
-    factory(\App\Product::class, 100)->create(); //Crea los prodcutos definidos en el factory.
+    factory(\App\Product::class, 50)->create(); //Crea los prodcutos definidos en el factory.
   }
 }

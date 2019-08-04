@@ -21,7 +21,8 @@ window.onload = function(){
   .then(function(data){
     var body = document.querySelector('body');
     for (var i = 0; i < data.localidades.length; i++) {
-      // if (data.localidades[i].provincia.id == '02'){
+      // Solo 02-CABA y 06-Provincia de Bs. As.
+      if (data.localidades[i].provincia.id == '02' || data.localidades[i].provincia.id == '06'){
         var nameLocation = data.localidades[i].nombre;
         nameLocation = strToTitle(nameLocation);
 
@@ -30,7 +31,7 @@ window.onload = function(){
         body.append(line);
         var line = document.createElement('br');
         body.append(line);
-      // }
+      }
     }
   })
   .catch(function(error){

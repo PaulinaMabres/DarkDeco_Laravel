@@ -38,19 +38,18 @@
       </div> -->
 
       <!-- Redes Sociales -->
-      <div class="row">
+      <div class="row redes-sociales">
   				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-            <div class="col-md-6 col-sm-6">
+            <div class="col-12">
       					<ul class="list-unstyled list-inline social text-center text-white">
                   <h4>Seguinos en nuestras redes y contactanos!</h4>
-      						<li class="list-inline-item"><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f fa-2x"></i> </a></li>
+      						<li class="list-inline-item"><a hr="https://facebook.com" target="_blank"><i class="fab fa-facebook-f fa-2x"></i> </a></li>
       						<li class="list-inline-item"><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i> </a></li>
       						<li class="list-inline-item"><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i> </a></li>
-      						<li class="list-inline-item"><a href="https://googleplus.com" target="_blank"><i class="fab fa-google-plus fa-2x"></i>  </a></li>
       						<li class="list-inline-item"><a href="mailto:ejemplo@email.com"><i class="fa fa-envelope fa-2x"></i>  </a></li>
   					    </ul>
             </div>
-            <div class="col-md-6 col-sm-6 text-white">
+            {{-- <div class="col-md-6 col-sm-6 text-white">
               <ul class="list-unstyled list-inline social text-center text-white">
               <h4>Sumate a nuestro Newsletter!</h4>
                 <div class="cajaEmail d-flex justify-content-center">
@@ -59,22 +58,19 @@
                   <button type="button" name="button" class="text-dark boton">No funciona</button>
                 </div>
               </ul>
-            </div>
+            </div> --}}
   				</div>
-  				</hr>
   		</div>
     <!-- Extra Footer -->
       <div class="row extra-footer">
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
           <p class="h6">
             <span> &bull; &copy; Derechos Reservados Black Décor &nbsp; &bull; Los precios están en pesos argentinos </span> &nbsp;
-            <a href="#"> &bull; Terminos y condiciones </a> &nbsp;
-            <a href="#"> &bull; Privacidad</a>
-
+            {{-- <a href="#"> &bull; Terminos y condiciones </a> &nbsp;
+            <a href="#"> &bull; Privacidad</a> --}}
           </p>
           <p class="letraChica">
               Hecho con mucho <i class="fas fa-heart"></i> & <i class="fas fa-coffee"></i> por Paulina, Lucas y Agostina.
-
           </p>
         </div>
       </div>
