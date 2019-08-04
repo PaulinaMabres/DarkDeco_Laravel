@@ -41,13 +41,13 @@
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <form method="POST" action="{{ route('actualizarImagen') }}" enctype="multipart/form-data">>
+                    <form method="POST" action="{{ route('actualizarImagen') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <div class="profile-card">
                                     
-                                    <div class="profile-img">
-                                            <img src="{{ Storage::url(Auth::user()->image) }}  " alt="" />
+                                    <div class="profile-img ">
+                                            <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}  " alt="" />
                                             {{-- <img src="" alt=""/> --}}
                                             <div class="file btn btn-lg btn-primary">
                                                 Cambiar foto
@@ -59,8 +59,7 @@
                             </div>            
                         </div>
                     </form>
-                
-
+        
                     
 
                     <div class="col-lg-8 col-md-12 col-sm-12">

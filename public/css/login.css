@@ -6,12 +6,12 @@ html,body{
   background-image: url('/images/interior.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  /* height: 100%; */
   /* font-family: 'Numans', sans-serif; */
 }
 
 .container{
-  height: 100vh;
+  min-height: 100vh;
   /* align-content: center; */
   /* margin-top: 10px; */
   margin-bottom: 30px;
@@ -175,7 +175,7 @@ content: 'tu foto';
 } */
 .container.registro .headerEspacio,
 .container.perfil .headerEspacio{
-  padding-top: 81px!important;
+  padding-top: 115px!important;
 }
 .container.registro .card,
 .container.perfil .card{
@@ -215,42 +215,6 @@ content: 'tu foto';
   font-weight: bold;
 }
 
-/*Celular*/
-@media (max-width:575px){
-  .card .tablet{
-    visibility: visible;
-  }
-  .card .imagen{
-    display: none;
-  }
-  .login_btn {
-    width: 46%;
-  }
-
-  .container {
-    height: 100%;
-  }
-
-  .card {
-    margin: 1em 0 1em 0;
-    height: auto;
-  }
-
-  .container.login .social_icon{
-    display: none !important;
-  }
-  .container.login .social_login{
-    display: block;
-  }
-
-
-}
-
-@media (min-width:1024px){
-  .login .tablet{
-    visibility: hidden;
-  }
-}
 /*
 .perfil .card{
   flex-grow: 1;
@@ -324,4 +288,68 @@ content: 'tu foto';
   opacity: 0;
   right: 0;
   top: 0;
+}
+
+
+
+/* LOGIN */
+.container.login{
+  height: 100vh;
+  margin-bottom: 30px;
+}
+
+
+
+
+/*Media*/
+
+/*Celular*/
+@media (max-width:575px){
+  .card .tablet{
+    visibility: visible;
+  }
+  .card .imagen{
+    display: none;
+  }
+  .login_btn {
+    width: 46%;
+  }
+
+  .container{
+    height: 100%;
+    min-height: unset;
+  }
+  .container.login {
+    height: 69vh;
+  }
+  .container.login .headerEspacio{
+    justify-content: center!important;
+    align-items: center;
+  }
+
+  .container.perfil .btn{
+    float: unset;
+    width: 100%;
+    height: 3em;
+    margin: 0.1em 0;
+  }
+  .card {
+    margin: 1em 0 1em 0;
+    height: auto;
+  }
+
+  .container.login .social_icon{
+    display: none !important;
+  }
+  .container.login .social_login{
+    display: block;
+  }
+
+
+}
+
+@media (min-width:1024px){
+  .login .tablet{
+    visibility: hidden;
+  }
 }

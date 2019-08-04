@@ -101,7 +101,7 @@
 					{{-- <form class="form-login" action="login.php" method="post" enctype="multipart/form-data"> --}}
 					<form method="POST" action="{{ route('login') }}" id="mainForm">
 							@csrf
-						<div class="form-group social_login">
+						{{--<div class="form-group social_login">
 							<a class="btn btn-block btn-social btn-twitter">
 								<span class="fab fa-twitter"></span> Ingresá con Twitter
 							</a>
@@ -114,7 +114,9 @@
 							<div class = "space">
 								O
 							</div>
-						</div>
+							</div>
+							--}}
+						
 
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
