@@ -62,11 +62,11 @@
     </div>
 
     <div class="products-footer card-footer row">
-      <div class="products-links col-xs-12 col-md-7">
+      <div class="products-links">
         {{$products->links()}}
         {{-- {{$products->links("pagination::bootstrap-4")}} --}}
       </div>
-      <div class="products-btn col-xs-12 col-md-4">
+      <div class="products-btn btn-secondary">
         @if (Auth::user() && Auth::user()->admin)
           <button type="button" name="edit-product" id="#editProduct" class="btn-agregar-producto btn btn-secondary" onclick="window.location.href='/addProduct'">Agregar producto</button>
         @endif

@@ -62,7 +62,11 @@
           @else
             <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="padding:0">
-                <img src={{ Storage::url(Auth::user()->image) }}  class="img-circle" height="35px" width="35px"/>
+                @if( Storage::exists(Auth::user()->image) )     
+                  <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}"  class="img-circle" height="35px" width="35px"/>
+                @else
+                  <img class="img-circle" src="{{url('/images/perfil/NotFound-ProfilePhoto.png') }}" class="img-circle" height="35px" width="35px"/>
+                @endif
                 {{ Auth::user()->name }}
                 {{-- <span class="caret"></span> --}}
               </a>
