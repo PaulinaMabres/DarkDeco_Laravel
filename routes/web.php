@@ -16,10 +16,6 @@
 // });
 
 Route::get('/',function(){ return view('home');})->name('anonimo'); /* Anonimo = La ruta no requiere login */
-
-// Route::get('home',function(){
-//   return view('home');
-// });
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Rutas de autorizacion
@@ -30,9 +26,9 @@ Route::post('login/validateData','Auth\LoginController@ValidateLoginData');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registration Routes...
-Route::get('register', 'Auth\RegisterController@formularioDeRegistro')->name('register');
+Route::get('register', 'Auth\RegisterController@formularioDeRegistro')->name('register'); // Vista auth.register y vuelve al home
 Route::post('register', 'Auth\RegisterController@register');
-Route::post('register/validateData', 'Auth\RegisterController@ValidateRegisterData');
+Route::post('register/validateData', 'Auth\RegisterController@ValidateRegisterData'); // Le manda el JSON a register.js que se usa en register.blade
 
 // Password Reset Routes...
 Route::get('/recuperarpassword', 'RecuperarPasswordController@index');
@@ -42,37 +38,37 @@ Route::post('/recuperarpassword', 'RecuperarPasswordController@recuperar')->name
 Route::get('password/reset', 'Auth\ForgotPasswordController@mostrarFormularioDeReinicio')->name('password.request');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 Route::post('password/reset/preguntaSecreta', 'Auth\ForgotPasswordController@reiniciarPassword')->name('password.reiniciar');
-Route::post('password/reset/validateData','Auth\ForgotPasswordController@ValidateRecuperarPasswordData');
-Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset/validateData','Auth\ForgotPasswordController@ValidateRecuperarPasswordData'); // Le manda el JSON a recuperarPassword.js que se usa en recuperarpassword.blade
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email'); // Viene predeterminado
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset'); // Debe ser predeterminado porque no existe pero es necesario
 
 // Preguntas frecuentes
-Route::get('/faq', 'FaqsController@index');
+Route::get('/faq', 'FaqsController@index'); // Crea array de preguntas y respuestas frecuentes y redirige a la vista faq
 
 // Rutas de productos
-Route::get('/products','ProductController@index');
-Route::get('/products/{category_id?}', 'ProductController@index');
-Route::get('/product/{id}', 'ProductController@show');
-Route::get('/addProduct', 'ProductController@create');
-Route::post('addProduct', 'ProductController@store');
-Route::get('/deleteProduct/{id}','ProductController@destroy');
-Route::get('/editProduct/{id}', 'ProductController@edit');
-Route::post('editProduct/{id}', 'ProductController@update');
-Route::get('/searchProducts', 'ProductController@search');
+Route::get('/products','ProductController@index'); // Lista completa de productos, redirige a la vista products
+Route::get('/products/{category_id?}', 'ProductController@index'); // Lista filtrada (por categoría) de productos, redirige a la vista products
+Route::get('/product/{id}', 'ProductController@show'); // Muestra un solo producto, redirige a la vista product
+Route::get('/addProduct', 'ProductController@create')->middleware('auth'); // Crea un registro vacio en la BD y redirige a addEditProduct
+Route::post('addProduct', 'ProductController@store')->middleware('auth'); // Valida los datos y guarda el registro en la BD y redirige a products
+Route::get('/deleteProduct/{id}','ProductController@destroy')->middleware('auth'); // Borrar el registo pedido (id) de la BD y redirige a products
+Route::get('/editProduct/{id}', 'ProductController@edit')->middleware('auth'); // Busca el producto en la BD y redirige a addEditProduct
+Route::post('editProduct/{id}', 'ProductController@update')->middleware('auth'); // Valida los datos y actualiza el registro en la BD y redirige a products
+Route::get('/searchProducts', 'ProductController@search'); // Lista filtrada (resultado de la búsqueda) de productos, redirige a la vista products
 
 // Perfil
-Route::get('/perfil', 'PerfilController@index')->name('perfil');
-Route::get('/perfil/editar', 'PerfilController@editarPerfil')->name('editarPerfil');
-Route::post('/perfil/editar/validateData','PerfilController@ValidateEditarPerfilData');
-Route::post('/perfil/editar', 'PerfilController@update')->name('updatePerfil');
-Route::get('/perfil/editarcontraseña', 'PerfilController@editarContraseña')->name('editarContraseña');
-Route::post('/perfil/editarContraseña/validateData','PerfilController@validateEditarContraseñaData');
-Route::post('/perfil/actualizarcontraseña', 'PerfilController@actualizarContraseña')->name('actualizarContraseña');
-Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->name('actualizarImagen');
+Route::get('/perfil', 'PerfilController@index')->name('perfil'); // Busca los datos del perfil y redirige a la vista perfil
+Route::get('/perfil/editar', 'PerfilController@editarPerfil')->name('editarPerfil'); // Busca los datos del perfil y redirige a la vista editarperfil
+Route::post('/perfil/editar/validateData','PerfilController@ValidateEditarPerfilData'); // Le manda el JSON a editarperfil.js que se usa en editarperfil.blade
+Route::post('/perfil/editar', 'PerfilController@update')->name('updatePerfil'); // Actualiza el perfil en la BD y redirige a la ruta perfil
+Route::get('/perfil/editarcontraseña', 'PerfilController@editarContraseña')->name('editarContraseña'); // Busca los datos de la contraseña y redirige a la vista editarcontraseña
+Route::post('/perfil/editarContraseña/validateData','PerfilController@validateEditarContraseñaData'); // Le manda el JSON a editarContraseña.js que se usa en editarContraseña.blade
+Route::post('/perfil/actualizarcontraseña', 'PerfilController@actualizarContraseña')->name('actualizarContraseña'); // Actualiza la contraseña en la BD y redirige a la ruta editarcontraseña
+Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->name('actualizarImagen'); // Actualiza la imagen en la BD y redirige a la ruta perfil
 
 // Rutas de carrito
-Route::get('/addToCart', 'CartController@store')->middleware('auth');
+Route::get('/addToCart', 'CartController@store')->middleware('auth'); // Agrega un producto al carrito con status 0 y redirige a products
 Route::get('/delete/{id}', 'CartController@destroy')->middleware('auth'); //Borramos productos del carrito.
 Route::get('/myCart', 'CartController@index')->middleware('auth')->name('myCart'); //Mostramos el carrito abierto.
-Route::post('/cartClose', 'CartController@cartClose')->middleware('auth');
-Route::get('/history', 'CartController@history')->middleware('auth')->name('history');
+Route::post('/cartClose', 'CartController@cartClose')->middleware('auth'); // Cierra el carrito
+Route::get('/history', 'CartController@history')->middleware('auth')->name('history'); // Muestra el historial de compras 

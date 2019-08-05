@@ -36,6 +36,8 @@
         <div class="col-md-5">
           <h3 class="text-primary">Descripción: <span class="text-secondary">{{$item->description}}</span></h3>
         </div>
+
+        {{-- Borrar --}}
         <div class="col-md-1">
           <a href="/delete/{{$item->id}}"><i class="fa fa-trash-o"></i></a>
         </div>

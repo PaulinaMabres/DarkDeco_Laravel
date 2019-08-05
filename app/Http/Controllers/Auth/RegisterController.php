@@ -79,13 +79,13 @@ class RegisterController extends Controller
             'secretAnswer' => ['required','string', 'max:255'],
             'secretQuestion' => ['required']
         ]);
-        
+
         if ($validator->fails())
         {
             return response()->json(['messaje'=>$validator->errors()->all(),'errores'=>$validator->errors(),'valida'=>false]);
         }
         return response()->json(['messaje'=>'Tus campos son validos','valida'=>true]);
-        
+
  }
     /**
      * Create a new user instance after a valid registration.
@@ -118,7 +118,7 @@ class RegisterController extends Controller
 
     protected function formularioDeRegistro(){
 
-        $preguntasSecretas = DB::table('secretQuestions')->get();
+        $preguntasSecretas = DB::table('SecretQuestions')->get();
         $cities = City::all();
         return view('auth.register', ["secretQuestions"=>$preguntasSecretas,
             "cities" => $cities

@@ -31,9 +31,9 @@
       {{-- {{csrf_field()}} --}}
 
       {{-- Si hay errores que vienen del controlador en addEditProduct.js muestra mensaje --}}
-      <ul>
+      <ul hidden>
         @foreach ($errors->all() as $error)
-          <li class="error">
+          <li class="error" hidden>
             {{$error}}
           </li>
         @endforeach

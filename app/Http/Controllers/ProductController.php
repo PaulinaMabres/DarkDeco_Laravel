@@ -62,7 +62,7 @@ class ProductController extends Controller
   {
     $brands = Brand::all();
     $categories = Category::all();
-    $action = 'create';
+    $action = 'create'; // Para decirle a la vista que es alta
     // dd($brands, $categories);
     return view('addEditProduct', compact('brands', 'categories', 'action'));
   }
