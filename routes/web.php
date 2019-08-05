@@ -38,7 +38,6 @@ Route::post('register/validateData', 'Auth\RegisterController@ValidateRegisterDa
 Route::get('/recuperarpassword', 'RecuperarPasswordController@index');
 Route::post('/recuperarpassword', 'RecuperarPasswordController@recuperar')->name('recuperarpassword');
 
-
 // Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::get('password/reset', 'Auth\ForgotPasswordController@mostrarFormularioDeReinicio')->name('password.request');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
@@ -70,7 +69,6 @@ Route::get('/perfil/editarcontraseña', 'PerfilController@editarContraseña')->n
 Route::post('/perfil/editarContraseña/validateData','PerfilController@validateEditarContraseñaData');
 Route::post('/perfil/actualizarcontraseña', 'PerfilController@actualizarContraseña')->name('actualizarContraseña');
 Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->name('actualizarImagen');
-
 
 // Rutas de carrito
 Route::get('/addToCart', 'CartController@store')->middleware('auth');

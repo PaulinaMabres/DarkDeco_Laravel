@@ -46,14 +46,21 @@
           </div>
           <div class="card-footer product-card-footer">
             <div class="">
-              {{-- Agregar al carrito --}}
-              <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='/product/{{$product->id}}'">Ver detalle</button>
-
               @if (Auth::user())
                 {{-- Agregar al carrito --}}
-                <button id="cartData" type="button" name="add-to-cart" class="btn btn-secondary" value ="{{$product->productName}}-{{$product->price}}-{{$product->brand_id}}"
-                   onclick="carrito()">Agregar al Carrito</button>
+                <div class="" style="display:inline-block; height:30px">
+                  <form class="" action="/addToCart" method="get">
+                    @csrf
+                    <input type="number" min="1" max="5" name="quantity" value="1">{{$errors->first('quantity') }}
+                    <input type="hidden" name="id" value="{{$product->id}}">
+                    <button type="submit" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='#'"
+                    >Agregar al Carrito</button>
+                  </form>
+                </div>
               @endif
+
+              {{-- Ver detalle --}}
+              <button type="button" name="show-product" class="btn btn-secondary" onclick="window.location.href='/product/{{$product->id}}'">Ver detalle</button>
             </div>
           </div>
         </div>

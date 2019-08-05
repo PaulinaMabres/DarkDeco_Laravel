@@ -61,8 +61,8 @@
             @endif
           @else
             <li class="nav-item dropdown">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="padding:0">
-                @if( Storage::exists(Auth::user()->image) )     
+              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                @if( Storage::exists(Auth::user()->image) )
                   <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}"  class="img-circle" height="35px" width="35px"/>
                 @else
                   <img class="img-circle" src="{{url('/images/perfil/NotFound-ProfilePhoto.png') }}" class="img-circle" height="35px" width="35px"/>
@@ -89,7 +89,7 @@
       </ul>
     </div>
 
-    {{--  Idea: CARRITO; se comenta porque no funciona --}}
+    {{--  Carrito --}}
     <a class=" nav-link text-secondary d-flex justify-content-center mb-2" href="{{ route('myCart') }}"><i class="fas fa-shopping-cart fa-2x"></i>
     </a>
 
