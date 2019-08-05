@@ -51,6 +51,7 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::get('/faq', 'FaqsController@index');
 
 // Rutas de productos
+Route::get('/products','ProductController@index');
 Route::get('/products/{category_id?}', 'ProductController@index');
 Route::get('/product/{id}', 'ProductController@show');
 Route::get('/addProduct', 'ProductController@create');
@@ -72,5 +73,8 @@ Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->na
 
 
 // Rutas de carrito
-Route::get('/myCart', 'CartController@index');
-Route::get('/storeCart', 'CartController@store');
+Route::get('/addToCart', 'CartController@store')->middleware('auth');
+Route::get('/delete/{id}', 'CartController@destroy')->middleware('auth'); //Borramos productos del carrito.
+Route::get('/myCart', 'CartController@index')->middleware('auth'); //Mostramos el carrito abierto.
+Route::post('/cartClose', 'CartController@cartClose')->middleware('auth');
+Route::get('/history', 'CartController@history')->middleware('auth');

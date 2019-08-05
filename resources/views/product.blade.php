@@ -36,7 +36,15 @@
               @if (Auth::user())
 
                 {{-- Agregar al carrito --}}
-                <button type="button" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='#'">Agregar al Carrito</button>
+                <div class="" style="display:inline-block; height:30px">
+                  <form class="" action="/addToCart" method="get">
+                    @csrf
+                    <input type="number" min="1" max="5" name="quantity" value="1">{{$errors->first('quantity') }}
+                    <input type="hidden" name="id" value="{{$product->id}}">
+                    <button type="submit" name="add-to-cart" class="btn btn-secondary" onclick="window.location.href='#'"
+                    >Agregar al Carrito</button>
+                  </form>
+                </div>
 
                 @if (Auth::user()->admin)
 

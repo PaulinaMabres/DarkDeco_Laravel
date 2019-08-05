@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Product;
 use Illuminate\Http\Request;
+use Auth;
 
 class CartController extends Controller
 {
@@ -16,11 +18,11 @@ class CartController extends Controller
     {
         //Vemos que el usuario este logueado
         $carts = Cart::where('status',0)
-        ->where('user_id', Auth:user()->id)
+        ->where('user_id', Auth::user()->id)
         ->get(); //y traemos todo su carrito
 
         $carts = Cart::all()->where('status', 0)
-        ->where('user_id', Auth::user()->id)
+        ->where('user_id', Auth::user()->id);
 
         // IDEA: Sacando el total de cada carrito
         $total = 0;
@@ -70,13 +72,20 @@ class CartController extends Controller
         //entonces; cada "$cart" o Cart es un item/articulo del carrito:
         $cart = new Cart;
         $cart->product_id = $product->id;
-        $cart->name = $product->name;
+        $cart->productName = $product->productName;
         $cart->price = $product->price;
         $cart->quantity = $request->quantity;
         $cart->user_id = Auth::user()->id;
+        $cart->date = date("Y-m-d");
+        $cart->status = 0;
+        $cart->image = $product ->image;
+        $cart->description = $product->description;
 
         $cart->save();
-        return redicect('/products');
+
+        return redirect('/products');
+
+
     }
 
     /**
@@ -121,8 +130,8 @@ class CartController extends Controller
      */
     public function destroy($id) // TODO: ca me tienen que dar el ID del item del carrito a eliminar
     {
-        $item = Cart::where('id',$id);
-        ->where('user_id', Auth::user()->id);
+        $item = Cart::where('id',$id)
+        ->where('user_id', Auth::user()->id)
         ->where('status',0)->get();
 
         $item[0]->delete();
@@ -142,6 +151,7 @@ class CartController extends Controller
         $item->status = 1;
         $item->save();
       }
+      return redirect ('/products');
     }
 
     public function history()
@@ -149,7 +159,7 @@ class CartController extends Controller
       $carts = Cart::where('user_id', Auth::user()->id)
       ->where('status', 1)->get()->groupBy('cart_num');
 
-      // return view('history', compact('carts'));
+      return view('history', compact('carts'));
     }
 
 }
