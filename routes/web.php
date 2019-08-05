@@ -75,6 +75,6 @@ Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->na
 // Rutas de carrito
 Route::get('/addToCart', 'CartController@store')->middleware('auth');
 Route::get('/delete/{id}', 'CartController@destroy')->middleware('auth'); //Borramos productos del carrito.
-Route::get('/myCart', 'CartController@index')->middleware('auth'); //Mostramos el carrito abierto.
+Route::get('/myCart', 'CartController@index')->middleware('auth')->name('myCart'); //Mostramos el carrito abierto.
 Route::post('/cartClose', 'CartController@cartClose')->middleware('auth');
-Route::get('/history', 'CartController@history')->middleware('auth');
+Route::get('/history', 'CartController@history')->middleware('auth')->name('history');

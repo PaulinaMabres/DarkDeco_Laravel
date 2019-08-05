@@ -136,7 +136,7 @@ class CartController extends Controller
 
         $item[0]->delete();
 
-        return redirect('/cart');
+        return redirect('/myCart');
     }
 
     public function cartClose()

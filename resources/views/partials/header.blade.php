@@ -68,6 +68,7 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('history') }}" > Historial de Compras </a>
                 <a class="dropdown-item" href="{{ route('perfil') }}" > Mi perfil </a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
@@ -85,7 +86,7 @@
     </div>
 
     {{--  Idea: CARRITO; se comenta porque no funciona --}}
-    <a class=" nav-link text-secondary d-flex justify-content-center mb-2"href="#"><i class="fas fa-shopping-cart fa-2x"></i>
+    <a class=" nav-link text-secondary d-flex justify-content-center mb-2" href="{{ route('myCart') }}"><i class="fas fa-shopping-cart fa-2x"></i>
     </a>
 
     {{-- Buscador --}}

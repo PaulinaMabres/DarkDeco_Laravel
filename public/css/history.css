@@ -1,0 +1,40 @@
+.container{
+  border: solid 1px;
+  border-color: rgb(199,160,77);
+  min-height: 59vh;
+  margin-top:100px;
+  margin-bottom:100px;
+  overflow-x: hidden;
+  padding: 1em;
+}
+.text-left{
+  font-size:18px;
+}
+.text-muted {
+  margin-top:0;
+  margin-bottom: 5px;
+}
+.text-info{
+  margin-top:0;
+  margin-bottom:0;
+  padding-top:0;
+  padding-bottom: 0!important;
+}
+.btn-primary{
+  background:rgb(199,160,77)!important;
+}
+.partido{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.cuadro{
+  padding:2em;
+  padding: solid 1px #b9935a;
+}
+@media (max-width: 800px) {
+
+  .cuadro{
+    text-align: center;
+  }
+}
