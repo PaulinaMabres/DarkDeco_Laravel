@@ -3,20 +3,22 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark Color fixed-top">
 
     {{-- Logo --}}
-    <a class="navbar-brand mt-15 " href="/">
+    <a class="navbar-brand mt-15" href="/">
       <img src="/images/logoNuevoRecortado.png" title="DarkDeco" class="d-inline-block align-top logo" alt="logoDarkD">
     </a>
-
-    {{-- <l class="dark-deco">Dark Deco -</l> --}}
 
     {{-- Menú hamburguesa --}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    {{-- <a href="#" class="btn btn-info btn-sm">
+    <span class="glyphicon glyphicon-menu-hamburger"></span>
+</a> --}}
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="home-item nav-item">
           {{-- Home --}}
           <a class="nav-item nav-link" href="/">Home</a>
           {{-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> --}}
@@ -88,17 +90,20 @@
           </li>
         @endguest
       </ul>
+
+      {{--  Carrito --}}
+      <a class=" nav-link text-secondary" href="{{ route('myCart') }}"><i class="fas fa-shopping-cart fa-2x"></i>
+      </a>
+
+      {{-- Buscador --}}
+      <form class="form-inline my-2 my-lg-0" action="/searchProducts" method="get">
+        <input class="form-control" type="search" name="filtro" placeholder="Buscar productos" aria-label="Search">
+        <button class="btn-buscador btn" type="submit">Buscar</button>
+      </form>
+
+
     </div>
 
-    {{--  Carrito --}}
-    <a class=" nav-link text-secondary" href="{{ route('myCart') }}"><i class="fas fa-shopping-cart fa-2x"></i>
-    </a>
-
-    {{-- Buscador --}}
-    <form class="form-inline my-2 my-lg-0" action="/searchProducts" method="get">
-      <input class="form-control mr-sm-2" type="search" name="filtro" placeholder="Buscar productos" aria-label="Search">
-      <button class="btn-buscador btn my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
 
   </div>
 </nav>
