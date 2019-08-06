@@ -59,7 +59,7 @@ class RegisterController extends Controller
             'city' => ['required'],
             'address' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'string', 'max:255'],
-            'image' => ['required', 'mimes:jpeg,jpg,png','max:1000'],
+            'image' => ['mimes:jpeg,jpg,png','max:1000'],
             'secretAnswer' => ['required','string', 'max:255'],
             'secretQuestion' => ['required']
         ]);
