@@ -28,7 +28,7 @@ Una vez clonado el proyecto ejecutar:
 Para cambiar el diseño en las paginas nativas de laravel ejemplo **login** asegurarse lo siguiente:
 
 1 - Respetar todos los campos inputs
-2 - Respetar todos los codigos de laravel que le presedan @ ejemplo los ifs
+2 - Respetar todos los codigos de laravel que le precedan @ ejemplo los ifs
 
 
 ## Generar un nuevo seed

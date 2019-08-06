@@ -75,11 +75,11 @@
           {{$products->links()}}
           {{-- {{$products->links("pagination::bootstrap-4")}} --}}
         </div>
-        <div class="products-btn btn-secondary">
-          @if (Auth::user() && Auth::user()->admin)
+        @if (Auth::user() && Auth::user()->admin)
+          <div class="products-btn btn-secondary">
             <button type="button" name="edit-product" id="#editProduct" class="btn-agregar-producto btn btn-secondary" onclick="window.location.href='/addProduct'">Agregar producto</button>
-          @endif
-        </div>
+          </div>
+        @endif
       </div>
     </div>
 
