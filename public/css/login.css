@@ -11,6 +11,7 @@ html,body{
 }
 
 .container{
+  padding-top:3em;
   min-height: 100vh;
   /* align-content: center; */
   /* margin-top: 10px; */
@@ -262,7 +263,7 @@ content: 'tu foto';
 
 .profile-card{
   padding: 1em 0 0 0;
-  
+
 }
 
 .profile-img{
@@ -349,7 +350,7 @@ content: 'tu foto';
 }
 
 @media( max-width: 800px){
-  
+
   .container.perfil .btn{
     float: unset;
     width: 100%;

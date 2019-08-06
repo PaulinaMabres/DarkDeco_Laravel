@@ -66,7 +66,7 @@
               {{-- foto --}}
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                 @if( Storage::exists(Auth::user()->image) )
-                  <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}"  class="img-circle" height="35px" width="35px"/>
+                  <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}" class="img-circle" height="35px" width="35px"/>
                 @else
                   <img class="img-circle" src="{{url('/images/perfil/NotFound-ProfilePhoto.png') }}" class="img-circle" height="35px" width="35px"/>
                 @endif
