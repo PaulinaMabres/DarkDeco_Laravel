@@ -33,6 +33,25 @@ class ProductController extends Controller
     return view('products', compact('products', 'categoryName', 'categories'));
   }
 
+  // Destacados
+  // public function featured(){
+  //   $featured = Product::where('important', '=', '1')->paginate(6);
+  //   // dd($featured);
+  //
+  //   $json = array();
+  //   $total_records = mysql_num_rows($featured);
+  //
+  //   if($total_records > 0){
+  //     while ($row = mysql_fetch_array($featured, MYSQL_ASSOC)){
+  //       $json[] = $row;
+  //     }
+  //   }
+  //
+  //   // echo json_encode($json);
+  //
+  //   return response()->json($json);
+  // }
+
   /**
   * Display a listing of the resource.
   *

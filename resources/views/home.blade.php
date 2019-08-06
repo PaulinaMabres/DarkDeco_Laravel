@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="css/home.css">
   <link href="https://fonts.googleapis.com/css?family=Reenie+Beanie&display=swap" rel="stylesheet"> <!-- IDEA: fuente utilizada una sola vez y solo en home!!!-->
   <script src="/js/header.js"> </script>
+  <script src="/js/home.js"> </script>
 @endsection
 
 <!-- Contenido del Home -->
