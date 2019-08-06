@@ -40,7 +40,7 @@
         <div class="card-columns">
           @foreach ($products as $product)
             <div class="card">
-              <img src="/storage/product/{{$product->image}}" class="card-img-top" alt="...">
+              <img src="/storage/product/{{$product->image}}" class="card-img-top" alt="Foto del producto">
               <div class="card-body">
                 <h3 class="card-title">{{$product->productName}}</h3>
                 {{-- <p class="card-text">{{$product->description}}</p> --}}
