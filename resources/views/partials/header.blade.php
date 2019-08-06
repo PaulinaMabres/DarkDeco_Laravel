@@ -63,6 +63,7 @@
             @endif
           @else
             <li class="nav-item dropdown">
+              {{-- foto --}}
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                 @if( Storage::exists(Auth::user()->image) )
                   <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}"  class="img-circle" height="35px" width="35px"/>

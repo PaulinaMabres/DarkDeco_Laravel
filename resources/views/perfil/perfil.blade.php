@@ -45,10 +45,10 @@
                         @csrf
                         <div class="col-lg-4 col-md-12 col-sm-12">
                             <div class="profile-card">
-                                    
+
                                     <div class="profile-img ">
                                         {{-- Validamos si existe la imagen, caso contrario mostramos una de ejemplo. --}}
-                                        @if( Storage::exists(Auth::user()->image) )     
+                                        @if( Storage::exists(Auth::user()->image) )
                                             <img class="img-circle" src="{{ Storage::url(Auth::user()->image) }}" alt=""  onerror="{{Storage::url('perfil/NotFound-ProfilePhoto.png') }} " id="PerfilImage"/>
                                         @else
                                             <img class="img-circle" src="{{url('/images/perfil/NotFound-ProfilePhoto.png') }}" alt="" id="PerfilImage"/>
@@ -61,11 +61,11 @@
                                             <input type="submit" id="actualizarImagen" name="actualizarImagen" value="Aplicar Foto">
                                         </button>
                                     </div>
-                            </div>            
+                            </div>
                         </div>
                     </form>
-        
-                    
+
+
 
                     <div class="col-lg-8 col-md-12 col-sm-12">
                         {{-- <div class="card-header">
@@ -129,7 +129,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group"> 
+                        <div class="form-group">
                             <label class="col-md-4 col-form-label form-control-label"> Teléfono </label>
                             <div class="input-group col-md-12 col-lg-8">
                                 <input type="text" class="form-control" name="phone" placeholder="tu teléfono"
@@ -147,7 +147,7 @@
 									<input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
 										name="email" value="{{ old('email',$user->email) }}" required autocomplete="email"
 										placeholder="tu email" readonly>
-			
+
 									@error('email')
 									<span class="invalid-feedback d-block" role="alert">
 										<strong>{{ $message }}</strong>
@@ -164,7 +164,7 @@
                             <div class="form-group">
                                     <label class="col-md-4 col-form-label form-control-label"> Banco </label>
                                     <div class="input-group col-md-12 col-lg-8">
-                                        <select type="text" class="form-control" name="city" 
+                                        <select type="text" class="form-control" name="city"
                                             aria-label="tu banco" aria-describedby="basic-addon1" id="bank" disabled>
                                             <option id="item" value=""></option>
                                                 @foreach($banks as $bank)
@@ -173,7 +173,7 @@
                                                     selected="selected"
                                                     @endif
                                                 >{{$bank->bankName}}</option>
-                                            
+
                                             @endforeach
                                         </select>
                                         @error('banco')
@@ -189,7 +189,7 @@
                                         <input id="cardNumber" type="number" class="form-control @error('cardNumber') is-invalid @enderror"
                                             name="cardNumber" value="{{ old('cardNumber',$user->cardNumber) }}" required autocomplete="cardNumber"
                                             placeholder="" readonly>
-                
+
                                         @error('cardNumber')
                                         <span class="invalid-feedback d-block" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -205,10 +205,10 @@
             </div>
         </div>
         <div class="form-group">
-            
+
 
         </div>
-    
+
     </div>
     </div>
 </div>
