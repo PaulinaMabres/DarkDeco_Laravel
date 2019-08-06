@@ -17,10 +17,10 @@ function validateForm(event){
         city : $('#city').val(),
         address : $('#address').val(),
         phone : $('#phone').val(),
-        image : $('#image').val(),
+        // image : $('#image').val(),
         secretAnswer : $('#secretAnswer').val(),
         secretQuestion : $('#secretQuestion').val(),
-        
+
     }
 
     fetch( "/register/validateData", {
@@ -30,7 +30,7 @@ function validateForm(event){
             'Content-Type': "application/json",
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    } ).then( 
+    } ).then(
         function(success){
             console.log("oki");
             console.log(success);
@@ -49,7 +49,7 @@ function validateForm(event){
             $.each( data.errores, function(key,value){
                 $('.alert-danger ul').append("<li>"+value+"</li>")
             })*/
-            
+
             $.each( data.errores, function(key,value){
                 showErrorInField(key,value);
             })
@@ -93,7 +93,7 @@ function validarEditarPerfil(event){
             'Content-Type': "application/json",
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
-    } ).then( 
+    } ).then(
         function(success){
             console.log("oki");
             console.log(success);
@@ -112,7 +112,7 @@ function validarEditarPerfil(event){
             $.each( data.errores, function(key,value){
                 $('.alert-danger ul').append("<li>"+value+"</li>")
             })*/
-            
+
             /*$.each( data.errores, function(key,value){
                 showErrorInField(key,value);
             })
