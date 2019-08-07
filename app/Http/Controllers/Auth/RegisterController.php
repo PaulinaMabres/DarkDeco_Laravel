@@ -95,13 +95,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $imageUploaded ="";
-        if ($data['image'] == "") {
-          $uploadedFile = $data['image'];
-          $imageUploaded = Storage::putFile("/public/perfil", $uploadedFile);
-        } else{
-          $imageUploaded = "/public/perfil/NotFound-ProfilePhoto.png";
-        }
+        $uploadedFile = $data['image'];
+        $imageUploaded = Storage::putFile("/public/perfil", $uploadedFile);
 
         $user = User::create([
             'name' => $data['name'],
