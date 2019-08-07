@@ -53,7 +53,7 @@ Route::post('/perfil/actualizarcontraseña', 'PerfilController@actualizarContras
 Route::post('/perfil/actualizarImagen', 'PerfilController@actualizarImagen')->name('actualizarImagen'); // Actualiza la imagen en la BD y redirige a la ruta perfil
 
 // Preguntas frecuentes
-Route::get('/faq', 'FaqsController@index'); // Crea array de preguntas y respuestas frecuentes y redirige a la vista faq
+Route::get('/faq', 'FAQsController@index'); // Crea array de preguntas y respuestas frecuentes y redirige a la vista faq
 
 // Rutas de productos
 Route::get('/products','ProductController@index'); // Lista completa de productos, redirige a la vista products
