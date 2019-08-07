@@ -11,6 +11,13 @@
 
     @include('partials.modal')
 
+    {{-- Si hay errores que vienen del controlador en addEditProduct.js muestra mensaje --}}
+    <ul hidden>
+      <li class="error" hidden>
+        {{$error}}
+      </li>
+    </ul>
+
     <div class="product-card card mb-3" style="max-width: 1000px; margin: auto; margin-top: 20px;">
     {{-- <div class="card mb-3" style=""> --}}
       <div class="row no-gutters">
@@ -52,14 +59,15 @@
                   <button type="button" name="edit-product" id="editProduct" class="btn btn-secondary" onclick="window.location.href='/editProduct/{{$product->id}}'">Modificar producto</button>
 
                   {{-- Borrar Producto --}}
-                  <button type="button" name="delete-product" id="deleteProduct" class="btn btn-secondary" value="{{$product->id}}">Borrar producto</button> 
+                  <button type="button" name="delete-product" id="deleteProduct" class="btn btn-secondary" value="{{$product->id}}">Borrar producto</button>
 
                   {{-- <button type="button" name="delete-product" id="deleteProduct" class="btn btn-secondary" value="{{$product->id}}"
                   onclick="$('.message-card').show();$('.message-card-container').show();">Borrar producto</button> --}}
                 @endif
               @endif
 
-              <button type="button" name="back" class="btn btn-secondary" onclick="window.location.href='javascript:history.back(-1);'">Volver</button>
+              {{-- Volver --}}
+              <button type="button" name="back" class="btn btn-secondary" onclick="window.location.href='/products'">Volver</button>
               {{-- <a href="javascript:history.back(-1);">Volver</a> --}}
             </div>
 

@@ -135,7 +135,8 @@ class ProductController extends Controller
     $product = Product::find($id);
     $brand = Brand::find($product->brand_id);
     $category = Category::find($product->category_id);
-    return view('product', compact('product', 'brand', 'category')); //Pasamos el dato a la vista.
+    $error = 'OK';
+    return view('product', compact('product', 'brand', 'category', 'error')); //Pasamos el dato a la vista.
   }
 
   /**
@@ -203,7 +204,17 @@ class ProductController extends Controller
   public function destroy($id)
   {
     $product = Product::find($id);
-    $product->delete();
+
+    try{
+      $product->delete();
+    } catch (\Exception $e) {
+      $product = Product::find($id);
+      $brand = Brand::find($product->brand_id);
+      $category = Category::find($product->category_id);
+      $error = 'No se puede borrar el producto';
+      return view('product', compact('product', 'brand', 'category', 'error')); //Pasamos el dato a la vista.
+      // dd($product);
+    }
 
     return redirect('products');
   }

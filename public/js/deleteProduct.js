@@ -9,4 +9,10 @@ window.onload = function(){
     message('confirm', 'Está seguro de borrar el producto?', "window.location.href='/deleteProduct/"+valor+"'");
   }
 
+  // Errores que vienen del controlador al intentar grabar
+  var error = document.querySelector('.error');
+  console.log(error.innerText);
+  if (error.innerText.trim() != 'OK') {
+    message('alert', error.innerText, "$('.message-card').fadeToggle();$('.message-card-container').fadeToggle()")
+  }
 }
