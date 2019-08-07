@@ -65,7 +65,7 @@ Route::get('/deleteProduct/{id}','ProductController@destroy')->middleware('auth'
 Route::get('/editProduct/{id}', 'ProductController@edit')->middleware('auth'); // Busca el producto en la BD y redirige a addEditProduct
 Route::post('editProduct/{id}', 'ProductController@update')->middleware('auth'); // Valida los datos y actualiza el registro en la BD y redirige a products
 Route::get('/searchProducts', 'ProductController@search'); // Lista filtrada (resultado de la búsqueda) de productos, redirige a la vista products
-Route::post('featuredProducts', 'ProductController@featured'); // Le manda el JSON a home.js que se usa en home.blade
+// Route::post('featuredProducts', 'ProductController@featured'); // Le manda el JSON a home.js que se usa en home.blade
 
 // Rutas de carrito
 Route::get('/addToCart', 'CartController@store')->middleware('auth'); // Agrega un producto al carrito con status 0 y redirige a products
