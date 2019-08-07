@@ -37,21 +37,18 @@
         </hr>
       </div> -->
 
-      <!-- Redes Sociales -->
+      <!-- Medios de pago y Redes Sociales -->
       <div class="row redes-sociales justify-content-center">
-        <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-5 d-flex justify-content-center">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
           <div class="col-12">
-              <ul class="col-12 list-unstyled list-inline social text-center text-white justify-content-center">
+              <ul class="list-unstyled list-inline social text-center text-white">
                 <h4 class=""> Medios de pago aceptados: </h4>
                 <div class=" col-md-12 d-flex justify-content-center flex-wrap">
-                  <li class="list-inline-item col-md-2 "><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/245px-Mastercard-logo.svg.png" alt="" width="80" height="50"></li>
-                  <li class="list-inline-item col-md-2"><img src="https://logosmarcas.com/wp-content/uploads/2018/03/VISA-s%C3%ADmbolo.png" alt="" width="90" height="50"></li>
-                  <li class="list-inline-item col-md-2"><img src="https://d31dn7nfpuwjnm.cloudfront.net/images/valoraciones/0033/6151/Como_ingresar_a_mi_cuenta_de_tarjeta_naranja.png?1554480151" width="80" height="50" alt=""></li>
-
-                </div>
-                <div class=" col-md-12 d-flex justify-content-center flex-wrap">
-                  <li class="list-inline-item col-md-3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" width="50" height="50" alt=""></li>
-                  <li class="list-inline-item col-md-3"><img src="https://www.samic.com.uy/wp-content/uploads/2017/07/version-horizontal-large.png" alt="" width="150" height="50"></li>
+                  <li class="logo-tarjetas list-inline-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/245px-Mastercard-logo.svg.png" alt="" width="30" height="20"></li>
+                  <li class="logo-tarjetas list-inline-item"><img src="https://logosmarcas.com/wp-content/uploads/2018/03/VISA-s%C3%ADmbolo.png" alt="" width="30" height="20"></li>
+                  {{-- <li class="logo-tarjetas list-inline-item"><img src="https://d31dn7nfpuwjnm.cloudfront.net/images/valoraciones/0033/6151/Como_ingresar_a_mi_cuenta_de_tarjeta_naranja.png?1554480151" width="50" height="40" alt=""></li> --}}
+                  <li class="logo-tarjetas list-inline-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" width="30" height="20" alt=""></li>
+                  <li class="logo-tarjetas list-inline-item"><img src="https://www.samic.com.uy/wp-content/uploads/2017/07/version-horizontal-large.png" alt="" width="60" height="20"></li>
                 </div>
               </ul>
           </div>
