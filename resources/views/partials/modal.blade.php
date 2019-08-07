@@ -1,6 +1,6 @@
 {{-- Card para alert y confirm --}}
-<div class="message-card-container">
-  <div class="card message-card">
+<div class="message-card-container display-none">
+  <div class="card message-card display-none">
     <div class="card-body message-card-body">
       Mensaje
     </div>
