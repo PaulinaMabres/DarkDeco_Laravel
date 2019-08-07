@@ -38,7 +38,19 @@
       </div> -->
 
       <!-- Redes Sociales -->
-      <div class="row redes-sociales">
+      <div class="row redes-sociales justify-content-center">
+        <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-5 d-flex justify-content-center">
+          <div class="col-12">
+              <ul class="col-12 list-unstyled list-inline social text-center text-white justify-content-center">
+                <h4 class="text-monospace"> MEDIOS DE PAGO ACEPTADOS: </h4>
+                <li class="list-inline-item col-md-4 "><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/245px-Mastercard-logo.svg.png" alt="" width="100" height="70"></li>
+                <li class="list-inline-item col-md-4"><img src="https://logosmarcas.com/wp-content/uploads/2018/03/VISA-s%C3%ADmbolo.png" alt="" width="100" height="60"></li>
+                <li class="list-inline-item col-md-3"><img src="https://d31dn7nfpuwjnm.cloudfront.net/images/valoraciones/0033/6151/Como_ingresar_a_mi_cuenta_de_tarjeta_naranja.png?1554480151" width="100" height="70" alt=""></li>
+                <li class="list-inline-item col-md-6"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png" width="70" height="70" alt=""></li>
+                <li class="list-inline-item col-md-5"><img src="https://www.samic.com.uy/wp-content/uploads/2017/07/version-horizontal-large.png" alt="" width="200" height="70"></li>
+              </ul>
+          </div>
+        </div>
   				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
             <div class="col-12">
       					<ul class="list-unstyled list-inline social text-center text-white">

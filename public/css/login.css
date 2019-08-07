@@ -175,7 +175,7 @@ content: 'tu foto';
 } */
 .container.registro .headerEspacio,
 .container.perfil .headerEspacio{
-  padding-top: 3em!important;
+  padding-top: 13em!important;
 }
 .container.registro .card,
 .container.perfil .card{

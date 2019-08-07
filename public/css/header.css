@@ -14,18 +14,17 @@
 .navbar{
   min-height: 65px;
 }
-.navbar-brand{
-
+#header .navbar-brand{
+  height: 70px;
 }
+/* }
 #header .mt-15{
   margin-top: -15px;
-}
+} */
 #header .logo{
+  margin-top:2px;
   width: 60px;
   height: 60px;
-}
-#header .show{
-  width: 12em;
 }
 .btn-buscador{
   color: white;
@@ -41,7 +40,7 @@
 }
 #navbarDropdown{
   /* width: 180px !important; */
-  margin-right: 100;
+  /* margin-right: 100; */
   width: 100%;
 }
 .dropdown-menu{
@@ -56,16 +55,12 @@
 ul{
   margin: 0 !important;
 }
-.nav-link{
-  padding-top: 15px;
+#izqCero{
+  margin-left:0px!important;
 }
-
 @media screen and (max-width:575px) {
   #header .mt-15{
     margin-top: 3px
-  }
-  #header .logo{
-    margin-top: -8px;
   }
   .navbar-nav{
     display: flex !important;
@@ -73,6 +68,17 @@ ul{
   }
   .login-nav{
     margin: auto;
-    align-self: center;
+    /* align-self: left; */
   }
+}
+@media screen and (max-width:766px) {
+  #header .logo{
+   position: absolute!important;
+   left:42%!important;
+ }
+}
+#header .navbar-toggler {
+  position:absolute;
+  right:20;
+  top:25;
 }

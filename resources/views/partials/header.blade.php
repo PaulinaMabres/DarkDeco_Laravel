@@ -1,6 +1,6 @@
 <section id="header" class="header">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark Color fixed-top">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark Color fixed-top">
 
     {{-- Logo --}}
     <a class="navbar-brand mt-15" href="/">
@@ -49,8 +49,8 @@
       </ul>
 
       {{-- Usuario - Register - Login --}}
-      <div class="login-area login-collapse navbar-nav fluid">
-        <ul class="login-nav navbar-nav ml-auto">
+      <div class="login-area login-collapse navbar-nav fluid " style ="display:contents;">
+        <ul class="login-nav navbar-nav ml-auto " id="izqCero">
           <!-- Authentication Links -->
           @guest
             <li class="nav-item">
