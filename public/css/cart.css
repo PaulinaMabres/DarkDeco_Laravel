@@ -32,9 +32,9 @@ p{
   margin-bottom: 5px;
   font-size: 14px;
 }
-img{
+/* img{
   width: 35%;
-}
+} */
 .fa{
   font-size: 30px!important;
   padding: 10px;
@@ -107,9 +107,9 @@ img{
     padding: 5px;
 
   }
-  img{
+  /* img{
     width: 45%;
-  }
+  } */
   h5{
     font-size: 14px;
   }

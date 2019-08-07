@@ -42,7 +42,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
           <div class="col-12">
               <ul class="list-unstyled list-inline social text-center text-white">
-                <h4 class=""> Medios de pago aceptados: </h4>
+                <h4 class="" style="color: papayawhip;"> Medios de pago aceptados: </h4>
                 <div class=" col-md-12 d-flex justify-content-center flex-wrap">
                   <li class="logo-tarjetas list-inline-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/245px-Mastercard-logo.svg.png" alt="" width="30" height="20"></li>
                   <li class="logo-tarjetas list-inline-item"><img src="https://logosmarcas.com/wp-content/uploads/2018/03/VISA-s%C3%ADmbolo.png" alt="" width="30" height="20"></li>
@@ -56,7 +56,7 @@
   				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
             <div class="col-12">
       					<ul class="list-unstyled list-inline social text-center text-white">
-                  <h4>Seguinos en nuestras redes y contactanos!</h4>
+                  <h4 style="color: papayawhip;">Seguinos en nuestras redes y contactanos!</h4>
       						<li class="list-inline-item"><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f fa-2x"></i> </a></li>
       						<li class="list-inline-item"><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i> </a></li>
       						<li class="list-inline-item"><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i> </a></li>
